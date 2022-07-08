@@ -1,0 +1,73 @@
+#wrap{
+  width: 1200px;
+  height: 700px;
+  background-color: antiquewhite;
+}
+
+#header{
+  height: 100px;
+  width:1200px;
+  background-color: aliceblue;
+}
+
+#header>#logo{
+  height: 100px;
+  width: 200px;
+  background-color: aquamarine;
+  float:left;
+}
+
+#header>#menu{
+  height: 100px;
+  width: 1000px;
+  background-color: aqua;
+  float:left;
+}
+
+#slide{
+  height: 300px;
+  width: 1200px;
+  background-color: bisque;
+}
+
+#contents>#noti{
+  height: 200px;
+  width: 700px;
+  background-color: blue;
+  float:left;
+}
+
+#contents>#ban{
+  height: 200px;
+  width: 300px;
+  background-color: salmon;
+  float:left;
+}
+
+#contents>#dir{
+  height: 200px;
+  width: 200px;
+  background-color: sandybrown;
+  float:left;
+}
+
+#footer>#logo{
+  height: 100px;
+  width: 400px;
+  background-color: rebeccapurple;
+  float:left;
+}
+
+#footer>#botmenu{
+  height: 50px;
+  width: 800px;
+  background-color: hotpink;
+  float:left;
+}
+
+#footer>#copy{
+  height: 50px;
+  width: 800px;
+  background-color: darkblue;
+  float:left;
+}

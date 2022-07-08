@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 주석 처리 -->
+<!-- HTML : Hyper Text MarkUp Language -->
+<!-- DOCTYPE : Document Type html -->
+<html lang="en">    <!--html 태그 language -->
+<head>  <!-- head 태그 -->
+    <meta charset="UTF-8">  <!-- meta 태그 : 문서 인코딩 방식 UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   <!-- 브라우저 호환성 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 뷰포트를 기기에 맞춰 설정한다. -->
+    <title>Document</title>     <!-- Title 태그 -->
+    <style>
+        #wrap{
+            width:100px;
+            height: 100px;
+            background-color: red;
+            display:block; 
+        }
+    
+        #my-span{
+            width:100px;
+            height: 100px;
+            background-color: blue;
+            display:inline;
+        }
+    </style>
+    <!-- div : display 속성이 default로 block, span : display 속성이 default로 inline -->
+
+</head> <!-- ALT + B 누르면 실행됨 -->
+<body>
+<!-- division : 구역 -->
+<!-- div는 block 요소다. -->
+<!-- block는 가로,세로 크기 적용됨 (세로 배치) -->
+<!-- span ,a 태그는 inline 요소다. -->
+<!-- inline는 가로,세로 크기 적용 안됨. -->
+<!-- inline 요소는 글자가 들어간 만큼 스타일을 줄 수 있다. (가로 배치) -->
+<!-- inline-block은 가로,세로 크기 적용됨 (가로배치) -->
+    <div id="wrap">
+        영역
+    </div>
+    <span id="my-span">
+        영역
+    </span>
+</body>
+</html>

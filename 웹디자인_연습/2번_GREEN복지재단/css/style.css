@@ -1,0 +1,93 @@
+#wrap{
+  width:1200px;
+  height: 700px;
+  background-color: antiquewhite;
+}
+
+#header{
+  height: 100px;
+  background-color: blueviolet;
+}
+
+#header>#logo{
+  width: 200px;
+  height: 100px;
+  background-color: salmon;
+  float:left;
+}
+
+#header>#submenu{
+  width:1000px;
+  height: 100px;
+  background-color: forestgreen;
+  float:left;
+}
+
+
+#sub{
+  height: 300px;
+  background-color: bisque;
+}
+
+#sub>#submenu{
+  height:150px;
+  background-color: black;
+  color:white;
+}
+
+#sub>#slide{
+  height:150px;
+  background-color: blue;
+}
+
+#contents{
+  height:200px;
+  background-color: brown;
+}
+
+#contents>#notice{
+  width: 300px;
+  height: 200px;
+  background-color: rosybrown;
+  float:left;
+}
+
+#contents>#gall{
+  width: 600px;
+  height: 200px;
+  background-color: aquamarine;
+  float:left;
+}
+
+#contents>#ban{
+  width: 300px;
+  height: 200px;
+  background-color: mediumspringgreen;
+  float:left;
+}
+
+#footer{
+  height: 100px;
+  background-color: aqua;
+}
+
+#footer>#logo{
+  height: 100px;
+  width: 200px;
+  background-color: blanchedalmond;
+  float:left;
+}
+
+#footer>#copy{
+  height: 100px;
+  width: 800px;
+  background-color: maroon;
+  float: left;
+}
+
+#footer>#site{
+  height: 100px;
+  width: 200px;
+  background-color: mediumslateblue;
+  float:left;
+}

@@ -1,0 +1,98 @@
+*{
+  /* 
+  *은 all을 뜻함
+  모든 요소 마진, 패딩 제거 */
+  margin:0;
+  padding:0;
+}
+
+ul{
+  /* list 스타일 제거*/
+  list-style: none;
+}
+
+a{
+  /*앵커 데코레이선 제거(밑줄 제거)*/
+  text-decoration: none;
+}
+
+#wrap{
+  width:1200px;
+  height:700px;
+  background-color: aqua;
+}
+
+#header{
+  height: 100px;
+  background-color: aquamarine;
+}
+
+#header>#logo{
+  width:200px;
+  height: 100px;  
+  background-color: cadetblue;
+  float:left; /*왼쪽부터 가로배치*/
+}
+
+#header>#nav{
+  width:1000px;
+  height: 100px;
+  background-color: darkgoldenrod;
+  float:left;
+}
+
+#slide{
+  height:300px;
+  background-color: blueviolet;
+}
+
+#contents{
+  height: 200px;
+  background-color: brown;
+}
+
+#contents>#cont1{
+  width: 480px;
+  height: 200px;
+  background-color: forestgreen;
+  float: left;
+}
+
+#contents>#cont2{
+  width: 360px;
+  height: 200px;
+  background-color: silver;
+  float:left;
+}
+
+#contents>#cont3{
+  width: 360px;
+  height: 200px;
+  background-color: chartreuse;
+  float: left;
+}
+#footer{
+  height: 100px;
+  background-color: sandybrown;
+}
+
+#footer>#logo{
+  width: 200px;
+  height: 100px;
+  background-color: gold;
+  float:left;
+}
+
+#footer>#copy{
+  width: 800px;
+  height: 100px;
+  background-color: blue;
+  float:left;
+}
+
+#footer>#sns{
+  width: 200px;
+  height: 100px;
+  background-color: rgb(235, 36, 10);
+  float:left;
+}
