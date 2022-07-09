@@ -1,0 +1,50 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+table{
+    border-collapse: collapse;
+    border:1px solid black;    
+}
+
+td{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+th, td{
+    border:1px solid black;
+}
+
+
+span>a{
+    text-decoration:none;
+    font-size:13px;
+    margin-left:13px;
+}
+
+ul{
+    list-style:none;
+}
+
+#wrap{
+    width:630px;
+    height:500px;
+    background-color:aquamarine;
+}
+
+
+
+.time-size{
+    width:425px;
+    display:flex;
+}
+
+.pos-size{
+   width:47px;
+   height:30px;
+   font-size:13px;
+   padding:0 2px 0 13px;
+}
