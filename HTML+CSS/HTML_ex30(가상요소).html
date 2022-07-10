@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        가상요소: 가상의 요소
+        ::before, ::after
+        태그를 안만들어도 영역을 만들어서 쓴다.
+        (가독성 좋아짐, 복잡성 감소,,,)
+        */
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        #box1::before{
+            content:'hello';
+            color:gray;
+        }
+        #box1::after{
+            content:'hello';
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        박스 1
+    </div>
+</body>
+</html>
