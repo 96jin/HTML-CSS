@@ -11,7 +11,9 @@ table{
 td{
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding:0;
+    margin:0;
 }
 
 th, td{
@@ -43,8 +45,13 @@ ul{
 }
 
 .pos-size{
-   width:47px;
+   width:53px;
    height:30px;
    font-size:13px;
-   padding:0 2px 0 13px;
+   padding:0 2px 0 10px;
+   margin-top:3px;
+}
+
+td>div{
+    border-bottom:1px solid rgb(163, 158, 158);
 }
