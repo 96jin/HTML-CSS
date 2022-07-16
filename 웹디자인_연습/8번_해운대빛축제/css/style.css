@@ -1,0 +1,96 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style:none;
+}
+
+#wrap{
+  width:1000px;
+  height:650px;
+  background-color: antiquewhite;
+  
+}
+
+#header{
+  width:200px;
+  height:650px;
+  background-color: aquamarine;
+  float:left;
+}
+
+#header>#logo{
+  width:200px;
+  height:100px;
+  background-color: aqua;
+  
+}
+
+#header>#menu{
+  width:200px;
+  height:550px;
+  background-color: blue;
+  
+}
+
+#content{
+  width:800px;
+  height:650px;
+  background-color: antiquewhite;
+  float:left;
+}
+
+#content>#slide{
+  width:800px;
+  height:350px;
+  background-color: blueviolet;
+  
+}
+
+#content>#notice{
+  width:300px;
+  height:200px;
+  background-color: brown;
+  float:left;
+}
+
+#content>#banner{
+  width:300px;
+  height:200px;
+  background-color: burlywood;
+  float:left;
+}
+
+#content>#dir{
+  width:200px;
+  height:200px;
+  background-color: cornflowerblue;
+  float:left;
+}
+
+#content>#logo{
+  height:100px;
+  width:150px;
+  background-color: gold;
+  float:left;
+}
+
+#content>#menu{
+  height:50px;
+  width:650px;
+  background-color: khaki;
+  float:left
+}
+
+#content>#copy{
+  height:50px;
+  width:650px;
+  background-color: red;
+  float:left
+}

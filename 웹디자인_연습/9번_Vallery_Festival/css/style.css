@@ -1,0 +1,87 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+#wrap{
+  width:1000px;
+  height:650px;  
+  background-color: beige;  
+}
+
+#wrap>#header{
+  height:650px;
+  width:250px;
+  float:left; 
+}
+
+#header>#logo{
+  width:250px;
+  height:150px;
+  background-color: aquamarine;
+}
+
+#header>#menu{
+  width:250px;
+  height:500px;
+  background-color: aqua;
+  float:left;
+  
+}
+
+#slide{
+  width:750px;
+  height:350px;
+  background-color: blue;
+  float:left; 
+}
+
+#notice{
+  width:200px;
+  height:200px;
+  background-color: blueviolet;
+  float:left;
+}
+
+#gal{
+  width:350px;
+  height:200px;
+  background-color: #1fbe67;
+  float:left;
+}
+
+#dir{
+  width:200px;
+  height:200px;
+  background-color: rgb(206, 19, 122);
+  float:left;
+}
+
+#logo{
+  width:150px;
+  height:100px;
+  background-color: rgb(141, 161, 84);
+  float:left;
+}
+
+#copy{
+  width:450px;
+  height:100px;
+  background-color: rgb(38, 36, 165);
+  float:left;
+}
+
+#site{
+  width:150px;
+  height:100px;
+  background-color: rgb(218, 214, 19);
+  float:left;
+}

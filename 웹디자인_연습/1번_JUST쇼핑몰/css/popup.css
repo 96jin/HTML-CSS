@@ -1,0 +1,46 @@
+#popup{
+  position: fixed;
+  left:37%;
+  top:10%;
+  width: 500px;
+  height: 500px;
+  z-index: 9;
+  border:1px solid #222328;
+}
+
+#popup>#popup-img{
+  width: 500px;
+  height: 400px;
+}
+
+#popup>#popup-img>img{
+  width:500px;
+  height: 400px;
+}
+
+#popup>#popup-btn{
+  width: 500px;
+  height: 100px;
+  background-color: #fff;
+  position:relative;
+}
+
+#popup>#popup-btn>input{
+  width:30px;
+  height: 30px;
+  position:absolute;
+  left:20px;
+  top:30px;
+}
+
+#popup>#popup-btn>label{
+  position:absolute;
+  left:60px;
+  top:35px;
+}
+
+#popup>#popup-btn>a{
+  position: absolute;
+  right:20px;
+  top:15px;
+}
