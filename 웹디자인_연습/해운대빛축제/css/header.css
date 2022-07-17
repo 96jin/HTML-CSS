@@ -1,0 +1,37 @@
+#aside>#logo>img{
+  position:relative;
+  top:25px;
+  left:10px;
+}
+#gnb{
+  position: relative;
+  top:20px;
+  left: 20px;
+}
+#gnb>li>a{
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: gold;
+  text-align: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  color:#222328;
+}
+#gnb li a:hover{
+  background-color: #222328;
+  color:#ffffff;
+}
+#lnb{
+  display: none;
+}
+#lnb>li>a{
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(81, 146, 19);
+  text-align: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  color:#222328;
+}

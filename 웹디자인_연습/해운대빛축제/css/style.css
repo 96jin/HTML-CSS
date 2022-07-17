@@ -1,0 +1,96 @@
+*{
+  margin :0;
+  padding:0;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none; 
+}
+
+#wrap{
+  width:1000px;
+  height:650px;
+  background-color: blanchedalmond;
+}
+#aside{
+  width:200px;
+  height: 650px;
+  background-color: aqua;
+  float: left;
+}
+#aside>#logo{
+  width: 200px;
+  height: 100px;  
+  background-color: blue;
+}
+#aside>#nav{
+  width: 200px;
+  height: 550px;
+  background-color: cadetblue;
+}
+#main{
+  width: 800px;
+  height: 650px;
+  background-color: aquamarine;
+  float: left;
+}
+#main>#slide{
+  width:800px;
+  height: 350px;
+  background-color: chartreuse;
+}
+#main>#contents{
+  width:800px;
+  height: 200px;
+  background-color: rgb(42, 236, 107);
+}
+#contents>#con1{
+  width: 320px;
+  height: 200px;
+  background-color: coral;
+  float: left;
+}
+#contents>#con2{
+  width: 240px;
+  height: 200px;
+  background-color: rgb(76, 39, 124);
+  float: left;
+}
+#contents>#con3{
+  width: 240px;
+  height: 200px;
+  background-color: rgb(52, 119, 21);
+  float: left;
+}
+
+#main>#footer{
+  width:800px;
+  height: 100px;
+  background-color: rgb(32, 126, 87);
+}
+#footer>#logo{
+  width: 200px;
+  height: 100px;
+  background-color: hotpink;
+  float: left;
+}
+#footer>#footer-right{
+  width: 600px;
+  height: 100px;
+  background-color: rgb(102, 133, 19);
+  float: left;
+}
+#footer-right>#bottom-menu{
+  width: 600px;
+  height: 50px;
+  background-color : rgb(91, 145, 158);
+}
+#footer-right>#copy{
+  width: 600px;
+  height: 50px;
+  background-color : rgb(116, 43, 43);
+}

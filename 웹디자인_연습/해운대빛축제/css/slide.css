@@ -1,0 +1,12 @@
+#slide{
+  overflow: hidden;
+}
+#slide-contents{
+  width: 100%;
+  height: 100%;
+}
+#slide-contents>img{
+  display: block;
+  width:100%;
+  height: 100%;
+}
