@@ -47,14 +47,17 @@
 }
 
 #tab>#tab-btn>a:first-child{
+  background-color: bisque;
 }
 
 #tab>#tab-btn>a:nth-child(2){
+  background-color: chocolate;
 }
 
 #tab>#tab-contents{
   width:470px;
   height:140px;
+  border:1px solid black;
 }
 
 #tab-contents>#notice{
