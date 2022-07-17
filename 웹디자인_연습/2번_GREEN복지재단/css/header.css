@@ -1,0 +1,45 @@
+#header>#logo>img{
+    margin-top:25px;
+}
+#header>#nav{
+    position: relative;
+}
+#header>#nav>#gnb{
+    position:absolute;
+    top:60px;
+    right:30px;
+}
+#header>#nav>#gnb>li{
+    float:left;
+    top:40px;
+}
+#header>#nav>#gnb>li>a{
+    display: inline-block;
+    width:100px;
+    height: 40px;
+    color:black;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(199, 217, 230, 0.92);
+}
+header>#nav>#gnb>li>#lnb>li>a{
+    text-align: center;
+    display: block;
+    width:100px;
+    height: 40px;
+    color:black;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: bisque;
+}
+/* 위에서 스타일 준 경로랑 일치시켜야한다. */
+#header #nav #gnb li a:hover{
+    background-color: #222328;
+    color:#ffffff;
+}
+#gnb>li>#lnb{
+    display:none;
+}
