@@ -22,6 +22,7 @@
 #notices>#contents{
     width:400px;
     height:150px;
+    border:1px solid black;
 }
 #notices>#contents>ul>li{
     position: relative;
@@ -67,6 +68,7 @@
     position:absolute;
     width:100%;
     height:150px;
+    border:1px solid black;
 }
 #gallery-container>ul{
     margin-top: 15px;
