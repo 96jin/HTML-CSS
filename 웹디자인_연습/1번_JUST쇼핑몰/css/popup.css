@@ -4,7 +4,7 @@
   top:10%;
   width: 500px;
   height: 500px;
-  z-index: 9;
+  z-index: 9;   /* 제일 위에 띄운다.(우선도) */
   border:1px solid #222328;
 }
 

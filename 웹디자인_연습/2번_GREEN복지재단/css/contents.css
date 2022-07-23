@@ -1,0 +1,91 @@
+#notices>#tab{
+    width:400px;
+    height: 50px;
+    position:relative;
+}
+#notices>#tab>#tab-btn{
+    position: absolute;
+    top:5px;
+    left:25px;
+    width:100px;
+    height: 45px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(175, 221, 231);
+}
+#notices>#tab>#tab-btn>a{
+    padding-top: 10px;
+    display: block;
+    color:black;
+    text-align: center;
+}
+#notices>#contents{
+    width:400px;
+    height:150px;
+    border:1px solid black;
+}
+#notices>#contents>ul>li{
+    position: relative;
+    margin-bottom: 5px;
+}
+#notices>#contents>ul>li>a>span{
+    margin-left: 10px;
+    display: inline-block;
+    height:30px;
+    padding-top: 3px;
+    box-sizing: border-box;
+    color:black;
+}
+#notices>#contents>ul>li>a>span:nth-child(2){
+    position:absolute;
+    right:20px;
+    color:black;
+}
+#con2>#gallery{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+#con2>#gallery>#gallery-btn{
+    width:100px;
+    height: 45px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    position: absolute;
+    top: 5px;
+    left:25px;
+    background-color: rgb(175, 221, 231);
+}
+#con2>#gallery>#gallery-btn>a{
+    display: block;
+    color:black;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+#con2>#gallery>#gallery-container{
+    margin-top: 50px;
+    position:absolute;
+    width:100%;
+    height:150px;
+    border:1px solid black;
+}
+#gallery-container>ul{
+    margin-top: 15px;
+    margin-left: 50px;
+}
+#gallery-container>ul>li{
+    float:left;
+    margin-right: 20px;
+}
+#gallery-container>ul>li>a>img{
+    width:120px;
+    height: 120px;
+}
+main>#contents>#con3>img{
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top:10px;
+    width: 95%;
+    height:95%;
+}

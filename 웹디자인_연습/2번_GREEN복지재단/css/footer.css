@@ -1,0 +1,16 @@
+footer>#logo>a>img{
+    margin-top:45px;
+}
+footer>#copy>address{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+footer>#site>ul{
+    padding-left: 45px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+footer>#site>ul>li{
+    float:left;
+    margin-right: 20px;
+}

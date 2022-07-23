@@ -1,93 +1,74 @@
+*{
+    margin:0 auto;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
 #wrap{
-  width:1200px;
-  height: 700px;
-  background-color: antiquewhite;
+    width: 1200px;
+    height: 700px;
 }
-
-#header{
-  height: 100px;
-  background-color: blueviolet;
+header{
+    width:1200px;
+    height: 100px;
 }
-
-#header>#logo{
-  width: 200px;
-  height: 100px;
-  background-color: salmon;
-  float:left;
+header>#logo{
+    width:200px;
+    height:100px;
+    float:left;
 }
-
-#header>#submenu{
-  width:1000px;
-  height: 100px;
-  background-color: forestgreen;
-  float:left;
+header>#nav{
+    width:1000px;
+    height: 100px;
+    float:left;
 }
-
-
-#sub{
-  height: 300px;
-  background-color: bisque;
+main{
+    width: 1200px;
+    height: 600px;
 }
-
-#sub>#submenu{
-  height:150px;
-  background-color: black;
-  color:white;
+main>#slide{
+    width:1200px;
+    height: 300px;
 }
-
-#sub>#slide{
-  height:150px;
-  background-color: blue;
-}
-
 #contents{
-  height:200px;
-  background-color: brown;
+    width: 1200px;
+    height: 200px;
 }
-
-#contents>#notice{
-  width: 300px;
-  height: 200px;
-  background-color: rosybrown;
-  float:left;
+#contents>#con1{
+    width: 400px;
+    height:200px;
+    float:left;
 }
-
-#contents>#gall{
-  width: 600px;
-  height: 200px;
-  background-color: aquamarine;
-  float:left;
+#contents>#con2{
+    width: 500px;
+    height:200px;
+    float:left;
 }
-
-#contents>#ban{
-  width: 300px;
-  height: 200px;
-  background-color: mediumspringgreen;
-  float:left;
+#contents>#con3{
+    width: 300px;
+    height:200px;
+    float:left;
 }
-
-#footer{
-  height: 100px;
-  background-color: aqua;
+footer{
+    width: 1200px;
+    height: 100px;
 }
-
-#footer>#logo{
-  height: 100px;
-  width: 200px;
-  background-color: blanchedalmond;
-  float:left;
+footer>#logo{
+    width:200px;
+    height: 100px;
+    float: left;
 }
-
-#footer>#copy{
-  height: 100px;
-  width: 800px;
-  background-color: maroon;
-  float: left;
+footer>#copy{
+    width:700px;
+    height: 100px;
+    float:left;
 }
-
-#footer>#site{
-  height: 100px;
-  width: 200px;
-  background-color: mediumslateblue;
-  float:left;
+footer>#site{
+    width:300px;
+    height: 100px;
+    float:left;
 }
