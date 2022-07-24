@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  start_dan = Number(prompt('시작 단 입력'))
+  end_dan = Number(prompt('끝 단 입력'))
+
+  for(i=start_dan;i<=end_dan;i++){
+    document.write(i+'단',"<br>")
+    for(k=1;k<=9;k++){
+      document.write(i+' x '+k+' = '+(i*k),"<br>")
+    }
+    document.write("<br>")
+  }
+</script>
+<body>
+  
+</body>
+</html>
