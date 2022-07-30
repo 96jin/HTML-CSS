@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  var j=0,i=0;
+  // function Timer(){
+  //   document.write(j+'분 '+i+'초')    
+  //   if(i==60){
+  //     j++;
+  //     i=0;
+  //   }
+  //   i++;
+  // }
+  // setInterval(Timer,1000)
+  
+  // function Timer2(){
+  //   console.log(i+':'+i)
+  //   if (i>=59){
+  //     j++;
+  //     i=0;
+  //   }
+  //   i++;
+  // }
+  // setInterval(Timer2,1000)
+
+    var t = 1
+    var min = 0
+    var sec = 0
+    var format = ''
+    
+    function Timer(){
+      console.log(parseInt(sec/60)+':'+(sec%60))
+      sec++
+    }
+    setInterval(Timer,1000)
+
+
+</script>
+<body>
+  
+</body>
+</html>

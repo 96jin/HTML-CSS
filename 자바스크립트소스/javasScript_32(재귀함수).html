@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  // 재귀함수 (recursive function)
+  // 다시 돌아오는~
+  // 자신 함수의 정의안에 자기 자신이 호출이 되는것
+  // 종료조건이 없으면 끝이 안난다.
+
+function recursive(a){
+  document.write(a)
+  a++;
+  if (a==5){return}
+  recursive(a)
+}
+recursive(0);
+</script>
+<body>
+  
+</body>
+</html>
