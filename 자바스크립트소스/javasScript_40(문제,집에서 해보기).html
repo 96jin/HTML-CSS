@@ -7,24 +7,147 @@
   <title>예제</title>
 </head>
 <script>
-  // 타이머 분초 만들기
+  // 타이머 재생, 정지, 리셋, 시간추가 만들기
   var i = 0
-  function myFunc(){
-    document.getElementById("Box").innerText = parseInt(i/3600)+'시간 '+parseInt(i/60)+'분 '+(i%60)+'초'
-    i++
+  var sec = 0
+  var hr = parseInt(sec/3600)
+  var min = parseInt(sec/60)
+
+  function myFunc(sel){    
+    if(sel == 'hr'){
+      sec+=3600
+    }
+    else if(sel == 'min'){
+      sec+=60
+    }
+    else if(sel == '30sec'){
+      sec+=30
+    }
+    else if(sel =='30min'){
+      sec+=(30*60)
+    }
+    else if(sel =='reset'){
+      sec=0
+    }
+    else if(sel == null){  
+      sec++
+    }
+    hr = parseInt(sec/3600)
+    min = parseInt(sec/60)  
+    document.getElementById("Box").innerText = hr+'hr '+min%60+'min '+sec%60+'sec'
   }
 
+  var ret = 0
   function start(){
-    setInterval(myFunc,1000)
+    if(ret==0){
+      ret = setInterval(myFunc,1000)
+    }
+    else{
+      alert('이미 실행중입니다.')
+      return
+    }
   }  
 
-
-
+  function stop(){
+    clearInterval(ret)
+  ret = 0
+  }
 </script>
+<style>
+  #wrap{
+    width:400px;
+    height: 150px;
+    background-color: rgb(26, 37, 165);
+    margin: auto;
+    position: relative;
+    top:100px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  #Box{
+    width : 300px;
+    height: 70px;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    background-color: #ffffff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    position:absolute;
+    top:9px;
+  }
+  #Box2{
+    width:300px;
+    height:60px;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+    background-color: lightgray;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 9px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  #Box2>button{
+    width:45px;
+    height:45px;
+    margin-right: 10px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-radius: 8px;
+  }
+  #Box2>button>span{
+    display: block;
+  }
+  #Box2>button>span>img{
+    width:40px;
+    height:40px;
+    margin-left: -4px;
+  }
+  #Box3{
+    /* background-color: yellow; */
+    width:80px;
+    position:absolute;
+    top:23px;
+    right: -4px;
+  }
+  #Box3>button{
+    display: block;
+    width:60px;
+    height: 20px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    border-width: 1px;
+    background-color: #ffffff;
+  }
+  #wrap button:hover{
+    background-color: aliceblue;
+  }
+</style>
 <body>
-  <div id="Box">
-    0시간 0분 0초
+  <div id="wrap">
+    <div id="Box">
+      0hr 0min 0sec
+      
+    </div>
+    <div id="Box2">
+      <button onclick="start()"><span><img src="./img/play.png" alt="Play"></span></button>
+      <button onclick="stop()"><span><img src="./img/pause.png" alt="Pause"></span></button>
+      <button onclick="myFunc('reset')"><span><img src="./img/stop.png" alt="Stop"></span></button>
+    </div>
+    <div id="Box3">
+      <button onclick="myFunc('hr')"><span>+1hr</span></button>
+      <button onclick="myFunc('30min')"><span>+30min</span></button>
+      <button onclick="myFunc('min')"><span>+1min</span></button>
+      <button onclick="myFunc('30sec')"><span>+30sec</span></button>
+    </div>
   </div>
-  <button onclick="start()">시작</button>
 </body>
 </html>
