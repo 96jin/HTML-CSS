@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  // 대수의 법칙 = 큰수의 법칙 : 시행회수 n 을 무한히 크게하여 시도하면 결국 확률에 수렴한다.
+  // 예시 : 주사위 각 눈이 나올 확률 = 1/6
+  var count = prompt('주사위 몇번?')
+  count = Number(count)
+  var dice_arr = [0,0,0,0,0,0,0]    // 횟수 저장할 배열
+  var dice_per_arr = [0,0,0,0,0,0,0]  // 확률 저장할 배열
+  for(var i=1; i<=count; i++){
+    var dice = Math.ceil(Math.random()*6)
+    // document.write(dice,"<br>")
+    dice_arr[dice] ++
+  }
+
+  for(var i=1;i<dice_arr.length;i++){
+    document.write(i+'눈금 횟수 : '+dice_arr[i],"<br>")
+  }
+  document.write("<br>")
+  for(var i=1;i<dice_arr.length;i++){
+    dice_per_arr[i] = (dice_arr[i]/count)*100
+    document.write(i+'눈금 확률 : '+dice_per_arr[i].toFixed(3)+'%',"<br>")  // toFix 메서드 : 소수점 제한
+  }
+  
+  
+</script>
+<body>
+  
+</body>
+</html>

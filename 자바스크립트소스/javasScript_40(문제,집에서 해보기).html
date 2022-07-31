@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  // 타이머 분초 만들기
+  var i = 0
+  function myFunc(){
+    document.getElementById("Box").innerText = parseInt(i/3600)+'시간 '+parseInt(i/60)+'분 '+(i%60)+'초'
+    i++
+  }
+
+  function start(){
+    setInterval(myFunc,1000)
+  }  
+
+
+
+</script>
+<body>
+  <div id="Box">
+    0시간 0분 0초
+  </div>
+  <button onclick="start()">시작</button>
+</body>
+</html>

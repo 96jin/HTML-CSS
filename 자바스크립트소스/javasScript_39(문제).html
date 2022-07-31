@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+
+  var i = 0
+  function add(){
+    if(i>=0){
+      i++
+      document.getElementById("Box").innerText=i+'개'
+    }
+  }
+  function dif(){
+    if(i>0){
+      i--
+      document.getElementById("Box").innerText=i+'개'
+    }
+    else{
+      alert('수량이 0개입니다.')
+    }
+  }
+
+
+</script>
+<style>
+  #Box{
+    width: 150px;
+    height: 100px;
+    background-color: brown;
+    font-weight: bold;
+    font-size:24px;
+    text-align: center;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
+
+  button{
+    width:50px;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 30px;
+    border-width: 1px;
+    margin-right: 44px;
+  }
+</style>
+<body>
+  <div id="Box">
+    0개
+  </div>
+  <button onclick="add()">+</button>
+  <button onclick="dif()">-</button>
+</body>
+</html>

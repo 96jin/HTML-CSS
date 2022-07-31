@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  // clearInterval
+  // - setInterval을 중지시키는 함수
+  // - setInterval : 재생시간, 재생바, 슬라이드 동작, 스탑워치, 타이머
+
+  var i = 0
+  var ret = 0
+  function myFunc(){
+    // console.log(i)
+    document.getElementById("display").innerText=parseInt(i/60)+'분 '+(i%60)+'초'      // id가  display인곳에 접근해서 i를 출력
+    i++
+  }
+
+  function start(){
+    if(ret>=1){
+      alert('이미 실행중입니다.')
+      return}
+    ret = setInterval(myFunc,1000)  // setInterval 함수를 작동하면 리턴값(Interval ID)이 나온다. / Interval ID 는 맨 처음에 1을 반환하고 그 다음에는 2를 반환, 1씩 증가한다.
+  }
+  
+  function stop(){
+    clearInterval(ret)             // 그 리턴값을 clearInterval 에 넣으면 그에 해당하는 setInterval을 중지한다.            
+    ret = 0              
+  }
+
+
+</script>
+<style>
+  #display{
+    width:200px;
+    height: 50px;
+    background-color: aquamarine;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+  }
+</style>
+
+
+<body>
+  <div id="display">
+    0분 0초
+  </div>
+  <button onclick="start()">시작</button>
+  <button onclick="stop()">중지</button>
+</body>
+</html>
