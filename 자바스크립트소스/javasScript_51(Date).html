@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  // Math 객체
+  var myDate = new Date()
+  // new - 메모리 생성 연산자
+  // new Date - Date 객체 생성
+  var year = myDate.getFullYear() // 년
+  var month = myDate.getMonth()+1 // 월
+  var day = myDate.getDate()      // 일
+  var hour = myDate.getHours()    // 시
+  var min = myDate.getMinutes()   // 분
+  var sec = myDate.getSeconds()   // 초
+  // 2022-08-06 hh:mm:ss
+
+  function date(x){
+    if(x<10){
+      return ('0'+x)
+    }
+    return x
+  }
+
+  // if(month<10){
+  //   month = '0'+month
+  // }
+  // if(day<10){
+  //   day = '0'+day
+  // }
+  // if(hour<10){
+  //   hour='0'+hour
+  // }
+  // if(min<10){
+  //   min = '0'+min
+  // }
+  // if(sec<10){
+  //   sec='0'+sec
+  // }
+
+  var format = date(year)+"-"+date(month)+"-"+date(day)+' '+date(hour)+':'+date(min)+':'+date(sec)
+  document.write(format)
+</script>
+<body>
+  
+</body>
+</html>

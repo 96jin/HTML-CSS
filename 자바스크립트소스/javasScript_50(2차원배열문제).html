@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  var n = Number(prompt('학생 수 입력'))
+  var total = 0
+  var avg = 0
+  var sc_list = []
+  var st_list = []
+
+  for(var i=0;i<n;i++){
+    st_list.push(sc_list)
+    sum = 0
+    for(var j=0;j<3;j++){
+      sc = Number(prompt((i+1)+'번째 학생의 '+(j+1)+'번째 과목의 점수 입력'))
+      st_list[i].push(sc)
+      sum += sc
+    }
+    st_list[i].push(sum)
+    st_list[i].push(sum/n)
+  }
+
+  for(var i=0;i<st_list.length;i++){
+    for(var j=0;j<st_list[i].length;j++){
+      document.write(st_list[i][j],' ')
+    }
+    document.write("<br>")
+  }
+</script>
+<body>
+  
+</body>
+</html>
