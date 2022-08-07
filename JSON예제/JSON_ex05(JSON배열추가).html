@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  var person = [  // JSON 배열
+    {name : "이민호", age : 20, height : 176.5},
+    {name : "정채연", age : 21, height : 162.4},
+    {name : "송중기", age : 22, height : 178.2}
+]
+  // 이름 나이 키 입력받아서 JSON 배열에 추가
+  var name = prompt('이름 입력')
+  var age = Number(prompt('나이 입력'))
+  var height = Number(prompt('키 입력'))
+  person.push({name : name, age: age,height: height}) // JSON 추가
+  console.log(person)
+  
+  for(var i=0;i<person.length;i++){
+    document.write(person[i].name,'<br>')
+    document.write(person[i].age,'<br>')
+    document.write(person[i].height,'<br>')
+    document.write('<br>')
+  }
+
+</script>
+<body>
+  
+</body>
+</html>

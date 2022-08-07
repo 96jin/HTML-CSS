@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+</head>
+<script>
+  var  person = []
+  
+  // 사람 몇명? - count
+  // for - (prompt)정보 입력 받은 후 push({...})
+  var n = Number(prompt('사람 몇명?'))
+
+  for(var i = 0; i<n; i++){
+    var name = prompt('이름 입력')
+    var age = Number(prompt('나이 입력'))
+    var height = Number(prompt('키 입력'))
+    person.push({name : name, age : age, height : height})
+    document.write(person[i].name,'<br>')
+    document.write(person[i].age,'<br>')
+    document.write(person[i].height,'<br>')
+    document.write('<br>')
+  }
+  
+  person.pop()  // 제일 뒤 요소 삭제
+  console.log(person)
+
+</script>
+<body>
+  
+</body>
+</html>

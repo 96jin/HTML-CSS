@@ -14,15 +14,19 @@
   var st_list = []
 
   for(var i=0;i<n;i++){
+    sc_list = []          // 이중 for 문 돌면서 sc_list에 원소가 추가되어있으니 초기화해준다.
     st_list.push(sc_list)
     sum = 0
     for(var j=0;j<3;j++){
-      sc = Number(prompt((i+1)+'번째 학생의 '+(j+1)+'번째 과목의 점수 입력'))
+      if(j==0){var sb = '국어'}
+      else if(j==1){var sb = '수학'}
+      else if(j==2){var sb = '영어'}
+      sc = Number(prompt((i+1)+'번째 학생의 '+sb+' 점수 입력'))
       st_list[i].push(sc)
       sum += sc
     }
     st_list[i].push(sum)
-    st_list[i].push(sum/n)
+    st_list[i].push((sum/3).toFixed(2))
   }
 
   for(var i=0;i<st_list.length;i++){
@@ -31,6 +35,7 @@
     }
     document.write("<br>")
   }
+  // document.write(sc_list)
 </script>
 <body>
   
