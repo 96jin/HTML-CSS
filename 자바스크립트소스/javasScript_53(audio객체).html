@@ -12,10 +12,12 @@
   // new Audio - 오디오 객체 생성
   var audioList = ['./audio/my_piano1.mp3','./audio/my_piano2.mp3','./audio/my_piano3.mp3']
   var i = 1
-  myAudio.src='./audio/my_piano'+i+'.mp3'
+  // myAudio.src='./audio/my_piano'+i+'.mp3'
   function playMusic(){
+    // myAudio.src='./audio/my_piano'+i+'.mp3'  // 배열 안쓰고 다음,전
+    myAudio.src=audioList[i-1]                  //  배열 사용해서 구현
     myAudio.play()          // 오디오 재생
-    alert(myAudio.duration) // 총 시간(초)
+    // alert(myAudio.duration) // 총 시간(초)
   }
   function pauseMusic(){
     myAudio.pause() // 오디오 일시중지
@@ -29,20 +31,20 @@
     // 이전음악을 배열에서 찾아서 src에 세팅하고 재생
     stopMusic()
     if(i>1){
-      i--
+      i--;
     }
     else{
-      i=3
+      i=3;
     }
     playMusic()
   }
   function nextMusic(){
     stopMusic()
     if(i<3){
-      i++
+      i++;
     }
     else{
-      i=1
+      i=1;
     }
     playMusic()
   }
