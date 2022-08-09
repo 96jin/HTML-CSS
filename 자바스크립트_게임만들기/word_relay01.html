@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>끝말잇기</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div><span id = "order">1</span>번쨰 참가자</div>
+  <div>제시어<span id = "word"></span></div>
+  <input type="text">
+  <button>입력</button>
+  <button class ="btn">버튼1</button>
+  <button class ="btn">버튼2</button>
+  
+  <script>
+    const number = parseInt(prompt('몇명이 참가하나요?'),10)  // 10진법 (생략가능)
+    alert(number)
+    confirm('맞나요?')  // boolean 형태로 true, false로 반환
+    // document.querySelector('선택자') 
+    // 선택자는 html 태그를 선택하는 문자열(첫번쩨거만 선택) div span : div의 자손 span , div>span : div의 자식span
+    // #을 붙이면 id를 나타낸다 '#id' . 앞에. 붙이면class '.class'
+    // document.querySelectorAll('선택자') 선택자는 html 태그를 여러개 선택(모든 태그)하는 문자열
+    // -> 유사배열이다(배열인 척 하는 객체)
+
+    //                   input태그에            글자입력 이벤트는 input이다
+    document.querySelector('input').addEventListener('input',function(event){
+      console.log('글자입력',event.target.value)  // input에 들어간 글자의값을 console에 출력
+    })
+    document.querySelector('button').addEventListener('click',function(){
+      console.log('버튼클릭')       // eventlistener에 있으니 리스너함수인데, 클릭한뒤에 호출되니까 콜백함수라고도 한다.
+    })
+
+    // const onClick = function(){
+    //   console.log('버튼클릭')
+    //   return undefined // return 따로 선언 안해주면 undefined이 기본값이다.
+    // }
+    // docume.querySelector('button').addEventListener('click',onClick)
+    // // onClick 라는 함수를 따로 만들어주고 함수자리에 onClick를 넣어도 된다. 단 이때는 ()를 빼고 넣어줘야한다.
+    // //                                         ()를 넣으면 함수가 호출되는거니까 undefined를 넣은것과 같다.
+  
+  
+  
+  
+  </script>
+</body>
+</html>

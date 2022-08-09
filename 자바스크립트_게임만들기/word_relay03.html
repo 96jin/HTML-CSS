@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>끝말잇기</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div><span id ="limit"></span></div>
+  <div><span id = "order">1</span>번쨰 참가자</div>
+  <div>제시어 : <span id = "word"></span></div>
+  <input type="text">
+  <button>입력</button>
+  
+
+  <script>
+    const number = Number(prompt('몇명이 참가하나요?'))
+    if (number) {
+      const limit = Number(prompt('글자수는?'))
+      const $limit = document.querySelector('#limit')
+      const $button = document.querySelector('button')
+      const $input = document.querySelector('input')
+      const $word = document.querySelector('#word')
+      const $order = document.querySelector('#order')
+      $limit.textContent = limit + '글자'
+      let word;     //제시어
+      let newWord;  // 새로 입력한 단어
+      $input.focus()
+
+      const onClickButton = () => {
+        if (newWord.length !== limit) {
+          alert('글자수를 확인해주세요')
+          $input.value = ''
+          $input.focus()
+          return
+        }
+        if (!word) { // 제시어가 비어있는가?
+          // 비어있다
+          word = newWord  // 입력한 단어가 제시어가 된다.
+          $word.textContent = word // 아이디가 word인 곳의 내용을 word로 바꿔준다.(span과 다른 태그들은 textContent)
+          $input.value = ''         // input태그의 내용을 바꾸려면 .value로 한다. (뭔가를 입력하는 select, input, textarea)
+          $input.focus()
+          const order = parseInt($order.textContent)  // order 아이디의 담긴 내용물 (여기서는 1)이 변수 order에 담긴다.
+          if (order + 1 > number) {
+            $order.textContent = 1
+          }
+          else {
+            $order.textContent = order + 1
+          }
+        }
+        else {
+          // 비어있지않다.
+          if (word[word.length - 1] == newWord[0]) { // 올바른가
+            word = newWord
+            $word.textContent = word
+            $input.value = ''
+            $input.focus()
+            const order = parseInt($order.textContent)
+            if (order + 1 > number) {
+              $order.textContent = 1
+            }
+            else {
+              $order.textContent = order + 1
+            }
+          }
+          else { // 올바르지않은가
+            alert('올바르지 않은 단어입니다.')
+            $input.value = ''
+            $input.focus()
+          }
+        }
+
+      }
+      const onInput = (event) => {
+        newWord = event.target.value  // 입력한 단어를 newWord에 넣는다.
+      }
+
+      $button.addEventListener('click', onClickButton)
+      $input.addEventListener('input', onInput)
+    }
+    else{
+      alert('참가수를 입력해주세요')
+    }
+
+  
+  </script>
+</body>
+</html>
