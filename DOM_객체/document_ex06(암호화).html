@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  function myFunc(){
+    var myPw = document.getElementById('my-pw')
+      // var $display = document.getElementById('display')
+      // if($display.textContent ==='표시'){
+      //   myPw.setAttribute("type","text") // 암호화 해제
+      //   $display.textContent = '숨기기'
+      // }
+      // else{
+      //   myPw.setAttribute('type','password')
+      //   $display.textContent='표시'
+      // }
+    
+    var status = myPw.getAttribute('type')  // type의 속성을 가져온다. => text
+    if(status == 'text'){
+      myPw.setAttribute('type','password')  // 암호화
+    }
+    else if(status =='password'){
+      myPw.setAttribute('type','text')      // 암호화 해제
+    }
+  }
+</script>
+<body>
+  <input type="text" id="my-id"><br>
+  <input type="password" id="my-pw"><br>
+  <button onClick="myFunc()" id="display">표시</button>
+  <button>로그인</button>
+</body>
+</html>

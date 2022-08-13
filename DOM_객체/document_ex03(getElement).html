@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width : 100px;
+      height : 100px;
+      background-color: red;
+    }
+  </style>
+  <script>
+    // var i = 0
+    // function myFunc(){
+    //   var box = document.getElementById("box1") // 박스1 접근
+    //   if (i===0){
+    //   box.style.backgroundColor = 'blue'
+    //   // 접근한 요소의 style속성의 backgroundColor속성 blue로 변경
+    //   // document.getElementById("box1").style.backgroundColor='blue';
+    //   i++
+    //   }
+    //   else if (i===1){
+    //     box.style.backgroundColor = 'green'
+    //     i++
+    //   }
+    //   else{
+    //     box.style.backgroundColor = 'red'
+    //     i=0
+    //   }
+    // }
+      var colorList = ['red','green','blue']
+      var i = 0
+      function myFunc(){
+        var box = document.getElementById("box1")
+        box.style.backgroundColor=colorList[i]
+        i++
+        if(i>colorList.length-1){
+          i=0
+        }
+      }
+    
+  </script>
+</head>
+<body>
+  <div id="box1">
+    박스1
+  </div>
+  <button onclick="myFunc()">클릭</button>
+
+
+</body>
+</html>

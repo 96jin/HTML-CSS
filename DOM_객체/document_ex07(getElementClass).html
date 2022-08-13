@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var tripPriceList=[
+      {country:'일본',price:500000},
+      {country:'중국',price:600000},
+      {country:'대만',price:700000}
+    ]
+    var totalPrice=0
+    function myFunc(){
+      var myCheck = document.getElementsByClassName('my-check') // 배열로 받는다.
+      alert(myCheck.length)
+      // alert(myCheck[0].checked)   // [0] 이면 제일 첫번쪠
+      // alert(myCheck[1].checked)   
+      // alert(myCheck[2].checked)   
+      // checked 속성 확인해서
+      // checked 가 false 면 체크안됨
+      // chedked 가 true 면 체크됨
+      for (var i=0;i<myCheck.length;i++){
+        // alert(myCheck[i].checked)
+        if(myCheck[i].checked){
+          // alert(myCheck[i].value)
+          for(var j=0;j<tripPriceList.length;j++){
+            if(tripPriceList[j].country == myCheck[i].value){
+              totalPrice += tripPriceList[j].price
+            }
+          }
+        }
+      }
+      alert('총가격 : '+totalPrice)
+    }
+  </script>
+</head>
+<body>
+  <label for="">일본</label>
+  <input type="checkbox" class="my-check" id="japan" value="일본">
+  
+  <label for="">중국</label>
+  <input type="checkbox" class="my-check" id="china" value="중국">
+
+  <label for="">대만</label>
+  <input type="checkbox" class="my-check" id="thailand" value="대만">
+  <button onClick="myFunc()">클릭</button>
+</body>
+</html>

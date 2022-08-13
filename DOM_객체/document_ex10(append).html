@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrap{
+      width:1000px;
+      height:600px;
+      background-color: aqua;
+    }
+    #box{
+      width:100px;
+      height:100px;
+      background-color: red;
+      display: inline-block;
+      margin:10px;
+    }
+  </style>
+  <script>
+    function myFunc(){
+      var myWrap = document.getElementById('wrap')
+      var myDiv = document.createElement('div')
+      myDiv.setAttribute('id','box')
+      // input태그 생성
+      myWrap.appendChild(myDiv)
+      // wrap의 자식요소로 myInput를 추가
+    }
+  </script>
+</head>
+<body>
+  <div id="wrap">
+
+  </div>
+  <button onclick="myFunc()">클릭</button>
+</body>
+</html>

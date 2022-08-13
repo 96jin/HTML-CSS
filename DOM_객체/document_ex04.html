@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function myFunc(){
+      var $idInput = document.getElementById('id-input')
+      var $pwdInput = document.getElementById('pwd-input')
+      if($idInput.value === 'manager' && $pwdInput.value ==='abcd1234'){
+        alert('로그인 성공')
+      }
+      else{
+        alert('로그인 실패')
+      }
+      // alert(myInput.value) // input의 value값 출력
+      // myInput.value="변경됨"
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="id-input"><br>
+  <input type="password" id="pwd-input"><br>
+  <button onclick="myFunc()">클릭</button>
+</body>
+</html>
