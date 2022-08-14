@@ -6,7 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  #wrap{
+    width: 1000px;
+    height: 550px;
+    background-color: aqua;
+    overflow: hidden;
+  }
+  #box{
+    width:100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 100%;
+    margin : 20px;
+    padding-top: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
+  }
+</style>
+<script>
+  var count = 1
+  function myFunc(){
+    var myWrap = document.getElementById('wrap')
+    var myDiv = document.createElement('div')
+    // input태그 생성
+    myDiv.setAttribute('id','box')
+    myDiv.innerText='box'+count
+    myWrap.appendChild(myDiv)
+    // wrap의 자식요소로 myInput를 추가
+    count++
+  }
+  function removeLastDiv(){
+    var myWrap = document.getElementById('wrap')
+    myWrap.removeChild(myWrap.lastChild)  // myWrap의 마지막 자식요소 제거
+    if(count>1){
+      count -= 1
+    }
+  }
+  function removeSelectDiv(){
+    var myWrap = document.getElementById('wrap')
+    // alert(myWrap.children.length) // wrap의 자식요소 개수
+    var myDiv=document.querySelectorAll('#wrap>div')
+    myWrap.removeChild(myDiv[1])    // 이렇게도 제거 가능
+    // myWrap.removeChild(myWrap.children[1])
+  }
+</script>
 <body>
-  
+  <div id="wrap">
+
+  </div>
+  <button onclick="myFunc()">생성</button>
+  <button onclick="removeLastDiv()">마지막 제거</button>
+  <button onclick="removeSelectDiv()">선택 제거</button>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<script>
+  var path = './img/'
+  var imgList = ['개.jpg','고양이.jpg','토끼.jpg']
+  function myFunc(){
+    var num = Math.ceil(Math.random()*3)
+    var myImg=document.getElementById('my-img')
+    myImg.setAttribute('src',path+imgList[num-1])
+  }
+</script>
+<body>
+  <img src="./img/개.jpg" alt="" id="my-img">
+  <button onclick="myFunc()">변경</button>
+</body>
+</html>
