@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #wrap{
+      width : 300px;
+      height : 300px;
+      background-color: aqua;
+    }
+  </style>
+  <script>
+    let colorList =['red','blue','green','orange','pink','navy','black','grey','coral','yellow']
+    let len = colorList.length
+    let i = 0
+    function makeBall(){
+      let index = Math.floor(Math.random()*len)
+      $("#wrap").css("borderRadius",i+"%")
+      $("#wrap").css("backgroundColor",colorList[index])
+      if(i<=70){
+        i++
+      }
+      else{
+        i=0
+      }
+    }
+    var ret = 0
+    function start(){
+      if(ret == 0){
+        ret = setInterval(makeBall,100)
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id = "wrap">
+
+  </div>
+  <button onclick="start()">원만들기</button>
+</body>
+</html>

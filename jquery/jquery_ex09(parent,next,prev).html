@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    ul{
+      width:200px;
+      height:200px;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){ // jquery 로도 css 사용없이 속성을 줄 수 있다.
+      $("#li2").parent().css("backgroundColor","red")             // id가 li2인 요소의 부모(ul)를 찾아서 배경색을 바꿔라
+      $("#li2").prev().css("backgroundColor","blue")              // li2의 이전요소
+      $("#li2").next().css("backgroundColor","blue")              // li2의 다음요소
+      $("#li3").prevAll().css("color","white")                    // li3의 이전 모든 요소
+      $("#li6").prevUntil("#li3").css("backgroundColor","yellow") // li6부터 li3 까지. (5,4 번쨰에만 적용)
+      $("#li6").nextAll().css("color","white")                    // li3의 다음 모든 요소
+      $("#li6").nextUntil("#li8").css("backgroundColor","navy")   // li6부터 li8 까지. (7 번째에만 적용)
+      $("#li5").siblings().css("font-weight","bold")              // li5 형제들(li5위로 li5아래로 모두)
+    })
+  </script>
+</head>
+<body>
+  <ul>
+    <li>리스트1</li>
+    <li id = "li2">리스트2</li>
+    <li id = "li3">리스트3</li>
+    <li>리스트4</li>
+    <li id="li5">리스트5</li>
+    <li id="li6">리스트6</li>
+    <li>리스트7</li>
+    <li id="li8">리스트8</li>
+    <li>리스트9</li>
+  </ul>
+</body>
+</html>

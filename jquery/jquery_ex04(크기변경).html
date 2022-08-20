@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #wrap{
+      width : 100px;
+      height : 100px;
+      background-color: aqua;
+    }
+  </style>
+  <script>
+    let colorList =["red","green","blue"]
+    let i = 0
+    let j = 0
+    let aw = 100
+    let ah = 100
+    function incWidth(){
+      aw += 50
+      $("#wrap").css("width",aw+"px")
+      i++
+      if(i>8){
+        aw = 100
+        i=0
+      }
+    }
+    function incHeight(){
+      ah += 50
+      $("#wrap").css("height",ah+"px")
+      j++
+      if(j>8){
+        ah = 100
+        j=0
+      }
+    }
+    function fw(){setInterval(incWidth,500)}
+    function fh(){setInterval(incHeight, 500)}
+  </script>
+
+</head>
+
+<body>
+  <div id="wrap">
+
+  </div>
+  <button onclick="fw(),fh()">너비 증가</button>
+  <button onclick="incWidth()">가로증가</button>
+  <button onclick="incHeight()">세로증가</button>
+</body>
+</html>

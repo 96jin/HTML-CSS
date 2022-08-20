@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #my-h1{
+      width:100px;
+      height : 100px;
+    }
+   
+  </style>
+  <script>
+    // ready : DOM 생성이 완료되면 설정된 콜백함수 실행
+    $(document).ready(function(){   // <- 함수의 이름이 없다 : 익명함수
+    //  $선택자로 document 객체 선택
+      // $("#my-h1").css("backgroundColor","blue").css("width","200px").css("height","200px")  // 체이닝 : 함수 연속 실행
+      $("#my-h1").css({   // 이렇게 JSON 형태로 해줘도 된다.
+        "backgroundColor":"blue",
+        "width":"200px",
+        "height":"200px"
+      })
+    })
+    // $("#my-h1").css("backgroundColor","blue") // 이 자체만으로 css를 바꿔줄 수 없다. DOM 생성전에 실행되어서 적용이 되지않음
+  </script>
+</head>
+<body>
+  <h1 id="my-h1">제목1</h1>
+</body>
+</html>

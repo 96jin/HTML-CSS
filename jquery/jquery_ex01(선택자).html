@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #wrap{
+      width : 100px;
+      height : 100px;
+      background-color: aqua;
+    }
+  </style>
+  <script>
+    // $(document).ready(function(){
+    //   $("#wrap").css("backgroundColor","red")
+    // })
+    function myFunc(){
+      $("#wrap").css("backgroundColor","red")
+    }
+
+    // $ : 선택자 (html의 요소를 선택)
+    // $(선택자)로 아이디가 wrap인 요소에 접근
+    // $("#wrap") == document.queryselector("#wrap") == document.getElementbyId("wrap")
+    // css메서드로 배경색 지정 == .style.backgroundColor = "red"
+
+  </script>
+
+</head>
+
+<body>
+  <div id="wrap">
+
+  </div>
+  <button onclick="myFunc()">버튼</button>
+</body>
+</html>
