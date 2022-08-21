@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #wrap{
+      width : 300px;
+      height : 300px;
+      background-color: aqua;
+    }
+  </style>
+  <script>
+    function myFunc(){        // attribute
+      var result = $("#mydog").attr('src')  // src 속성을 가져와라 getter -> 사진의 경로가 나온다.
+      alert(result)
+    }
+  </script>
+</head>
+<body>
+  <img src="../DOM_객체/img/개.jpg" alt="개" id="mydog">
+  <button onclick="myFunc()">클릭</button>
+</body>
+</html>

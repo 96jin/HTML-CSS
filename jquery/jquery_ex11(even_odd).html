@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $("#menu>li").even().css({  // 짝수번쨰
+        "backgroundColor":"red",
+        "border":"3px solid blue"
+      })
+      // menu 하위 li중 첫번쨰 요소 선택
+      
+      $("#menu>li").odd().css({   // 홀수번쨰
+        "backgroundColor":"green",
+        "border":"3px solid yellow"
+      })
+      // menu 하위 li중 마지막 요소 선택
+    })
+  </script>
+</head>
+<body>
+  <ul id="menu">
+    <li>리스트1: index 0</li>
+    <li>리스트2: index 1</li>
+    <li>리스트3: index 2</li>
+    <li>리스트4: index 3</li>
+    <li>리스트5: index 4</li>
+    <li>리스트6: index 5</li>
+    <li>리스트7: index 6</li>
+    <li>리스트8: index 7</li>
+  </ul>
+</body>
+</html>

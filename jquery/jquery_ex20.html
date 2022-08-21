@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #my-btn{
+      width: 100px;
+      height: 50px;
+      font-weight:bold;
+      font-size: 28px;
+    }
+   .on{
+    background-color: red;
+    border : 1px solid black;
+   }
+   .off{
+    background-color: green;
+    border : 1px solid black;
+   }
+  </style>
+  <script>
+    function myFunc(){
+
+      if ($("#my-btn").hasClass('on')){
+        $("#my-btn").removeClass('on').addClass('off')
+        $("#my-btn").text('On')
+        start()
+      }
+      else if($("#my-btn").hasClass('off')){
+        $("#my-btn").removeClass('off').addClass('on')
+        $("#my-btn").text('Off')
+      }
+    }
+
+    var time = 0
+    function start(){
+      setInterval(increase,1000)
+    }
+
+    function increase(){
+      time++
+      $("#box").text(time)
+    }
+  </script>
+</head>
+<body>
+  <div id="box">0</div>
+  <button id = "my-btn" class="on" onclick="myFunc()">Off</button>
+</body>
+</html>

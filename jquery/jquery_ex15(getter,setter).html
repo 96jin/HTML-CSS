@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+    }
+    #inner-box{
+      width: 80px;
+      height: 80px;
+      background-color: red;
+    }
+    #inner-box>span{
+      background-color: yellow;
+    }
+  </style>
+  <script>
+    function myFunc(){
+      // val 메서드
+      // var result = $("#my-input").val()  // 접근한 곳의 value 리턴
+      // document.getElementById("my-input").value
+      // var result2 = document.getElementById("my-input").value
+      // alert(result2)
+      $("#my-input").val('asdf') // 괄호안의 값이 입력된다
+      // 메서드 오버로딩, 함수 오버로딩
+      // 똑같은 이름의 함수가 매개변수 갯수나 리턴이 다르면 다르게 쓸 수 있다.
+      // $("#my-input").val()         : getter (가져오는 애)
+      // $("#my-input").val('asdf')   : setter (설정해준다)
+    }
+    function myBox(){
+      // var result = $("#box").text()   // 접근해서 텍스트 가져옴
+      //text() - getter로 사용
+
+      // var result = $("#box").text(1234)
+      // 안에 값이 들어가면 setter로 사용
+
+      // var result = $("#box").html()     // #box 안의 html내용을 가져옴
+      // html - getter
+
+      // var result = $("#box").html('<b>바뀜!</b>') // #box 안의 태그내용을 바꿔라
+
+      var result = $("#box").width()       // #box의 width 정보를 가져옴
+      
+      // $("#box").width('200px') // #box의 width를 200px로 바꿈
+      // $("#box").height('200px')
+      $("#box").height('+=50px')  // 실행할 때 마다 50px씩 증가
+      
+    }
+  </script>
+</head>
+<body>
+  <div id="box">
+    <div id="inner-box">
+      <span>박스내부</span>
+    </div>
+    
+  </div>
+  <input type="text" placeholder="입력하세요" id="my-input">
+  <button onclick="myFunc()">클릭</button>
+  <button onclick="myBox()">박스 클릭</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+     
+    }
+   
+    .red{
+      background-color: red;
+    }
+  </style>
+  <script>
+    function myFunc(){
+      // 클래스 관련함수
+      // $("#box").addClass('red')      // 클래스 추가
+      // $("#box").removeClass('red')   // 클래스 제거
+      // var result = $("#box").hasClass('red')     // 클래스 유무 판별 -> true false로 나옴
+      $("#box").toggleClass('red')      // 클래스 On / Off
+      // 해당 클래스가 존재하면 삭제하고, 없으면 추가한다.
+      
+    }
+  </script>
+</head>
+<body>
+  <div id="box" class="red">
+    </div>
+    
+  </div>
+ 
+  <button onclick="myFunc()">클릭</button>
+  
+</body>
+</html>
