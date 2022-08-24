@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자야구</title>
+</head>
+<body>
+  <form id="form">
+    <input type = "text" id="input">
+    <button>확인</button>
+  </form>
+  <div id="logs"></div>
+
+  <script>
+    const $input = document.querySelector('#input')
+    const $form = document.querySelector('#form')
+    const $logs = document.querySelector('#logs')
+
+    const numbers = []
+    for(let n = 0; n<9; n++) {
+      numbers.push(n+1)
+    }
+
+    const answer =[]
+    for(let n = 0; n < 4; n++) {
+      const index = Math.floor(Math.random() * numbers.length)  // 0-8 정수
+      answer.push(numbers[index])
+      numbers.splice(index,1)
+    }
+    console.log(answer)
+
+    let out = 0
+    const tries = []
+    function checkInput(input) {
+      if(input.length!==4){ // 길이가 4인가
+        return alert('4자리 숫자를 입력해주세요.')
+      }
+      if(new Set(input).size !==4){ // 중복된 숫자가 있는가 (new Set를 사용해서 중복이 제거된 새로운 객체를 생성, Set는 size사용)
+        return alert('중복되지 않게 입력해주세요.')
+      }
+      if(tries.includes(input)){  // 이미 시도한 값인가 
+        return alert('이미 시도한 값입니다.')
+      }
+      return true
+    }
+
+    // input 을 form 으로 감싸주면 form에다가 addEventListener 달아준다.
+    // form 안의 button을 클릭하면 submit이 호출된다. submit이 호출되면 페이지가 새로고침된다.
+    $form.addEventListener('submit', (event)=>{
+      event.preventDefault()      // 기본동작 막기 -> submit 의 기본동작인 새로고침이 안된다.
+      const value = $input.value  // event.target[0].value 와 같다.
+      $input.value =''
+      if(!checkInput(value)){
+        // 에러있음
+        return      
+      }
+      // 입력값 정상                   // join() : 사이사이에 무엇을 넣어줄지 ()안에 넣어준다   
+      if(answer.join('') === value){  // join함수: 배열을 문자열로 바꿈 ex) [3,1,4,6]이 있을떄 -> '3146'으로 바꾼다.
+        $logs.textContent='홈런!'
+        return
+      }
+      if (tries.length>=9){ // 시도 횟수가 9번 넘으면 // 백틱(`)으로 감싸서 ${}안에 변수를 사용해줌
+        const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`)  // 한줄씩 추가할떄 좋다.
+        $logs.appendChild(message)  // createTextNode(텍스트 만들어줌) 하고나서 appendChild 가능 (여려개 넣기 불가능)
+        return
+      }
+      // 몇스트라이크 몇볼인지 검사
+      let strike = 0
+      let ball = 0
+      
+      // answer.forEach((element,i) => {    
+      // forEach 문 적용.배열에 있는 요소들을 순회하면서 element(요소), i (인덱스) 가 들어간다
+      //   const index = value.indexOf(element)
+      //   if(index > -1){
+      //     if (index === 1 ){
+      //       strike += 1
+      //     }
+      //     else{
+      //       ball+=1
+      //     }
+      //   }
+      // })  
+
+      for(let i = 0; i < answer.length; i++){
+        const index = value.indexOf(answer[i])  // 일치하는 숫자가 없으면 -1반환
+        if(index>-1){   // 일치하는 숫자 발견 
+          if(index === i){  // 자릿수도 같음
+            strike += 1
+          }
+          else{             // 숫자만 같음
+            ball +=1
+          }
+        }
+      }
+      // 스트라이크, 볼 정보를 추가해주고 br태그를 생성하여 추가함으로써 줄바꿈해준다.
+      if(strike ==0 && ball ==0){
+        out +=1
+        $logs.append(value+': 아웃!',document.createElement('br'))  // createElement() : 태그 생성
+      }       // append는 여러개 넣기 가능, 텍스트 그대로 넣기 가능
+      else{
+        $logs.append(`${value}: ${strike} 스트라이크 ${ball} 볼`, document.createElement('br'))
+      }
+      if(out == 3 ){
+        $logs.append(`패배! 정답은 ${answer.join('')}입니다`,document.createElement('br'))
+        return
+      }
+      tries.push(value)
+    })
+
+
+  </script>
+</body>
+</html>
