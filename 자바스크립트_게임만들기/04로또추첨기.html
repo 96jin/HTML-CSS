@@ -37,6 +37,35 @@
     const winBalls = shuffle.slice(0,6).sort((a,b) => a-b)
     const bonus = shuffle[6]
     console.log(winBalls,bonus)
+
+    const $result = document.querySelector('#result')
+    const $bonus = document.querySelector('#bonus')
+
+    colorList = ['red','yellow','green','blue','grey','orange']
+    const showBall = (number,$target) => {
+      ranidx = Math.floor(Math.random()*colorList.length)
+      const $ball = document.createElement('div') // 1초뒤에 div 태그를 생성한다.
+      $ball.className = 'ball'  // class name을 ball로 지정해준다.
+      $ball.textContent = number
+      $ball.style.backgroundColor = colorList[ranidx]
+      $target.appendChild($ball)  // id가 result 인 태그에 $ball을 추가해준다.
+    }
+    // setTimeout(()=>{  // 특정 시간 후 실행되는 함수
+    //   const $ball = document.createElement('div') // 1초뒤에 div 태그를 생성한다.
+    //   $ball.className = 'ball'  // class name을 ball로 지정해준다.
+    //   $ball.textContent = winBalls[0]
+    //   $result.appendChild($ball)  // id가 result 인 태그에 $ball을 추가해준다.
+    // },1000) // 1000ms 후 실행
+    
+    for(let i =0;i<6;i++) {
+      setTimeout(()=>{
+      showBall(winBalls[i],$result)
+    }, (i+1)*1000) 
+    }
+    setTimeout(()=>{
+      showBall(bonus,$bonus)
+    },7000)
+
   </script>
 </body>
 </html>

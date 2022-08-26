@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+    /*
+    변수는 스코프(scope,범위)라는 것을 가진다. 
+    var는 함수 스코프를 가지고, (함수 바깥에서 접근 불가능) ex) if,for,while 접근가능 -> 변수값이 변한다.
+    let은 블록 스코프를 가진다. (블록{} 바깥에서 접근 불가능) -> 변수값이 블록 안에서 고정
+    
+    반복문 : 동기실행 -> 함수가 실행될때 같이 실행
+    setTimer : 비동기 실행 -> 함수가 실행되는 시점이 다르다.
+    var가 반복문에서 setTimer로 다시 쓰이면 반복문을 혼자 먼저 실행해서 값이 증가한 후에 setTimer 수행
+    -> 그래서 var 와 let을 쓸 떄 결과가 달라진다.
+
+    --> 그럼에도 불구하고 var를 쓰고 싶을 때
+    클로저(closer) 문제를 해결해야한다.
+    클로저 : 함수와 함수바깥쪽에 있는 변수를 클로저라고 한다.
+    var 변수는 함수 안에 갇히니까 반복문 내에서 함수로 setTimer를 감싸서 변수를 받아서 실행하게 만든다.
+
+    */
+  </script>
+</body>
+</html>
