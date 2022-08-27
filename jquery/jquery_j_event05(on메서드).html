@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    .active{
+      color: red;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    
+  </style>
+  <script>
+    $(document).ready(function(){ // on 메서드 안에 중괄호 넣고, 여러 이벤트 설정
+        $('#btn').on({            // #btn 태그 기준!!
+        mouseover:function(){     // 마우스가 위에 올라가면 (css의 hover기능)
+          $('#my-div').css('color','orange')  // #my-div에 css적용
+        },
+        mouseout:function(){
+          $('#my-div').css('color','black')
+        }
+        ,
+        click:function(){
+          $('#my-div').css('color','red')
+        },
+        dblclick:function(){
+          $('#my-div').css('color','green')
+        }
+        }
+      )
+      
+    })
+     
+  </script>
+</head>
+<body>
+  <div id="my-div">
+    영역
+  </div>
+  <button id="btn">버튼</button>
+</body>
+</html>

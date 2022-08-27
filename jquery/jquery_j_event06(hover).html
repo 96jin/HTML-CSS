@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    .active{
+      color: red;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#btn').hover(  // hover : 떠있다.
+        // mouseover, mouseout 전용이다.
+        function(){ // 첫번쨰 함수는 mouseover
+          $('#my-div').css('color','red')
+        },
+        function(){ // 두번쨰 함수는 mouseout으로 자동으로 적용됨
+          $('#my-div').css('color','black')
+        }
+      )
+    })
+     
+  </script>
+</head>
+<body>
+  <div id="my-div">
+    영역
+  </div>
+  <button id="btn">버튼</button>
+</body>
+</html>

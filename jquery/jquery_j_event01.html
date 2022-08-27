@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){ // DOM 완성시에 실행할 콜백함수
+      $('#btn').click(function(){ // 콜백함수, 익명함수
+        $('#btn').parent().next().css('color','red')
+        // 선택자, 체이닝, 부모요소, 다음요소, css메서드
+      })
+    })
+    // document.getElementById('btn').addEventListener('click',function(){})
+  </script>
+</head>
+<body>
+  <p>
+    <button id="btn">버튼</button>
+  </p>
+  <p id="para">
+    내용
+  </p>
+</body>
+</html>

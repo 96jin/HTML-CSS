@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      // $(document).on('mouseup',function(){}) -> 한개짜리
+      $(document).on({  //  -> 여러개 적용할떄
+        'mouseup':function(){
+          console.log('mouseup!')
+        },
+        'mousedown':function(){
+          console.log('mousedown!')
+        },
+        'mousemove':function(){
+          console.log('mousemove!')
+        }
+      })
+    })
+    // 이 이벤트를 적용하면 그림판을 만들 수 있다.
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

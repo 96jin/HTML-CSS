@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      // $(document).on('keydown',function(){}) // 익명함수는 길어지면 좋지않다. 웬만하면 짧은 내용으로 쓰는게 좋다.
+      $(document).on('keydown',keyEventFnc)
+      // keydown (키가 눌려지면) keyEventFnc 함수(콜백함수)가 실행되고
+      function keyEventFnc(e){  // 그리고 이벤트 정보가 e에 담긴다.
+        // 매개변수e에 이벤트 객체 정보가 넘어온다.
+        switch(e.keyCode){  // 이벤트 객체 안의 키 코드값
+          case 37:  // LEFT
+            $('#user-id').val('LEFT')
+            break
+          case 38:  // TOP
+            $('#user-id').val('TOP')
+            break
+          case 39:  // RIGHT
+            $('#user-id').val('RIGHT')
+            break
+          case 40:  // BOTTOM
+            $('#user-id').val('BOTTOM')
+            break
+        }
+      }
+    })
+  </script>
+</head>
+<body>
+  <p>
+    <input type="text" name="user-id" id="user-id" placeholder="ID를 입력해주세요.">
+  </p>
+</body>
+</html>

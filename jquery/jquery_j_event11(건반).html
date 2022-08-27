@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    p = new Audio()
+    path ='./audio/'
+    audioList = ['1_do.wav','2_re.wav','3_mi.wav','4_fa.wav','5_sol.wav','6_ra.wav','7_si.wav','8_do.wav']
+    $(document).ready(function(){
+      $('#keyboard').on('keydown',keyEventFnc)
+      function keyEventFnc(e){
+        switch(e.keyCode){
+          case 65:  // a
+            $('#keyboard').val('')
+            p.src = path+audioList[0]
+            break
+          case 83:  // s
+            $('#keyboard').val('')
+            p.src = path+audioList[1]
+            break
+          case 68:  // d
+            $('#keyboard').val('')
+            p.src = path+audioList[2]
+            break
+          case 70:  // f
+            $('#keyboard').val('')
+            p.src = path+audioList[3]
+            break
+          case 71:  // g
+            $('#keyboard').val('')
+            p.src = path+audioList[4]
+            break
+          case 72:  // h
+            $('#keyboard').val('')
+            p.src = path+audioList[5]
+            break
+          case 74:  // j
+            $('#keyboard').val('')
+            p.src = path+audioList[6]
+            break
+          case 75:  // k
+            $('#keyboard').val('')
+            p.src = path+audioList[7]
+            break
+        }
+        p.play()
+      }
+    })
+  </script>
+</head>
+<body>
+  <input type="text" name="keyboard" id="keyboard">
+</body>
+</html>
