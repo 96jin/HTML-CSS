@@ -7,13 +7,28 @@
   <title>Document</title>
   <script src="./js/jquery.min.js"></script>
   <style>
-    
+    #box{
+      width:100px;
+      height: 100px;
+      background-color: aquamarine;
+    }
   </style>
   <script>
-    
+    $(document).ready(function(){
+      $('#hide-btn').click(function(){  // mouseover 하면 버튼위에 올리기만 해도 숨기기 가능
+        $('#box').hide()
+      })
+      $('#show-btn').click(function(){
+        $('#box').show()
+      })
+    })
   </script>
 </head>
 <body>
-  
+  <button id="hide-btn">hide</button>
+  <button id="show-btn">show</button>
+  <div id="box">
+    박스
+  </div>
 </body>
 </html>
