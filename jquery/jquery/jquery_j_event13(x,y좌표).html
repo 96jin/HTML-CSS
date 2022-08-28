@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #my-canvas{
+      width:400px;
+      height:300px;
+      background-color: rgba(168, 228, 228, 0.418);
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $(document).on(
+        'mousemove', function (e) {
+          // mousemove 이벤트 발생하면 이벤트 정보가 매개변수 e로 넘어감
+          // console.log('mousemove!')
+          $('.posX').text(e.pageX)  // e.pageX : X좌표
+          $('.posY').text(e.pageY)  // e.pageY : Y좌표
+          $('.off_posX').text(e.offsetX)  // 특정객체 기준으로 좌표를 다시 잡음
+          $('.off_posY').text(e.offsetY)
+        }
+      )
+    })
+    // 이 이벤트를 적용하면 그림판을 만들 수 있다.
+  </script>
+</head>
+<body>
+  <h1>mousemove</h1>  
+  <p>X:<span class="posX">0</span>px</p>
+  <p>Y:<span class="posY">0</span>px</p>
+  <p>Off_X:<span class="off_posX">0</span>px</p>
+  <p>Off_Y:<span class="off_posY">0</span>px</p>
+  <canvas id="my-canvas"></canvas>
+</body>
+</html>

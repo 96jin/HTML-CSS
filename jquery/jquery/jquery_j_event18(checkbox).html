@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#agree-btn').click(function(){
+        if($('#agr1').is(':checked') && $('#agr2').is(':checked')){
+          alert('회원가입진행')
+        }
+        else{
+          alert('약관에 모두 동의해주셔야합니다.')
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="box1">
+    개인정보 이용 동의
+  </div>
+  <input type="checkbox" id="agr1">
+  <div id="box1">
+    이메일 수신 동의
+  </div>
+  <input type="checkbox" id ='agr2'><br>
+  <button id="agree-btn">동의</button>
+</body>
+</html>

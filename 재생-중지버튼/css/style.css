@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#my-btn{
+    /*버튼 디자인*/
+    width:19px;
+    height:20px;
+    border:none;
+}
+
+.play{
+    /*재생 이미지*/
+    background-image: url('../images/btn_event_pause2.png');
+    background-position: 0px -17px;
+    width:18px;
+    height:18px;
+}
+
+.pause{
+    /*중지 이미지*/
+    background-image: url('../images/btn_event_pause2.png');
+    background-position: 0px 1px;
+    width:18px;
+    height:18px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#domain-sel').change(function(){
+        if(this.value == 'naver'){
+          $('#email-back').val(('naver.com'))
+        }
+        else if(this.value == 'daum'){
+          $('#email-back').val('daum.net')
+        }
+        else if(this.value == 'google'){
+          $('#email-back').val('gmail.com')
+        }
+        else{
+          $('#email-back').val('')
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <input type="text" id="email-front">@<input type="text" id="email-back">
+  <select id="domain-sel">
+    <option value="">선택</option>
+    <option value="naver">naver.com</option>
+    <option value="daum">daum.net</option>
+    <option value="google">gmail.com</option>
+  </select>
+</body>
+</html>

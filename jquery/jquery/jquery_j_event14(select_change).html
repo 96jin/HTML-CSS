@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#fruit').change(function(){
+        // alert('changed!')
+        // alert(this.value)
+        alert($(this).val())
+      })
+    })
+  </script>
+</head>
+<body>
+  <select id="fruit">
+    <option value="sel">선택</option>
+    <option value="apple">사과</option>
+    <option value="pear">배</option>
+    <option value="grape">포도</option>
+  </select>
+</body>
+</html>

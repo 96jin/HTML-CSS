@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+   #lan{
+    padding:4px 10px 6px 8px;
+    border:1px solid #ccc;
+    padding-left: 0px;
+   }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#lan').change(function(){
+        if(this.value == 'kor'){
+          $('#id').attr('placeholder','아이디')
+          $('#pw').attr('placeholder','비밀번호')
+        }
+        else if(this.value == 'eng'){
+          $('#id').attr('placeholder','USERNAME')
+          $('#pw').attr('placeholder','PASSWORD')
+        }
+        else if(this.value == 'chi'){    
+          $('#id').attr('placeholder','帐号')
+          $('#pw').attr('placeholder','密码')
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <select id="lan">
+    <option value="kor">한국어</option>
+    <option value="eng">English</option>
+    <option value="chi">중국어</option>
+  </select>
+  <form>
+    <input type="text" placeholder="아이디" id="id">
+    <input type="password" placeholder="비밀번호" id="pw">
+  </form>
+</body>
+</html>

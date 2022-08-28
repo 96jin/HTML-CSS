@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#check-all').click(function(){
+        // if($('#check-all').is(':checked')){
+        $('input[name=info]:checkbox').prop("checked","checked")
+        // input태그의 name이 info인 체크박스, prop : 속성 (attr과 같게 쓰인다.)
+        // }
+        if(!$('#check-all').is(':checked')){
+          $('input[name=info]:checkbox').prop("checked",false)
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <label for="check-all">모두 체크</label>
+  <input type="checkbox" id="check-all"><br>
+
+  <input type="checkbox" name ='info' id="chk1">
+  <input type="checkbox" name ='info' id="chk2">
+  <input type="checkbox" name ='info' id="chk3">
+  <input type="checkbox" name ='info' id="chk4">
+</body>
+</html>

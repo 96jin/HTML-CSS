@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#btn').click(function(){ // input태그중에 radio타입의 name이 my-radio이고 체크 된 것의 value를 가져옴.
+        var result = $('input:radio[name=my-radio]:checked').val()
+        // $ - jquery 선택자에 정보 넣어주면 알아서 찾아서 체크된 라디오버튼의 value값을 가져온다.
+        alert(result)
+      })
+    })
+  </script>
+</head>
+<body>
+  <input type="radio" name="my-radio" value="사과">
+  <input type="radio" name="my-radio" value="배">
+  <input type="radio" name="my-radio" value="포도">
+  <button id="btn">클릭</button>
+</body>
+</html>
