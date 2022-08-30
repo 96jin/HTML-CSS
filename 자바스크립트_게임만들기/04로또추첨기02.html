@@ -41,13 +41,11 @@
     const $result = document.querySelector('#result')
     const $bonus = document.querySelector('#bonus')
 
-    colorList = ['red','yellow','green','blue','grey','orange']
     const showBall = (number,$target) => {
-      ranidx = Math.floor(Math.random()*colorList.length)
       const $ball = document.createElement('div') // 1초뒤에 div 태그를 생성한다.
       $ball.className = 'ball'  // class name을 ball로 지정해준다.
       $ball.textContent = number
-      $ball.style.backgroundColor = colorList[ranidx]
+      colorize(number,$ball)
       $target.appendChild($ball)  // id가 result 인 태그에 $ball을 추가해준다.
     }
     // setTimeout(()=>{  // 특정 시간 후 실행되는 함수
@@ -66,6 +64,26 @@
       showBall(bonus,$bonus)
     },7000)
 
+    function colorize(number,$tag) {  // 공 번호에 따라 색깔을 입히는 함수
+      if(number<10){
+        $tag.style.backgroundColor = 'red'
+        $tag.style.color = 'white'
+      }
+      else if (number<20){
+        $tag.style.backgroundColor = 'orange'
+      }
+      else if (number<30){
+        $tag.style.backgroundColor = 'yellow'
+      }
+      else if (number<40){
+        $tag.style.backgroundColor = 'blue'
+        $tag.style.color = 'white'
+      }
+      else{
+        $tag.style.backgroundColor = 'green'
+        $tag.style.color = 'white'
+      }
+    }
   </script>
 </body>
 </html>
