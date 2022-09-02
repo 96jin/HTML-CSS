@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응속도</title>
+  <style>
+    #screen{
+      width : 300px;
+      height : 200px;
+      text-align: center;
+      user-select: none;
+    }
+    #screen.waiting{
+      background-color: aqua;
+    }
+    #screen.ready{
+      background-color: red;
+      color:white;
+    }
+    #screen.now{
+      background-color: greenyellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="screen" class="waiting">클릭해서 시작하세요</div>
+  <div id="result"></div>
+  
+  <script>
+    /*
+    reduce는 배열을 다루기 가장 좋은 메서드이다.
+
+    [1,2,3,4].reduce((a,c) => (a + c),0 ) 
+    a는 누적값, c는 현재값 , a+c는 다음 누적값, 0은 초기 누적값
+    초기값을 안넣어주면 첫번째 값이 초기값이다.
+    
+    ['철수','영희','현영','한솔'].reduce((a,c,i)=>{ a[i] = c; return a },{})  i는 인덱스이다.(0,1,2,3)
+    ==> {0:"철수", 1: "영희", 2: "현영", 3: "한솔"}
+    
+    a : {} , c:'철수' , i = 0
+    a : {0:'철수'} , c: '영희', i = 1
+        .
+        .
+        .
+
+    */
+  </script>
+</body>
+</html>

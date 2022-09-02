@@ -27,7 +27,7 @@
     for(let n = 0; n < 4; n++) {
       const index = Math.floor(Math.random() * numbers.length)  // 0-8 정수
       answer.push(numbers[index])
-      numbers.splice(index,1)
+      numbers.splice(index,1)   // 해당 인덱스 제거
     }
     console.log(answer)
 

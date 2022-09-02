@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응속도</title>
+  <style>
+    #screen{
+      width : 300px;
+      height : 200px;
+      text-align: center;
+      user-select: none;
+    }
+    #screen.waiting{
+      background-color: aqua;
+    }
+    #screen.ready{
+      background-color: red;
+      color:white;
+    }
+    #screen.now{
+      background-color: greenyellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="screen" class="waiting">클릭해서 시작하세요</div>
+  <div id="result"></div>
+  
+  <script>
+    const $screen = document.querySelector('#screen')
+    const $result = document.querySelector('#result')
+
+    // html 의 class와 js의 class가 헷갈릴 수 있으므로 html의 class 는 className으로 한다.
+    // html의 클래스는 한 태그에 여러개의 클래스가 있을수도 있다. -> 이럴때는 태그.classList.contains('클래스이름') -> true , false 반환
+    // screen 이랑 event.target가 같다. (screen을 클릭하면 이벤트 발생, 이벤트의 타겟은 스크린)
+    // event.target.classList.add('클래스'), event.target.classList.remove('클래스'), event.target.classList.replace('기존클래스','수정클래스')
+    $screen.addEventListener('click', (event)=>{  
+      if(event.target.classList.contains('waiting')){   // 파랑
+        $screen.classList.replace('waiting','ready')    // 화면을 빨간색으로 바꾼다.
+        $screen.textContent = '초록색이 되면 클릭하세요'
+
+        setTimeout(function(){  // 초록색이 빨간색으로 변할때 타이머가 동작해야한다.
+          $screen.classList.replace('ready','now')
+          $screen.textContent = "클릭하세요!"
+          // 첫 시간 재기 ( 밑의 시간 후에 실행되므로 )
+        },Math.floor(Math.random()*1000)+2000)  // 2000~3000 사이의 수
+      }
+      else if(event.target.classList.contains('ready')){  // 빨강
+        
+      }
+      else if(event.target.classList.contains('now')){    // 초록
+        // 끝 시간 재기
+        // 시간 차이 저장하기
+      }
+    })
+  </script>
+</body>
+</html>
