@@ -15,18 +15,19 @@
   </style>
   <script>
     $(document).ready(function(){
-      $('#hide-btn').click(function(){  // mouseover 하면 버튼위에 올리기만 해도 숨기기 가능
-        $('#box').hide()
-      })  // jquery 안쓰면 -> document.getElementById('hide-btn').addEventListener('click',function(){docunebt.getElementById('box').style.display = 'none'})
-      $('#show-btn').click(function(){
-        $('#box').show()
+      $('#btn').click(function(){
+        $('#box').fadeToggle()
+        // hide, show , toggle
+        // slideUp, slideDown, slideToggle
+        // fadeIn, fadeOut, fadeToggle
       })
-    })
+    
+  })
   </script>
 </head>
 <body>
-  <button id="hide-btn">hide</button>
-  <button id="show-btn">show</button>
+  <button id="btn">페이드인버튼</button>
+ 
   <div id="box">
     박스
   </div>

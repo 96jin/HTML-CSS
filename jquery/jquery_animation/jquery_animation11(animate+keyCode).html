@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #box{
+      width:100px;
+      height: 100px;
+      background-color: rgba(21, 75, 126, 0.945);
+      position : relative;
+      /* 모든 요소는 기본적으로 position : static 이기 때문에 animate 사용하려면 position 을 relative 로 바꾼다. */
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $(document).on('keydown',keyEventFnc) // 키가 눌려지면
+      function keyEventFnc(e){
+        switch(e.keyCode){
+          case 37:  // left
+            $('#box').animate({'left':'-=100px'},100)
+            break
+          case 38:  // up
+            $('#box').animate({'top':'-=100px'},100)
+            break
+          case 39:  // right
+            $('#box').animate({'left':'+=100px'},100)
+            break
+          case 40:  // down
+            $('#box').animate({'top':'+=100px'},100)
+            break
+          }
+      }
+      // animate({'left':'+=100px'}),1000,'swing',function(){}
+      // 오른쪽으로 100만큼 이동, 1000ms(default:400ms), 스윙, 콜백함수 실행
+    })
+  </script>
+</head>
+<body>
+  <button id="upbtn">위</button>
+  <button id="downbtn">아래</button>
+  <button id="leftbtn">왼쪽</button>
+  <button id="rightbtn">오른쪽</button>
+  <div id="box">
+    박스
+  </div>
+</body>
+</html>

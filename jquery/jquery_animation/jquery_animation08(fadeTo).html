@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #box{
+      width:100px;
+      height: 100px;
+      background-color: rgba(21, 75, 126, 0.945);
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#fadetobtn').click(function(){
+        $('#box').fadeTo(1000,0.2)  
+        // fadeTo : 'fast', 'slow' 로 속도 조절 가능, 숫자로도 가능하다.
+        // fadeTo : fade 상태로 만든다. 1이 원래 모습, 0 이면 투명하게 , 0.2 이면 20% 비치게       
+      })
+    
+  })
+  </script>
+</head>
+<body>
+  <button id="fadetobtn">페이드인버튼</button>
+  <div id="box">
+    박스
+  </div>
+</body>
+</html>

@@ -21,10 +21,11 @@
   <script>
     $(document).ready(function(){
       $('#slideUp-btn').click(function(){ 
-        $('#box').slideUp(500, function(){ 
+        let a = $('#box').slideUp(500, function(){ 
           // box태그를 가진 객체가 위로 슬라이드한다. default:400 , 애니메이션 완료 시간을 설정해줄 수 있다. slide 수행 한 후의 함수를 지정해줄 수 있다.
           alert('슬라이드 업 완료!')
-        }) 
+        })
+        console.log(a)
       })
       $('#slideDown-btn').click(function(){
         $('#box').slideDown(500, function(){
@@ -40,11 +41,11 @@
   <div id="box">
     박스
   </div>  
-  <div id="box">
+  <!-- <div id="box">
     박스2
   </div>
   <div id="box">
-    박스3
+    박스3 -->
   </div>
 </body>
 </html>

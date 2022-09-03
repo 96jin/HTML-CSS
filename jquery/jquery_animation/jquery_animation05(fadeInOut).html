@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <style>
+    #box{
+      width:100px;
+      height: 100px;
+      background-color: aquamarine;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#fadeInBtn').click(function(){
+        $('#box').fadeIn(1000,function(){
+          // 콜백 함수를 설정한게 일종의 동기화 효과도 된다.
+          console.log('fade in 완료')
+        })
+        // default : 400 , complete(call back)
+      })  
+      $('#fadeOutBtn').click(function(){
+        $('#box').fadeOut(1000)
+      })
+    // 슬라이드 유형 : 가로, 세로, 페이드
+    // 페이드 방식 슬라이드 제작할 떄 fadeIn, fadeOut
+  })
+  </script>
+</head>
+<body>
+  <button id="fadeInBtn">페이드인버튼</button>
+  <button id="fadeOutBtn">페이드아웃버튼</button>
+ 
+  <div id="box">
+    박스
+  </div>
+</body>
+</html>
