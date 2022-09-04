@@ -1,0 +1,20 @@
+#slide{
+    overflow:hidden;
+    position: relative;
+}
+
+#slide_contents{
+    position:absolute;
+    top:0;
+    left:0;
+    font-size: 0;
+}
+
+#slide_contents>img{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:800px;
+    height:350px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.bxslider.js"></script>
+  <link rel="stylesheet" href="./css/jquery.bxslider.css" type="text/css">
+  <script>
+    $(document).ready(function(){
+      $('.slide-contents').bxSlider({
+        auto:true,          // 자동 넘기기
+        speed : 500,        // 한 페이지 넘기는 시간
+        pause : 2000,       // 한 페이지 머무르는 시간
+        autoControls:true,  // 자동 제어창
+        pager:false,         // 페이지 선택하는 점 (default : true)
+        // mode : 'horizontal'  default 값
+        // mode : 'vertical',  // 위 아래로 움직인다.
+        mode : 'fade',
+      });
+    });
+  </script>
+  <style>
+    #slide{
+      width:1200px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="slide">
+    <div class = "slide-contents">
+      <img src="../웹디자인기능사_실기재료/3번.강원천문대/images/slide1.jpg" alt="">
+      <img src="../웹디자인기능사_실기재료/3번.강원천문대/images/slide2.jpg" alt="">
+      <img src="../웹디자인기능사_실기재료/3번.강원천문대/images/slide3.jpg" alt="">
+  </div>
+  </div>
+</html>
