@@ -21,7 +21,7 @@
   <script>
     $(document).ready(function(){
       $('#btn').hover(
-        function(){   // on
+        function(){   // over
           $('#box').stop().slideToggle(300,'swing',function(){
             console.log('슬라이드 다운 완료')
           }) 
@@ -29,7 +29,7 @@
           // stop을 하면, 지금 실행하는 애니메이션 당장 멈추고 slidedown을 바로 실행힌다.
           // -> 애니메이션 명령이 중첩이 안된다.
         },
-        function(){   //over
+        function(){   // out
           $('#box').stop().slideToggle(300,'swing',function(){
             console.log('슬라이드 업 완료')
           }) 

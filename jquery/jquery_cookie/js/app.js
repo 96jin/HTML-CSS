@@ -17,15 +17,15 @@ function popupcheck(){
     // alert('체크박스 클릭')
     // 쿠키 생성
     $.cookie('popup_java','ok',{
-      expires:1/24/60,  // 단위는 day
+      expires:1/24/60,  // 단위는 day, 지금 이건 1분으로 설정한 것.
       path:'/'
     })
-    $('#popup').hide()
     // name, value,domain,expires...
     // name : 임의로 설정
     // value : ok (값 확인)
     // expires,path
     // -> 현재 경로에 7일뒤에 만료되는 쿠키를 생성하겠다.
+    $('#popup').hide()
   })
 }
 

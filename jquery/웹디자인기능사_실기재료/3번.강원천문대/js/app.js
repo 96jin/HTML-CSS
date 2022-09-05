@@ -1,7 +1,13 @@
 $(document).ready(function(){
   menu()
-  slideInit()
-  slide()
+  // slideInit()
+  // slide()
+  $('#slide_contents').bxSlider({
+    auto:true,
+    pause:2000,
+    speed:1000,
+    mode:'fade',
+  })
   tab()
   popup()
 })
@@ -13,7 +19,8 @@ function menu(){
       var index =$(this).index()
       // console.log(index)
       $('.gnb>li').eq(index).find('.lnb').stop().slideDown(250)
-      // find함수 써서 선택한 영역의 내부에서 찾는다
+      // find함수 써서 선택한 영역의 내부에서 lnb class를 찾는다
+      // -> gnb의 n번쨰 li중 class가 lnb인 태그를 슬라이드한다.
       // 중첩 방지를 위해 stop()해주고 슬라이드
     },
     function(){
@@ -28,22 +35,21 @@ function slide(){
   setInterval(slideFade,3000)
 }
 function slideInit(){
-  $('#slide_contents>img').hide()
-  $('#slide_contents>img').eq(i).show()
+  $('#slide_contents>img').fadeOut(1000)
+  $('#slide_contents>img').eq(i+1).fadeIn(1000)
 }
 let i = 0
+
 function slideFade(){
   // 스르륵 사라졌다가, 스르륵 나온다, 번갈아가면서
-  $('#slide_contents').eq(i).fadeOut(1000)
-
+  $('#slide_contents>img').eq(i).fadeOut(1000)
   if(i==2){
-    $('#slide_contents').eq(0).fadeIn(1000)
+    $('#slide_contents>img').eq(0).fadeIn(1000)
     i=0
   }
   else{
-    $('#slide_contents').eq(i+1).fadeIn(1000)
+    $('#slide_contents>img').eq(i+1).fadeIn(1000)
     i++
-    console.log(i)
   }
   
 }

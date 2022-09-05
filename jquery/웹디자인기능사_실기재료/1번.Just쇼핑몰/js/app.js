@@ -50,11 +50,11 @@ function tab(){
 }
 
 function advanced_tab(){
-  $('tab_btn>a').click(function(){
+  $('.tab_btn>a').click(function(){
     // 앵커만 클릭하면~ 반응
     // 안에서 몇뻔째 앵커인가
     var index = $(this).index()
-    alert(index)
+    // alert(index)
     // 지금 이벤트가 일어난 곳의 index번호
     // (앵커에서 클릭 이벤트가 일어났으니까 앵커번호가 알아서 들어옴)
     // 보여줄 것이 탭 컨텐츠 밑에있는 div 번호
