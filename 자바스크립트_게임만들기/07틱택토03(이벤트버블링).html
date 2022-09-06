@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>틱택토</title>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    td{
+      border : 1px solid black;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    const {body, createElement } = document // 구조분해할당
+    // const body = document.body , const createElement = document.createElement // 같은 표현이다.
+
+    const $table = document.createElement('table')
+    const $result = document.createElement('div') // 나중에 결과를 보여줄 곳
+
+    let turn = 'O'
+
+    // arr = [
+    //   [$td,$td,$td],
+    //   [$td,$td,$td],
+    //   [$td,$td,$td],
+    // ]
+
+    const data = []
+    const callback=(event)=>{
+      // 칸에 글자가 있나?
+      // event.stopPropagation()  이벤트 버블링을 막는다.
+      if(event.target.textContent) return // 칸에 내용이 있으면 종료
+      event.target.textContent = turn
+      // event.currentTarget : 이벤트를 붙인 태그 (addEventListener가 달린 태그)
+      // td말고 table에다가 이벤트를 줬을때 사용
+
+      // 승부확인
+      turn = (turn === 'O'?'X':'O') 
+      // if(turn === 'O'){
+      //   turn = 'X'
+      // }
+      // else if(turn === 'X'){
+      //   turn = 'O'
+      // }
+    }
+    for(let i = 0 ; i<3; i++) {
+      const $tr = document.createElement('tr')
+      const cells = []
+      for(let j=0; j<3; j++){
+        const $td = document.createElement('td')
+        cells.push($td)
+        // $td.addEventListener('click',callback)
+        $tr.append($td)
+      }
+      data.push(cells)
+      $table.append($tr)
+    }
+    $table.addEventListener('click',callback) 
+    // td에다 안하고 table에다 addEventListener 해도 똑같이 실행된다. => 이벤트 버블링 : 자식한테서 발생한 이벤트가 부모한테도 발생
+    // td를 클릭하면 event가 td에도 발생하고, tr에도 발생하고 table에도 발생하고 body에도 발생한다. (html의 특성 : 이벤트 버블링)
+    // 이와 반대되는 개념이 이벤트 캡쳐링이다.
+
+    body.append($table) // body에 table 태그 추가
+    body.append($result)
+  </script>
+</body>
+</html>
