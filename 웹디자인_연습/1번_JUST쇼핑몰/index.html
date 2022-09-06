@@ -9,9 +9,14 @@
   <link href="./css/style.css" type="text/css" rel="stylesheet">
   <link href="./css/contents.css" type="text/css" rel="stylesheet">
   <link href="./css/footer.css" type="text/css" rel="stylesheet">
-  <link href="./css/header.css" type="text/css" rel="stylesheet">
   <link href="./css/slide.css" type="text/css" rel="stylesheet">
+  <link href="./css/header.css" type="text/css" rel="stylesheet">
   <link href="./css/popup.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/jquery.bxslider.css" type="text/css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.cookie.min.js"></script>
+  <script src="./js/jquery.bxslider.js"></script>
+  <script src="./js/app.js"></script>
 </head>
 
 <body>
@@ -24,7 +29,7 @@
       <input type="checkbox">
       <label>7일간 열지않기</label>
       <a href="#">
-        <img src="./images/popup_btn.jpg">
+        <img src="./images/popup_btn.jpg" id="closeBtn">
       </a>
     </div>
   </div>
@@ -39,7 +44,7 @@
         <ul id="gnb">
           <li>
             <a href="#">탑</a>
-            <ul id="lnb">
+            <ul class="lnb">
               <li><a href="#">블라우스</a></li>
               <li><a href="#">티</a></li>
               <li><a href="#">셔츠</a></li>
@@ -48,7 +53,7 @@
           </li>
           <li>
             <a href="#">아우터</a>
-            <ul id="lnb">
+            <ul class="lnb">
               <li><a href="#">자켓</a></li>
               <li><a href="#">코트</a></li>
               <li><a href="#">가디건</a></li>
@@ -57,7 +62,7 @@
           </li>
           <li>
             <a href="#">팬츠</a>
-            <ul id="lnb">
+            <ul class="lnb">
               <li><a href="#">청바지</a></li>
               <li><a href="#">짧은바지</a></li>
               <li><a href="#">긴바지</a></li>
@@ -66,7 +71,7 @@
           </li>
           <li>
             <a href="#">악세서리</a>
-            <ul id="lnb">
+            <ul class="lnb">
               <li><a href="#">귀걸이</a></li>
               <li><a href="#">목걸이</a></li>
               <li><a href="#">반지</a></li>
@@ -76,6 +81,7 @@
         </ul>
       </nav>
     </header>
+    <main>
     <div id="slide">
       <div id="slide-contents">
         <img src="./images/slide1.jpg" alt="슬라이드">
@@ -95,7 +101,7 @@
                 <ul>
                   <li>
                     <a href="#">
-                      <span>공지사항1</span>
+                      <span id="not1">공지사항1</span>
                       <span>[2022.01.01]</span>
                     </a>
                   </li>

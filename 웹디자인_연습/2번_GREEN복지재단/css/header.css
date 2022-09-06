@@ -33,7 +33,6 @@ header>#nav>#gnb>li>#lnb>li>a{
     color:black;
     padding-top: 10px;
     box-sizing: border-box;
-    background-color: bisque;
 }
 /* 위에서 스타일 준 경로랑 일치시켜야한다. */
 #header #nav #gnb li a:hover{

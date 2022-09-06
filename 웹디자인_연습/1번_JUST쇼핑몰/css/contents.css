@@ -13,12 +13,16 @@
   width: 360px;
   height: 200px;
   float:left;
+  position: relative;
+  top:10px;
 }
 
 #contents>#cont3{
   width: 360px;
   height: 200px;
   float: left;
+  position: relative;
+  top:10px;
 }
 
 #cont1>#tab{
@@ -45,14 +49,16 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-
-#tab>#tab-btn>a:first-child{
-  background-color: bisque;
+#tab>#tab-btn>a{
+  font-weight : bold;
+}
+/* #tab>#tab-btn>a:first-child{
+  
 }
 
 #tab>#tab-btn>a:nth-child(2){
-  background-color: chocolate;
-}
+  
+} */
 
 #tab>#tab-contents{
   width:470px;
@@ -67,6 +73,8 @@
 #notice>ul{
   width:460px;
   height:130px; 
+  padding-top:10px;
+  box-sizing: border-box;
 }
 #notice>ul>li{
   margin-bottom: 1px;
@@ -79,15 +87,19 @@
 }
 
 #notice>ul>li>a>span:first-child{
-  display:inline-block;
+  display:block;
+  float:left;
   width:340px;
   height: 30px;
 }
 
 #notice>ul>li>a>span:nth-child(2){
-  display:inline-block;
+  display:block;
+  float:left;
   width:100px;
   height: 30px;
+  position:relative;
+  left:20px;
 }
 
 #tab-contents>#gallery{

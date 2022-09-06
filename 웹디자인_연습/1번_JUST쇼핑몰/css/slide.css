@@ -6,9 +6,9 @@
 /*
 슬라이드 움직이는 방향이 세로방향이면 세로배치, 가로방향이면 가로배치
 */
-#slide-contents{
+/* #slide-contents{
 
-}
+} */
 
 #slide-contents>img{
   display:block; /* 이미지들간의 간격 제거 */

@@ -6,6 +6,7 @@
   height: 500px;
   z-index: 9;   /* 제일 위에 띄운다.(우선도) */
   border:1px solid #222328;
+  /* display : none; */
 }
 
 #popup>#popup-img{

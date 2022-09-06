@@ -1,6 +1,8 @@
 #header{
   width:1200px;
   height: 100px;
+  position: relative;
+  z-index: 1;
 }
 
 #header>#logo{
@@ -42,9 +44,10 @@
   padding-top:10px;
   box-sizing: border-box;
   color:#222328;
+  font-weight: bold;
 }
 
-#lnb>li>a{
+.lnb>li>a{
   display: block;
   width: 100px;
   height:40px;
@@ -52,6 +55,8 @@
   padding-top:10px;
   box-sizing: border-box;
   color:#222328;
+  font-weight: bold;
+  background-color: #ffffff;
 }
 
 /* 
@@ -63,6 +68,6 @@ gnb밑에있는 모든 li 밑에있는 a는 모두 적용
   color:#ffffff;
 }
 
-#lnb{
+.lnb{
   display:none;
 }
