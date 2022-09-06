@@ -12,4 +12,6 @@
 
 #slide-contents>img{
   display:block; /* 이미지들간의 간격 제거 */
+  width:100%;
+  height:100%;
 }
