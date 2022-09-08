@@ -36,17 +36,12 @@
     */
 
     const checkWinner =(target) => {
-      let rowIndex    // target.parentNode.rowIndex 로 쓸 수 있다.
-      let cellIndex   // target.CellIndex 로 쓸 수 있다. 이러면 아래의 반복문이 필요 없어진다.
-      data.forEach((row, ri)=>{  
-        row.forEach((cell,ci)=>{
-          if(cell === target){
-          rowIndex = ri
-          cellIndex = ci
-          }
-        })
-      })
-      // 세 칸 다 채워졌나?
+      let rowIndex = target.parentNode.rowIndex   // target.parentNode.rowIndex 로 쓸 수 있다.
+      // rowIndex는 tr이 갖고있다. tr은 td의 부모요소.
+
+      let cellIndex = target.cellIndex  // target.CellIndex 로 쓸 수 있다. 이러면 아래의 반복문이 필요 없어진다.
+      // 클릭한 td가 몇번째 칸인지
+      
       
       // 가로 줄 검사
       if(
@@ -82,6 +77,23 @@
       return hasWinner
     }
 
+    const checkWinnerAndDraw = (target) => {
+      const hasWinner = checkWinner(target)
+
+      // 승자 있으면
+      if(hasWinner){
+        $result.textContent = `${turn}님의 승리!`
+        return
+      }
+      // 승자가 없으면
+      const draw = data.flat().every((cell)=>cell.textContent)
+      if(draw){
+        $result.textContent = '무승부'
+        return
+      }
+      turn = turn === 'X'?'O':'X'
+    }
+
     const data = []
     const callback=(event)=>{
       // 칸에 글자가 있나?
@@ -93,39 +105,19 @@
       // td말고 table에다가 이벤트를 줬을때 사용
 
       // 승부확인
-      if(checkWinner(event.target)){
-        $result.textContent = `${turn}님의 승리!`
-        return
-      }
-      // 무승부 검사
-      let count = 0
-      // data.forEach((row)=>{
-      //   row.forEach((ceil)=>{
-      //     if(!ceil.textContent){
-      //       draw = false
-      //     }
-      //   })
-      // })
-      data.forEach((row)=>{
-        row.forEach((ceil)=>{
-          if(ceil.textContent){
-            count++
-          }
-        })
-      })
-      if(count===9){
-        $result.textContent = '무승부'
-        return
-      }
+      checkWinnerAndDraw(event.target)
+    
 
-      turn = (turn === 'O'?'X':'O') 
-      // if(turn === 'O'){
-      //   turn = 'X'
-      // }
-      // else if(turn === 'X'){
-      //   turn = 'O'
-      // }
+      if(turn ==='X'){
+        const emptyCells = data.flat().filter((v)=>!v.textContent)
+        // filter 은 일차원 배열에만 적용가능          빈칸이면 라는뜻
+        const randomCell = emptyCells[Math.floor(Math.random()*emptyCells.length)]
+        randomCell.textContent = 'X'
+        checkWinnerAndDraw(event.target)
+      }
     }
+
+    // 칸 만들기
     for(let i = 0 ; i<3; i++) {
       const $tr = document.createElement('tr')
       const cells = []
@@ -137,6 +129,7 @@
       }
       data.push(cells)
       $table.append($tr)
+
     }
     $table.addEventListener('click',callback) 
     // td에다 안하고 table에다 addEventListener 해도 똑같이 실행된다. => 이벤트 버블링 : 자식한테서 발생한 이벤트가 부모한테도 발생
