@@ -93,9 +93,11 @@
       }
       turn = turn === 'X'?'O':'X'
     }
-
+    let clickable = true
     const data = []
+    $result.textContent ='당신의 차례입니다.'
     const callback=(event)=>{
+      if(!clickable) return
       // 칸에 글자가 있나?
       // event.stopPropagation()  이벤트 버블링을 막는다.
       if(event.target.textContent) return // 칸에 내용이 있으면 종료
@@ -107,13 +109,19 @@
       // 승부확인
       checkWinnerAndDraw(event.target)
     
-
       if(turn ==='X'){
-        const emptyCells = data.flat().filter((v)=>!v.textContent)
-        // filter 은 일차원 배열에만 적용가능          빈칸이면 라는뜻
-        const randomCell = emptyCells[Math.floor(Math.random()*emptyCells.length)]
-        randomCell.textContent = 'X'
-        checkWinnerAndDraw(event.target)
+        clickable = false
+        $result.textContent = '컴퓨터의 차례입니다.'
+        setTimeout(() =>{
+          const emptyCells = data.flat().filter((v)=>!v.textContent)
+          // filter 은 일차원 배열에만 적용가능          빈칸이면 라는뜻
+          const randomCell = emptyCells[Math.floor(Math.random()*emptyCells.length)]
+          randomCell.textContent = 'X'
+          checkWinnerAndDraw(event.target)
+          $result.textContent ='당신의 차례입니다.'
+          clickable = true
+        },1000)
+        
       }
     }
 
