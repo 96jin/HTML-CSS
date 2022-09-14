@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">  // bable로 읽을수 있게 해준다.
+      // JSX란 문자도 HTML도 아닌 JS의 확장 문법
+      // JSX를 쓰려면 Bable을 써야한다. Babel : JS 컴파일러
+      // JSX를 사용하면 변수화 가능해서 사용하기 편하다.
+      
+      const rootElement = document.getElementById("root");
+      const text = "Hello, world!!"
+      const titleClassName = "title"
+      const props = {className:titleClassName, children:text} // spread 표기
+      // const customH1 = <h1 {...props}/> // ... 하면 각각 요소를 분해해서 보여준다.  아래 표현과 같다.
+      const customH1 = <h1 className={props.className} children={props.children}/>
+      const element = customH1
+
+      // const element = <h1 className={titleClassName} children={text}></h1>
+      ReactDOM.render(element,rootElement)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">  
+    // 내 풀이
+      // const $body = document.querySelector('body')
+      // const element1 = React.createElement("h1",{children:"Hi"})
+      // const element2 = React.createElement("h3",{children:"Bye"})
+      // const element3 = React.createElement("h5",{children:"Children"})
+      // ReactDOM.render([element1,element2,element3],$body)
+    
+    // 이렇게 하면 root 아래에 box클래스의 div를 하나 더 만들고 아래 요소들을 추가한다.
+      // const rootElement = document.getElementById("root");
+      // const element = <div className ="box" children={
+      //   [
+      //   React.createElement('h1',null,'Hi'),
+      //   React.createElement('h3',null,'Bye'),
+      //   React.createElement('h5',null,'Children')
+      //   ]
+      // }/>
+      // ReactDOM.render(element, rootElement)
+
+    // React.Fragment를 사용하면 root아래에 생성 가능
+      // const rootElement = document.getElementById("root");
+      // const element = <React.Fragment children={
+      //   [
+      //   React.createElement('h1',null,'Hi'),
+      //   React.createElement('h3',null,'Bye'),
+      //   React.createElement('h5',null,'Children')
+      //   ]
+      // }/>
+      // ReactDOM.render(element, rootElement)
+
+    // 이렇게 가능
+      // const rootElement = document.getElementById("root");
+      // const element = <React.Fragment children={
+      //   [
+      //   <h1>Hi</h1>,
+      //   <h3>Bye</h3>,
+      //   <h5>Children</h5>
+      //   ]
+      // }/>
+      // ReactDOM.render(element, rootElement)
+
+    // 더 html스럽게 표현가능, React.Fragment 는 생략 가능
+      const rootElement = document.getElementById("root");
+      const element = 
+      <>        
+        <h1>Hi</h1>
+        <h3>Bye</h3>
+        <h5>Children</h5>
+      </>  
+      
+      ReactDOM.render(element, rootElement)
+    </script>
+  </body>
+</html>
