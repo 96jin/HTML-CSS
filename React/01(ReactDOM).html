@@ -20,11 +20,14 @@
       const rootElement = document.getElementById("root");
       const elementV = document.createElement("h1");
 
+      // h1 태그를 생성하고 그 안의 내용을 Hello,world! 로 한다.
       const element = React.createElement("h1", { children: "Hello,world!" });
       console.log(element);
       console.log(elementV);
+
+      // 추가 할 요소를 앞에 쓰고, 추가될 위치를 뒤에 쓴다.
       ReactDOM.render(element, rootElement);
-      // element.textContent = "Hello, world!";
+      // elementV.textContent = "Hello, world!";
       // rootElement.append(element);
     </script>
   </body>

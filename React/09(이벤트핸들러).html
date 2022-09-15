@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // React에선 카멜케이스로 써야한다 (onClick)
+      const rootElement = document.getElementById("root")
+
+      const handleClick = () => {
+        alert("press")
+      }
+      const handleMouseOut = () => alert("Bye")
+      const element = 
+      <button 
+      onClick={handleClick} 
+      onMouseOut={handleMouseOut}
+      >
+      Press
+      </button>
+      ReactDOM.render(element,rootElement)
+    </script>
+  </body>
+</html>

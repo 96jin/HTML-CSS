@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">  
+    // 더 html스럽게 표현가능, React.Fragment 는 생략 가능
+      const rootElement = document.getElementById("root");
+
+      // 태그를 생성하는 함수를 만들 수 있고, 입력값도 받을 수 있다.
+      const paint = (title,discription) =>( 
+      <>        
+        <h1>{title}</h1>
+        <h3>{discription}</h3>
+      </>  
+      )
+
+      // 맨 앞 글자를 대문자로 써야 일반 태그처럼 사용할 수 있다.
+      const Paint = ({title,description,children}) =>( 
+      <>        
+        <h1>{title}</h1>
+        <h3>{description}</h3>
+        {children}
+      </>  
+      )
+      // children 안에 새로운 태그를 찍어 낼 수도 있다.
+
+      // 함수를 찍어낼 수 있다.
+      const element = 
+      // 기존의 태그 생성 한 후에 안에 들어있는 태그를 생성하여 넣어준다.
+      <>
+      <Paint title="Good" description="good">
+        <h1>Hi</h1>  
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+      </Paint>  
+      <Paint title="Good" description ="good"/>
+      {paint("Bad","bad")}
+      {paint("So so","so so")}
+      </>
+      
+      ReactDOM.render(element, rootElement)
+    </script>
+  </body>
+</html>

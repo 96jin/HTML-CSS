@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">  
+    // interpolation : 여러개를 섞어 쓰는것.
+
+    // 더 html스럽게 표현가능, React.Fragment 는 생략 가능
+      const rootElement = document.getElementById("root");
+
+      // 맨 앞 글자를 대문자로 써야 일반 태그처럼 사용할 수 있다.
+      const Text = ({text}) => {
+        // text가 대문자로 시작하면 h1, 소문자로 시작하면 h3
+        if(text.charAt(0) === text.charAt(0).toUpperCase())
+        {return 
+          <h1>      {/* JSX */}
+            {text}  {/* JS */}
+          </h1>}      // JSX
+        else
+        {return <h3>{text}</h3>}       
+      }
+
+      function Number({number , selected}){
+        return selected ? <h1>{number}</h1> : <h3>{number}</h3>
+      }
+      
+      const element = 
+      // <>
+      // <Text text="Text" />
+      // <Text text="text" />
+      // </>
+      <>
+        {/* <Number number={1}/>
+          <Number number={2} selected={true}/>
+          <Number number={3}/>
+          <Number number={4}/> */}
+
+      {/* map을 사용해서도 가능하다. map으로 할때에는 key를 정해줘야한다. */}
+      {[1,2,3,4,5,6,7,8,9,10].map((number)=>(
+        <Number 
+        className ="title"
+        key={number}
+        number={number} 
+        selected={number === 3 }/>
+      ))}
+      </>
+      ReactDOM.render(element, rootElement)
+    </script>
+    <style>
+      .title{
+        color:red;
+      }
+    </style>
+  </body>
+</html>
