@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root")
+      // React 에서 제공하는 상태관리 메서드를 이용하면 리렌더링을 안해도 된다.
+
+      const App = () => {
+
+        // arrow 함수를 사용하지 않고 쓰면 input 안의 값이 바뀔때마다 render가 실행된다
+        // -> 값을 읽어오는데 시간이 걸리기때문에 keyword 값이 크게 될 경우 시간이 너무 오래걸려서
+        //    건너뛰어질 수 있다 그래서
+        // 처음 값을 읽어오는데 시간이 좀 걸리더라도 arrow 함수를 이용해준다.
+        // 이렇게 하면 조금 느리게 읽더라도 함수가 실행되면 값을 안정적으로 받아올 수 있다.
+        // 새로고침 될 떄에만 이 함수가 실행되어 값을 받아온다.
+        const[keyword, setKeyword] = React.useState(
+          () => { return window.localStorage.getItem("keyword") }
+          )
+        const[result, setResult] = React.useState() // useState안에는 글자,객체,배열 등등 다 넣을수있다
+        const[typing, setTyping] = React.useState(false)
+
+        function handleChange(event){
+        // 브라우저 내의 localstorage에 저장
+        window.localStorage.setItem("keyword", event.target.value)
+        setKeyword(event.target.value)
+        setTyping(true)
+        }
+
+        function handleClick(){
+          setTyping(false)
+          setResult(`We find result of ${keyword}`)
+        }
+        return (
+          <>
+            <input onChange={handleChange} value={keyword}/>  {/* input값이 바뀔때 마다 handleChange호출 */}
+            <button onClick={handleClick}>search</button>
+            <p>
+              {typing ? `Looking for ...${keyword}` : result}
+            </p>
+          </>
+          )
+      }
+
+      ReactDOM.render(<App />, rootElement)
+      
+    </script>
+  </body>
+</html>
