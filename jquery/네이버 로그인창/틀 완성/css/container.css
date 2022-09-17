@@ -1,0 +1,213 @@
+#container>.login_form
+{
+    width:460px;
+    height:224px;
+
+    background: #ffff;
+     /*
+    background: darkcyan;
+    */
+    position: absolute;
+    left:150px;
+
+    border: none;
+}
+
+#container>.login_form>.id_area
+{
+    width:460px;
+    height:47px;
+    border:1px solid gray;
+
+    /*
+    background: darkgray;
+    */
+    background: #ffff;
+
+    /*
+    나중에 입력창을 활성화 하면
+    경계선 녹색으로 만들어지게
+    border:1px solid green;
+    */ 
+
+    padding-left:5px;
+    padding-top:5px;
+    box-sizing: border-box;
+
+    margin-bottom:10px;
+}
+
+#container>.login_form>.id_area>.input_row
+{
+    width:412px;
+    height:29px;
+    
+    /*
+    background: firebrick;
+    */
+    background: #ffff;
+}
+
+#container>.login_form>.id_area>.input_row>.input_box
+{
+    width:411px;
+    height:28px;
+
+    display:block;
+    /*
+     background: forestgreen;
+    */
+    background: #ffff;
+
+}
+
+.id_area>.input_row>.input_box>#id
+{
+    width:411px;
+    height:28px;
+    background: white;
+
+    font-size:14px;
+    color:black;
+
+    border:none;
+}
+
+
+#container>.login_form>.pw_area
+{
+    width:460px;
+    height:47px;
+    border:1px solid gray;
+
+    /*
+     background: darkkhaki;
+    */
+    background: #ffff;
+
+     /*
+    나중에 입력창을 활성화 하면
+    경계선 녹색으로 만들어지게
+    border:1px solid green;
+    */ 
+    padding-left:5px;
+    padding-top:5px;
+    box-sizing: border-box;
+
+    margin-bottom:10px;
+}
+
+#container>.login_form>.pw_area>.input_row
+{
+    width:412px;
+    height:29px;
+
+    /*
+     background: firebrick;
+    */
+    background: #ffff;
+}
+
+#container>.login_form>.pw_area>.input_row>.input_box
+{
+    width:411px;
+    height:28px;
+
+    display:block;
+
+    /*
+     background: forestgreen;
+    */
+    background: #ffff;
+}
+
+.pw_area>.input_row>.input_box>#pw
+{
+    width:411px;
+    height:28px;
+    background: white;
+
+    font-size:14px;
+    color:black;
+
+    border:none;
+}
+
+#container>.login_form>#login
+{
+    width:458px;
+    height:54px;
+    
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    background: #03C75A;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.check_info
+{
+    width:458px;
+    height:40px;
+    /*
+     background: cornflowerblue;
+    */
+    background: #ffff;
+}
+
+.check_info>.login_check
+{
+    /*
+     background: crimson;
+    */
+    background: #ffff;
+    float:left;
+
+    margin-bottom: 10px;
+
+}   
+
+.check_info>.login_check>span
+{
+    display: inline-block;
+    /*결국엔 span의 이미지로 체크기능을 함*/
+
+    position: relative;
+    top:5px;
+}
+
+.check_info>.login_check>span>input
+{
+    display:none;
+    /*체크박스는 숨겨주고*/
+    /*체크박스라는 티를 내기 위한 용도*/
+}
+
+.check_info
+{
+    border-bottom: 1px solid rgb(228, 228, 229);
+}
+
+.check_info>.pc_check
+{
+    /*
+     background: cyan;
+    */
+    background: #ffff;
+
+    float:right;
+
+    margin-top: 10px;
+}
+
+.check_info>.pc_check>span
+{
+    display: inline-block;
+    /*결국엔 span의 이미지로 체크기능을 함*/
+}
+
+.check_info>.pc_check>span>input
+{
+    display: none;
+}

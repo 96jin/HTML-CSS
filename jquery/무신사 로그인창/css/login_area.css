@@ -1,0 +1,222 @@
+#login_header
+{
+    width:400px;
+    height:156px;
+
+    /*
+    background: blue;
+    */
+    background: #FFFF;
+
+    padding-top: 76px;
+    padding-bottom: 60px;
+    padding-left: 70px;
+    box-sizing: border-box;
+}
+
+#login_header>img
+{
+    width:251px;
+    height:20px;
+}
+
+form>input
+{
+    width:340px;
+    height:50px;
+
+    margin-left: 30px;
+    margin-bottom: 10px;
+
+    color:gray;
+
+    padding-left: 10px;
+    box-sizing: border-box;
+
+    border:none;
+    outline: none;
+    /*
+    보더 말고 아웃라인이 또 있다.
+    */
+}
+
+
+form>#login_btn
+{
+    background: black;
+    color:white;
+    font-size:16px;
+    
+    width:340px;
+    height:60px;
+
+    border: none;
+}
+
+#auto_login
+{
+    width:400px;
+    height:30px;
+    /*
+    background: chartreuse;
+    */
+    background: #FFFF;
+    padding-left: 30px;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+#auto_login>.auto_check>a>img
+{
+    width:20px;
+    height:20px;
+}
+
+#auto_login>span:nth-child(2)
+{
+    color:gray;
+    font-size:14px;
+
+    position: relative;
+    top:-3px;
+    left:5px;
+}
+
+#bot_menu
+{
+    width:400px;
+    height:70px;
+
+    /*
+    background: coral;
+    */
+    background: #FFFF;
+}
+
+#bot_menu>ul
+{
+    position: relative;
+    top:20px;
+    left:30px;
+}
+
+#bot_menu>ul>li
+{   
+    float:left;
+    margin-right:30px;
+    position: relative;
+}
+
+#bot_menu>ul>li>a
+{   
+    color:gray;
+}
+
+.bar
+{
+    width:1px;
+    height:13px;
+    background: gray;
+    display:block;
+
+    
+}
+
+#bot_menu>ul>li:first-child>span
+{
+    position: absolute;
+    left:80px;
+    top:6px;
+}
+
+#bot_menu>ul>li:nth-child(2)>span
+{
+    position: absolute;
+    left:100px;
+    top:6px;   
+}
+
+#kakao_and_apple
+{
+    width:400px;
+    height:120px;
+
+    /*
+    background: crimson;
+    */
+    background: #FFFF;
+}
+
+#kakao_and_apple>.kakao
+{
+    width:350px;
+    height:43px;
+    background: yellow;
+    border-radius: 8px;
+    border:1px solid gray;
+
+
+    position: relative;
+    left:20px;
+    top:10px;
+}
+
+.kakao_img
+{
+    width:45px;
+    height:45px;
+    display: inline-block;
+}
+
+#kakao_and_apple>.kakao>span:nth-child(2)
+{
+    font-weight: bold;
+    font-size:14px;
+
+    position: relative;
+    top:-20px;
+}
+
+#kakao_and_apple>.apple
+{
+    width:350px;
+    height:43px;
+    background: white;
+
+    border-radius: 8px;
+    border:1px solid gray;
+
+    position: relative;
+    left:20px;
+    top:10px;
+}
+
+.apple_img
+{
+    width:45px;
+    height:45px;
+    display: inline-block;
+}
+
+#kakao_and_apple>.apple>span:nth-child(2)
+{
+    font-weight: bold;
+    font-size:14px;
+
+    position: relative;
+    top:-20px;
+}
+
+/*
+크기 축소
+*/
+
+.kakao_img
+{
+    transform:scale(0.6)
+}
+
+.apple_img
+{
+    transform:scale(0.6)
+}

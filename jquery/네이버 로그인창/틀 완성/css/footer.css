@@ -1,0 +1,72 @@
+#footer
+{
+    position: absolute;
+    top:630px;
+    left:20%;
+
+    width:465px;
+    height:67px;
+
+    /*
+    background: magenta;
+    */
+    background: #ffff;
+}
+
+#footer>ul
+{
+    width:565px;
+    height:33px;
+     /*
+    background: maroon;
+    */
+    background: #ffff;
+}
+
+#footer>ul>li
+{
+    float:left;
+    margin-right:10px;
+}
+
+#footer>ul>li:nth-child(2)
+{
+    font-weight:bold;
+}
+
+#footer>ul>li>a
+{
+    color:black;
+    font-size:12px;
+}
+
+#footer>.copyright
+{
+    width:565px;
+    height:33px;
+     /*
+    background: mediumorchid;
+    */
+    background: #ffff;
+}
+
+.naver_small_logo
+{
+    display: inline-block;
+}
+
+#footer>.copyright>.copy_area
+{
+    position: relative;
+    left:60px;
+}
+
+.copy_area>span:nth-child(2)
+{
+    font-size:14px;
+}
+
+.copy_area>span:nth-child(2)>small>span
+{
+    font-weight:bold;
+}

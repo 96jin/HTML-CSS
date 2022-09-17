@@ -1,0 +1,12 @@
+.whale_wrap
+{
+    position: absolute;
+    top:410px;
+    left:20%;
+}
+
+.whale_wrap>img
+{
+    width:460px;
+    height:166px;
+}

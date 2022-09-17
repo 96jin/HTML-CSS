@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol,ul{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#item-wrap{
+  width:1200px;
+  height:1000px;
+  background-color: aqua;
+  margin:0 auto;
+}
+
+#display-image{
+  width:500px;
+  height:1000px;
+  background-color: aquamarine;
+  float:left;
+}
+
+#user-option{
+  width:700px;
+  height:1000px;
+  background-color: burlywood;
+  float:left;
+
+  position: relative;
+}
+
+#select-option{
+  width:700px;
+  height:200px;
+  background-color: brown;
+
+  position: absolute;
+  top:400px;
+}
+
+#select-option>h1{
+  font-size:20px;
+}
+
+#select-option>select{
+  width:500px;
+  height:50px;
+  margin:10px;
+}
+
+#buy-list{
+  width:700px;
+  height: 300px;
+  background-color: chartreuse;
+}

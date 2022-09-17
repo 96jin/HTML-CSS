@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;    
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background:#f5f6f7;
+}
+
+#wrap
+{
+    width:100%;
+    height:100%;
+    background:rgb(245, 246, 247);
+}
+
+#wrap>#header
+{
+    width:768px;
+    height:210px;
+    /*background: #ffff;*/
+
+    margin-left:567px;
+
+    position: relative;
+}
+
+#wrap>#container
+{
+    width:768px;
+    height:700px;
+    /*background: #ffff;*/
+    
+
+    margin-left:567px;
+
+    position: relative;
+}
+
+.naver_logo, .login_on, .login_off, .ip_on, .ip_off, .naver_small_logo
+{ 
+    background: url("../images/pc_sp_login_190522.png") no-repeat; 
+}
+    
+.naver_logo { width: 230px; height: 46px; background-position: 0px 0px; }
+.login_off { width: 26px; height: 26px; background-position: 0px -115px; }
+.login_on { width: 26px; height: 26px; background-position: 0px -145px; }
+.ip_on { width: 30px; height: 15px; background-position: 0px -48px; }
+.ip_off { width: 30px; height: 15px; background-position: 0px -62px; }
+.naver_small_logo { width: 60px; height: 12px; background-position: -241px 0px; }
+
+
+.qr_img, .once_img
+{ 
+    background: url("../images/pc_qr_once.png") no-repeat; 
+}
+
+.once_img { width: 20px; height: 20px; background-position: -102px 0px; }
+.qr_img { width: 20px; height: 20px; background-position: -128px 0px; }
+
+.facebook, .line
+{ 
+    background: url("../images/pc_qr_once.png") no-repeat; 
+}
+
+.facebook { width: 20px; height: 20px; background-position: -129px -38px; }
+.line { width: 25px; height: 20px; background-position: -61px -70px; }

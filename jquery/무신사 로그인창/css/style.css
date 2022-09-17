@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;    
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background: #f1f1f1;
+}
+
+#wrap
+{
+    width:400px;
+    height:1100px;
+
+     /*
+    background: aqua;
+    */
+    background: #FFFF;
+    margin-left: 506px;
+}
+
+#login_area
+{
+    width:400px;
+    height:400px;
+
+      /*
+    background: aquamarine;
+    */
+    background: #FFFF;
+}
+
+.kakao_img, .apple_img
+{ 
+    background: url("../images/bg_social.png") no-repeat; 
+}
+    
+.kakao_img { width: 40px; height: 40px; background-position: -7px -11px; }
+.apple_img { width: 40px; height: 40px; background-position: -70px -7px; }

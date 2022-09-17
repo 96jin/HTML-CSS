@@ -1,0 +1,45 @@
+.info
+{
+    position: relative;
+}
+
+.info>ul
+{
+    /*
+    background: yellow;
+    */
+    background: #ffff;
+
+    width:300px;
+    height:50px;
+
+    position: absolute;
+    left:100px;
+    top:0px;
+}
+
+.info>ul>li
+{
+    float:left;
+
+    font-size:14px;
+    color:#8e8e8e;
+
+    margin-right: 10px;
+
+    position: relative;
+}
+
+.bar {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: #8e8e8e;
+    vertical-align: bottom;
+
+    margin-left: 5px;
+
+    position: relative;
+    left:2px;
+    top:-3px;
+}
