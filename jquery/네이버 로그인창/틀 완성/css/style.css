@@ -16,10 +16,12 @@ body{
 }
 
 #wrap
-{
+{   position : relative;
     width:100%;
     height:100%;
+    padding-right: 20%;
     background:rgb(245, 246, 247);
+    /* background-color: antiquewhite; */
 }
 
 #wrap>#header

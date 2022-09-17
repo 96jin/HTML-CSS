@@ -21,7 +21,7 @@
 
     <script type="text/babel">
       const rootElement = document.getElementById("root")
-      // React 에서 제공하는 상태관리 메서드를 이용하면 리렌더링을 안해도 된다.
+      // React 에서 제공하는 상태관리 메서드(useState)를 이용하면 리렌더링을 안해도 된다.
       const App = () => {
 
         const[keyword, setKeyword] = React.useState("")
@@ -29,8 +29,8 @@
         const[typing, setTyping] = React.useState(false)
 
         // 이런식의 작동원리이다.
-        // const keywordState = React.useState("")
-        // const keyWord = keywordState[0]
+        // const keywordState = React.useState("")  useState를 사용하면 배열이 생성된다. 
+        // const keyword = keywordState[0]
         // const setkeyword = keywordState[1]
 
         function handleChange(event){

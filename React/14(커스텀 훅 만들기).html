@@ -23,21 +23,26 @@
       const rootElement = document.getElementById("root")
       // React 에서 제공하는 상태관리 메서드를 이용하면 리렌더링을 안해도 된다.
 
-      function useLocalStorage(itemName, value = ""){
+      // keyword는 keyword가 변할때마다, result는 result가 변할때 마다, typing는 typing가 변할때 마다 값을 갱신하고싶다.
+      // -> useEffect를 세개의 변수에 각각 적용해줘야 우리가 원하는 기능이 만들어진다.
+      // -> 따로따로 생성하면 같은 기능을 하는 함수가 3개 생성이 되므로 비효율적으로 보인다.
+      // -> 그러므로 이 기능들을 하나의 함수에 묶어준다. 이것이 커스텀 훅이다. (공통된 기능을 빼서 간소화)
+
+      function useLocalStorage(itemName, value = ""){ // value인자를 안넣어주면 default로 "" 를 넣어준다.
         const[state, setState] = React.useState(
-          () => { return window.localStorage.getItem(itemName) || value}
+          () => { return window.localStorage.getItem(itemName) || value}  // state의 값을 setState로 갱신
         )
         React.useEffect(()=>{
-          window.localStorage.setItem(itemName, state)
+          window.localStorage.setItem(itemName, state) // itemName에 저장된 값을 state로 설정해준다.
         },[state])
 
-        return [state, setState]
+        return [state, setState]  // useState는 리턴값이 배열이므로 똑같이 리턴값을 설정해준다.
       }
 
         const App = () => { 
         const [keyword, setKeyword] = useLocalStorage("keyword")
         const [result, setResult] = useLocalStorage("result")
-        const [typing, setTyping] = useLocalStorage("typing",false)
+        const [typing, setTyping] = useLocalStorage("typing",false) // typing의 처음값을 false로 설정.
 
         console.log("render")
 
@@ -49,7 +54,7 @@
         function handleChange(event){     
         // input 값이 바뀔때마다 keyword 값을 업데이트해줌
         setKeyword(event.target.value)
-        setTyping(true)
+        setTyping(true) // 바뀔때마다 typing를 true로 설정해줌.
         }
 
         function handleClick(){

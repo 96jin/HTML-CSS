@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root")
+      
+      const App = () => {
+        console.log("App render start")
+        const [show, setShow] = React.useState(()=>{
+          console.log("App useState ")
+          return false // 기본값을 false로 줌
+        })
+        
+        React.useEffect(()=>{ // render 가 끝난 이후에 동작한다. why? 사이드 이펙트이기 때문에
+          console.log("App useEffect, no deps")
+        })
+        React.useEffect(()=>{
+          console.log("App useEffect, empty deps")
+
+        },[])
+        React.useEffect(()=>{
+          console.log("App useEffect, [show]")
+
+        },[show])
+
+        function handleClick(){
+          setShow(prev => !prev) 
+          // useState로 만들어진 함수는 애초부터 인자로 이전값이 들어온다.
+          // 따라서 이전에 들어온 값을 반대로 만들어주면 된다.
+        }
+        return (
+          <>
+            <button onClick={handleClick}>search</button>
+            {show ? <>
+              <input/>
+              <p></p>
+            </> : null}
+          </>
+        )
+      }
+      ReactDOM.render(<App />, rootElement)
+      console.log("App render end")
+      
+    </script>
+  </body>
+</html>
