@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <title>Movie app</title>
+  </head>
+  <body>
+    <script>
+      const xhr = new XMLHttpRequest(); 
+      const method = "GET"; 
+      const url = "https://yts.mx/api/v2/list_movies.json"; 
+      var movieList=[]
+      xhr.open(method, url); 
+
+      xhr.onreadystatechange = function (event) { 
+        const { target } = event; 
+        if (target.readyState === XMLHttpRequest.DONE) { 
+          const { status } = target; 
+        if (status === 0 || (status >= 200 && status < 400)) { 
+          console.log(status)
+          console.log(xhr.response);
+          const data = JSON.parse(xhr.response);
+          console.log(data)
+          console.log(data.data.movies)
+          movieList=data.data.movies
+          console.log(movieList)
+          makeMovieList(movieList)
+        } else { 
+          // 에러가 발생한 경우 
+        } 
+      } 
+    }; 
+    xhr.send();
+
+    function makeMovieList(movieList){
+     
+      for(var i=0; i<movieList.length; i++){
+        var myDiv=document.createElement('div')
+        myDiv.setAttribute("id","movie")
+
+        let leftDiv = document.createElement('div')
+        leftDiv.setAttribute("id","movie-left")
+        
+        let imgBox = document.createElement('img')
+        imgBox.setAttribute('id','movie-img')
+        imgBox.setAttribute('src',movieList[i].medium_cover_image)
+        leftDiv.append(imgBox)
+
+        let rightDiv = document.createElement('div')
+        rightDiv.setAttribute("id","movie-right")
+        // rightDiv.innerHTML = '제목 : '+movieList[i].title+'<br>'+'줄거리 : '+movieList[i].summary
+        let titleDiv = document.createElement('div')
+        titleDiv.innerHTML = '제목 : '+movieList[i].title +'<br>'
+        
+        let sumDiv = document.createElement('div')
+        sumDiv.innerHTML = '<br>요약 : '+movieList[i].summary
+
+        let genDiv = document.createElement('div')
+        genDiv.innerHTML = '<br>장르 : '+movieList[i].genres
+        
+        
+
+        rightDiv.append(titleDiv)
+        rightDiv.append(sumDiv)
+        rightDiv.append(genDiv)
+        myDiv.append(leftDiv)
+        myDiv.append(rightDiv)
+
+        document.getElementById('wrap').appendChild(myDiv)
+      }
+    }
+
+    </script>
+    <div id="wrap">
+
+    </div>
+  </body>
+</html>

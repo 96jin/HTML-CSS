@@ -58,3 +58,9 @@ a {
   height: 300px;
   background-color: chartreuse;
 }
+
+#buy-item{
+  width:400px;
+  height: 25px;
+  background-color: chocolate;
+}

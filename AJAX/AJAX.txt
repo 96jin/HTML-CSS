@@ -1,0 +1,16 @@
+AJAX
+: Asynchronous JavaScript And XML
+  비동기 자바스크립트와 XML(데이터)
+XML : 서버와 통신하기 위해서 XMLHttpRequest 객체를 사용
+
+JavaScript - XMLHttpRequest 
+
+Jquery - $.get , $.post , $.ajax
+
+React, Vue - axios
+
+node.js - 엔진, 시스템 자체를 구축하는 라이브러리 ( 서버생성 )
+
+jquery.min.js - DOM 관련
+
+jquery.cookie.js - cookie 관련

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        function getData(){
+            $.ajax( // get방식인지 post방식인지 정할 수 있다.
+                {   // 해당url에 get 방식으로 전송해서 json 타입으로 받아온다. response가 받아온 값이다.
+                    url:"https://dog.ceo/api/breed/"+$('#breedList').val()+"/images/random",
+                    method:"GET",
+                    dataType:"json"
+                }
+            ).done(function(response){  // XMLHttpRequest 가 Done 되면~
+                console.log(response)//Object
+                //JSON데이터
+                let dogImg = response.message
+
+                $('#wrap').empty()
+                const imgTag = document.createElement('img')
+                imgTag.setAttribute('src',dogImg)
+                imgTag.setAttribute('id','img')
+                $('#wrap').append(imgTag)
+            })
+        }
+
+        setInterval(getData,3000)
+    </script>
+   <style>
+    #img{
+        width:400px;    
+        height:400px;
+    }
+   </style>
+</head>
+<body>
+    <button onClick="getData()">요청</button>
+    <select id="breedList">
+        <option value="pug">Pug</option>
+        <option value="maltese">Maltese</option>
+        <option value="dalmatian">Dalmatian</option>
+        <option value="boxer">Boxer</option>
+    </select>
+    <div id="wrap">
+
+    </div>
+</body>
+</html>

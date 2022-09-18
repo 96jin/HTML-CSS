@@ -1,0 +1,44 @@
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#wrap{
+    width:1400px;
+    height:1000px;
+    background-color: aqua;
+
+    overflow-y:scroll;
+    /* y축 방향으로 넘치면 스크롤 기능 */
+}
+
+#movie{
+    width:1200px;
+    height:500px;
+    background-color: antiquewhite;
+    margin:20px;
+}
+
+#movie-left{
+    width:400px;
+    height:450px;
+    background-color: blue;
+    float:left;
+}
+
+#movie-right{
+    padding-top: 20px;
+    box-sizing: border-box;
+    width:700px;
+    height: 450px;
+    background-color: yellow;
+    float:left;
+}
+
+#movie-img{
+    margin-top: 20px;
+    width:400px;
+    height:400px;
+}

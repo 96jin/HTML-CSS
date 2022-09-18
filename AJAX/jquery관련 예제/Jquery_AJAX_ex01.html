@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        function getData(){
+            $.get('https://yts.mx/api/v2/list_movies.json',function(response){  // Jquery가 제공하는 메서드, 바닐라JS로 길게 쓸 필요없이 간단하게 가능
+                console.log(response)
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onClick="getData()">요청</button>
+</body>
+</html>

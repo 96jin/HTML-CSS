@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie app</title>
+  </head>
+  <body>
+    <script>
+      const xhr = new XMLHttpRequest(); 
+      const method = "GET"; 
+      const url = "https://yts.mx/api/v2/list_movies.json"; 
+      
+      xhr.open(method, url); 
+
+      xhr.onreadystatechange = function (event) { 
+        const { target } = event; 
+        if (target.readyState === XMLHttpRequest.DONE) { 
+          const { status } = target; 
+        if (status === 0 || (status >= 200 && status < 400)) { 
+          console.log(status)
+          console.log(xhr.response);  // 텍스트 파일
+          const data = JSON.parse(xhr.response);
+          console.log(data)   // Object 형태
+          // 객체 형태로 만들어줘서 안의 데이터를 꺼낼 수 있다.
+          console.log(data.data.movies)
+          
+        } else { 
+          // 에러가 발생한 경우 
+        } 
+      } 
+    }; 
+    xhr.send();
+
+    </script>
+  </body>
+</html>

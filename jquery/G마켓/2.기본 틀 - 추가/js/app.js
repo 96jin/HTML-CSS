@@ -8,8 +8,7 @@ $(document).ready(function(){
 function initSelect(){
   $('#selectSize').attr('disabled',true)  // disbaled : 기능을 끈다.(비활성화)
 }
-let idx=0
-let idx2
+
 let selectMenu = [
   [], // 빈 행 (색상에 해당하는 인덱스)
   ['BRICK 090 ◈144346560◈(-59000원)','BRICK 090 ◈144346561◈(-59000원)'],
@@ -47,6 +46,17 @@ function secondSelectBoxChanged(){
     // let itemName = selectMenu[idx][idx2]
     let itemName = $('#selectSize').val()
     console.log(itemName)
-    $('#buy-list').append('<div>'+itemName+'</div>')
+    $('#buy-list').append('<div id="buy-item">'+itemName+'</div>')
+
+    // 시작 상태로 초기화
+    refreshBox()
   })
+}
+
+function refreshBox(){
+  $('#selectSize').empty()
+  $('#selectSize').attr('disabled',true)
+  $('#selectSize').append('<option>사이즈</option>')
+  $('#selectColor option:eq(0)').show() // 숨겨놨던 첫번쨰 옵션을 보이게한다.
+  $('#selectColor option:eq(0)').prop('selected',true) // 직접 선택한 상태로 만들어줌
 }
