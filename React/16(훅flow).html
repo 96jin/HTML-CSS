@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /*
+      useEffect 는 render가 끝난 후 실행된다 ( 부산물 , 사이드 이펙트 )
+      children의 useEffect가 먼저 실행되고 메인 App의 useEffect가 실행된다.
+      
+      update시 cleanup이 먼저 실행되고, useEffect 실행.
+      cleanup의 경우 App에서 먼저 실행되고 children의 update실행
+
+
+      */
+      const rootElement = document.getElementById("root")
+      
+      const Child = () => {
+        console.log("    Child render start")
+        const [text,setText] = React.useState(()=>{
+          console.log("    Child useState")
+          return ""
+        })
+
+        React.useEffect(()=>{
+          console.log("    Child useEffect, no deps")
+
+          // useEffect 안에 return값으로 함수를 호출시키면 cleanup한다.
+          return ()=>{
+            console.log("    Child useEffect [CleanUp], no deps")
+          }
+        })
+
+        React.useEffect(()=>{
+          console.log("    Child useEffect, empty deps")
+
+          return ()=>{
+            console.log("    Child useEffect [CleanUp], empty deps")
+          }
+        },[])
+
+        React.useEffect(()=>{
+          console.log("    Child useEffect, [text]")
+
+          return ()=>{
+            console.log("    Child useEffect [CleanUp], [text]")
+          }
+        },[text])
+
+        function handleChange(event){
+          setText(event.target.value)
+        }
+
+        const element =
+        (<>
+          <input onChange={handleChange}/>
+          <p>{text}</p>
+        </>)
+        console.log("    Child render end")
+        return element
+      }
+
+      const App = () => {
+        console.log("App render start")
+        const [show, setShow] = React.useState(()=>{
+          console.log("App useState ")
+          return false // 기본값을 false로 줌
+        })
+        
+        React.useEffect(()=>{ // render 가 끝난 이후에 동작한다. why? 사이드 이펙트이기 때문에
+          console.log("App useEffect, no deps")
+
+          return ()=>{
+            console.log("App useEffect [CleanUp], no deps")
+          }
+        })
+        React.useEffect(()=>{
+          console.log("App useEffect, empty deps")
+          
+          return ()=>{
+            console.log("App useEffect [CleanUp], empty deps")
+          }
+        },[])
+        React.useEffect(()=>{
+          console.log("App useEffect, [show]")
+          
+          return ()=>{
+            console.log("App useEffect [CleanUp], [show]")
+          }
+        },[show])
+
+        function handleClick(){
+          setShow(prev => !prev) 
+          // useState로 만들어진 함수는 애초부터 인자로 이전값이 들어온다.
+          // 따라서 이전에 들어온 값을 반대로 만들어주면 된다.
+        }
+
+        console.log("App render end")
+
+        return (
+          <>
+            <button onClick={handleClick}>search</button>
+            {show ? <Child/> : null}
+          </>
+        )
+      }
+      ReactDOM.render(<App />, rootElement)
+      
+    </script>
+  </body>
+</html>

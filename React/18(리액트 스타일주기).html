@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+  <div id="root"></div>
+
+  <style>
+    .button {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      
+    }
+
+    .blue {
+      background-color: #008CBA;
+    }
+
+    .red {
+      background-color: #f44336;
+    }
+
+    .gray {
+      background-color: #e7e7e7;
+      color: black;
+    }
+
+    .black {
+      background-color: #555555;
+    }
+
+    /* Black */
+  </style>
+  <script type="text/babel">
+
+    // props ={className, style, children} // children은 여러가지와 그 외.. 라고 표현할 수 있다.
+    function Button({className="", color ,style, ...rest}){
+      return <button className={`button${className===""?"" :` ${className}`} ${color}`} 
+      style={{fontSize:30 ,borderRadius:8, ...style}} 
+      {...rest} /> 
+      // props를 감싸줘야한다.
+      // 객체로 감싸서 전달해줘야한다. 
+      // props객체에서 뒤에있는 값이 앞의 값을 덮어쓴다. (중복된 key의 경우 원래key값이 사라지고 뒤의값으로 덮어짐)
+      // 리액트에서 스타일을 할때에 우선순위가 있다. 
+      // class를 제일 앞에, style을 그 다음에, 사용자 스타일을 마지막에 해준다.
+    }
+
+    const rootElement = document.getElementById('root');
+
+    const element = (
+      <>
+        <Button style={{borderRadius:'50%'}}>Green</Button>
+        <Button color="blue">Blue</Button>
+        <Button color="red">Red</Button>
+        <Button color="gray">Gray</Button>
+        <Button color="black">Black</Button>
+
+      </>
+    )
+
+    ReactDOM.render(element,rootElement)
+
+    // 리액트에서 스타일 입히기
+    // - className : 문자열
+    // - style : 객체, 카멜케이스, className보다 먼저
+  </script>
+</body>
+
+</html>

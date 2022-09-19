@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      /*
+      컴포넌트 : 엘리먼트의 집합, 엘리먼트는 작은 태그들을 가리킨다. , 컴포넌트도 엘리먼트의 집합이다.
+
+      useState : 상태값을 관리해 주는 훅
+      -useState를 사용하면 두가지 배열 값이 나오는데, 첫번째는 state의 값 두번쨰는 setState의 값(update시켜줄)
+
+      사이드 이펙트 : 부수 효과, 부산물
+      useState는 lazy initialize를 할 수 있다. useState안의 인자로 함수를 넣어주면 된다.
+      useEffect에는 dependency array가 있다. 
+
+      커스텀 훅 만들기
+      - 반복되는 코드가 있을 경우, 함수로 빼준다.
+      - 훅들이 반복되는 경우 custom Hook을 만들어준다.
+      
+      Hook flow 이해하기
+      -hook flow란 hook들의 호출 타이밍
+      -useState는 setState를 이용할 떄 prev(이전값)이 미리 주입되어있다.```
+
+      - useEffect는 render가 끝난 뒤 실행
+      - update시 App의 render가 가장 먼저 실행되고 종료된다, 그리고 children의 render가 실행되고
+      - children 의 useEffect가 실행됨, 마지막으로 App의 useEffect가 실행
+      - cleanup는 useEffect가 동작하기전에 먼저 실행된다.(맨 처음에는 실행안됨.)
+      
+      */
+    </script>
+  </body>
+</html>

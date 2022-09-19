@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+  <div id="root"></div>
+
+  
+  <script type="text/babel">
+  /*
+  왜 document.getElementById를 사용하지않고 useRef를 사용할까?
+  리액트는 스스로 element들을 최적화해서 관리하는데 우리가 dom을 이용해서 직접 다루면
+  오히려 비효율적으로 될 수 있어서
+  리액트가 스스로 다루도록 만들기 위해서 사용한다.
+  
+  useRef는 element외에도 접근할 수 있다.
+  저장공간으로 제공된다.
+  map형식으로 저장되는거 같다. 어떤값을 특정할수있고, value.current로 접근할 수 있다.
+  
+  */
+    
+    
+  </script>
+</body>
+
+</html>
