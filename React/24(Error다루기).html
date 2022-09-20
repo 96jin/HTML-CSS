@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+
+    /*
+    에러처리
+    try{}
+    catch(error){}
+    */
+
+    // child를 감싸놓고 error가 발생하면 특정 화면을 보여주겠다.
+    // ErrorBoundary는 클래스로 만들어야한다.
+    // 왜? 에러가 났을때 상태값을 처리하는 함수를 클래스 컴포넌트에서만 제공하기때문에
+    class ErrorBoundary extends React.Component{
+      state = {error : null}
+      static getDerivedStateFromError(error){
+        return {error}
+      }
+      render(){
+        const {error} = this.state
+        if(error){
+          return <this.props.fallback error={error}/>
+        }
+        return this.props.children
+      }
+    }
+
+    const rootElement = document.getElementById('root')
+    const App = () => { 
+    
+      const Child = () => {
+        throw new Error("Something wrong...")
+        return <p>child</p>
+      }
+      
+      const Fallback = ({error}) => {
+        // alert(error.message)
+        return <p>{error.message}</p>
+      }
+
+      return (
+        <>
+          <p>App</p>
+          <ErrorBoundary fallback={Fallback}>
+            <Child/>
+          </ErrorBoundary>
+        </>
+      )
+      
+      }
+    
+
+    ReactDOM.render(<App />, rootElement)
+
+    /*
+    ErrorBoundary 는 catch error해서 화면 보여준다.
+    Fallback는 Error가 났을떄 보여줄 컴포넌트
+    */
+
+  </script>
+</body>
+
+</html>

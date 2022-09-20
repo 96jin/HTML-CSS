@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+    /*
+    리액트 Element에 스타일 입히기
+    - className : 문자열
+    - style : 객체, 카멜케이스, className보다 우선
+
+    Ref로 Dom 다루기
+    - Vanilla JS : document.get~ , document.query~
+    - React : useRef / ref 사용
+    - useRef 로 지정된 값에 .current를 붙여야 접근가능
+
+    Form 다루기
+    - onSubmit : event.preventDefault() -- 기본 동작 막음
+    - event.target.elements : console.dir을 통해서 even.target의 구조를 볼 수 있다.
+    - Validation : onChange
+    - controlled : input의 value를 직접 관리
+    
+    Error 다루기
+    - ErroeBoundary : Catch Error해서 화면 보여준다.
+    - Fallback : Error가 났을 떄 보여줄 컴포넌트
+    
+    */
+  
+  </script>
+</body>
+
+</html>
