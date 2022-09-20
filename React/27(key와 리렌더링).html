@@ -24,14 +24,46 @@
   
     const rootElement = document.getElementById("root")
     const todos = [
-      {id:1, value:"Wash dishes"},
-      {id:2, value:"Clean the bed"},
-      {id:3, value:"Running"},
-      {id:4, value:"Learning"},
+      [
+        {id:1, value:"Wash dishes"},
+        {id:2, value:"Clean the bed"},
+        {id:3, value:"Running"},
+        {id:4, value:"Learning"}
+      ],
+      [
+        {id:4, value:"Learning"},
+        {id:1, value:"Wash dishes"},
+        {id:2, value:"Clean the bed"},
+        {id:3, value:"Running"},
+      ],
+      [
+        {id:3, value:"Running"},
+        {id:4, value:"Learning"},
+        {id:1, value:"Wash dishes"},
+        {id:2, value:"Clean the bed"},
+      ],
+      [
+        {id:2, value:"Clean the bed"},
+        {id:3, value:"Running"},
+        {id:4, value:"Learning"},
+        {id:1, value:"Wash dishes"},
+      ],
     ]
 
     const App = () =>{
-      const [items, setItems] = React.useState(todos)
+      const [items, setItems] = React.useState(todos[0])
+
+      React.useEffect(() => {
+        const interval = setInterval(()=>{
+          const random = Math.floor(Math.random()*todos.length)
+          setItems(todos[random])
+        },1000)
+
+        return () => {
+          clearInterval(interval)
+        }
+      },[])
+
       const handleDoneClick = (todo) => {
         setItems(item => items.filter((item) => item !== todo)) // 클릭된 /todo랑 다른값들을 다시 items에 넣어준다.
       }
@@ -44,11 +76,15 @@
 
       return (
         <>
-          {items.map((todo) => (
-            <div key={todo.id}>
-            <span>{todo.value}</span>
-            <button onClick={() => handleDoneClick(todo)}>Done</button>
+          {items.map((todo,index) => (
+            // 배열이 재배열될때에는 바뀌지 않는 고유의 값으로 주는게 효율적이다.
+            // 그냥 index로 주면 그 배열의 인덱스가 계속 바뀌면서 중복되는 값이 되기때문에 특정하기 힘들다.
+            <div key={todo.value}>  
+            <button onClick={() => handleDoneClick(todo)}>
+              {todo.value}
+              </button>
             </div>))}
+            <br/>
             <button onClick={handleRestoreClick}>Restore</button>
 
         </>
