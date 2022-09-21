@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+  
+  /*
+    id / password / butotn 입력창 만들고,
+    둘 다 입력되었을 때만 button이 기능하도록 한다.
+
+    상태 끌어올리기
+    - 형제 컴포넌트의 상태 궁금하다 -> 필요하면 부모로 lifting up (끌어 올리는것)
+    - Props drilling -> 과도한 lifting은 drilling을 야기  (props로 자식에게 상태를 넘겨주는것을 drilling)
+  */
+
+    const rootElement = document.getElementById("root")
+  
+    const Id = () => {
+      const [id, setId] = React.useState("")
+
+      const handleIdChange = (event) => {
+        setId(event.target.value)
+        console.log(`length : ${event.target.value.length}`)
+      }
+      return (
+        <>
+          <label>ID : </label>
+          <input onChange={handleIdChange} />
+        </>
+        )
+    }
+
+    const Password = () => {
+      const [password, setPassword] = React.useState("")
+
+      const handlePwChange = () => {
+        setPassword(event.target.value)
+      }
+      return (
+        <>
+          <label>PW : </label>
+          <input onChange={handlePwChange} type="password" />
+        </>
+        )
+    }
+
+
+    const App = () => {
+      const handleLoginClick = () => {
+        alert(`id : ${id} , pw : ${password}`)
+      }
+      return (
+        <>
+          <Id/>
+          <br/>
+          <Password/>
+          <br/>
+          <button disabled={true} onClick={handleLoginClick}>LOGIN</button>
+        </>
+        )
+    }
+
+    ReactDOM.render(<App/>,rootElement)
+
+
+
+  </script>
+</body>
+
+</html>
