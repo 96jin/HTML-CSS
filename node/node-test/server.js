@@ -1,6 +1,6 @@
 // express 는 웹 프레임워크이다.
 // get, post, put, delete ,,, 
-// tcp ip listen : 통신
+// tcp ip listen : 통신, TCP IP 에서 서버와 클라이언트 동작방식
 
 // -----server 만들기-----
 
