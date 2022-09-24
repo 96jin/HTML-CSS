@@ -24,6 +24,7 @@ app.get('/api/person',(req,res)=>{
   res.send('All person!')
 })
 
+// 콜론(:) 을 붙이면 key value 형태로 값이 저장된다.
 app.get('/api/person1/:name',(req,res)=>{
   const name = req.params.name
   // request parameters name
