@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script> <!-- babel script -->
+
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+  
+  /*
+  fetch : 네트워크 통신과 관련된것
+
+  */
+
+    const rootElement = document.getElementById("root")
+  
+    const App = () => {
+      const [data, setData] = React.useState(null)
+      const [error, setError] = React.useState(null)
+
+      React.useEffect(()=>{
+        fetch(
+          'https://raw.githubusercontent.com/techoi/raw-data-api/main/simple-api.json'
+          )
+        .then((response) => 
+          response.json())
+        .then((myJson) => 
+          setData(myJson.data))
+        .catch((error) => 
+          setError(error.message))
+      },[])
+
+      if(error!=null){
+        return <p>{error}</p>
+      }
+
+      if(data == null){
+        return <p>Loading...</p>
+      }
+
+      return (
+        <>
+          <div>
+            <p>People</p>
+            <p>{JSON.stringify(data, null, 2)}</p>
+            {data.people.map((person) => (
+              <>
+              <span>name: {person.name} </span>
+              <span>age: {person.age}</span><br/>
+              </>
+              ))}
+          </div>
+        </>
+        )
+    }
+
+    ReactDOM.render(<App/>,rootElement)
+
+
+
+  </script>
+</body>
+
+</html>
