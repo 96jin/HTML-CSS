@@ -19,7 +19,7 @@
   <script type="text/babel">
   
   /*
-  fetch : 네트워크 통신과 관련된것
+  fetch : 네트워크 통신 도구
 
   */
 
@@ -53,7 +53,7 @@
         <>
           <div>
             <p>People</p>
-            <p>{JSON.stringify(data, null, 2)}</p>
+            <p>{JSON.stringify(data, null,1)}</p>
             {data.people.map((person) => (
               <>
               <span>name: {person.name} </span>
@@ -62,6 +62,7 @@
               ))}
           </div>
         </>
+        // JSON.stringify(data, null, 2) : null(space) 2칸을 들여쓰기 한다.
         )
     }
 
