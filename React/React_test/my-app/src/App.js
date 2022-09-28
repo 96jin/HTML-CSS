@@ -1,6 +1,9 @@
 
 import './App.css';
-import Condition from './components/2-8.ConditionalRendering/Condition'
+import ControlledComponent from './components/2-10.Form/ControlledComponent';
+import UncontrolledComponent from './components/2-10.Form/UncontrolledComponent';
+// import List from './components/2-9.List/List';
+// import Condition from './components/2-8.ConditionalRendering/Condition'
 // import Event from './components/2-7.Event/Event'
 // import ClassComponent2 from './components/2-6.LifeCycle/ClassComponent2'
 // import Extraction from './components/2-4.Props/Extraction/Extraction'
@@ -11,7 +14,10 @@ import Condition from './components/2-8.ConditionalRendering/Condition'
 function App() {
   return (
     <div className="App">
-      <Condition/>
+      <UncontrolledComponent/>
+      <ControlledComponent/>
+      {/* <List/> */}
+      {/* <Condition/> */}
       {/* <Event/> */}
       {/* <ClassComponent2 />
       <FunctionalComponent/>
