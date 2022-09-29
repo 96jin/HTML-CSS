@@ -1,7 +1,10 @@
 
 import './App.css';
-import ControlledComponent from './components/2-10.Form/ControlledComponent';
-import UncontrolledComponent from './components/2-10.Form/UncontrolledComponent';
+import WelcomeDialog from './components/3-5.Composition/WelcomeDialog';
+// import Reducer from './components/3-3.Hooks/Reducer'
+// import State from './components/3-3.Hooks/State';
+// import ControlledComponent from './components/2-10.Form/ControlledComponent';
+// import UncontrolledComponent from './components/2-10.Form/UncontrolledComponent';
 // import List from './components/2-9.List/List';
 // import Condition from './components/2-8.ConditionalRendering/Condition'
 // import Event from './components/2-7.Event/Event'
@@ -14,8 +17,11 @@ import UncontrolledComponent from './components/2-10.Form/UncontrolledComponent'
 function App() {
   return (
     <div className="App">
-      <UncontrolledComponent/>
-      <ControlledComponent/>
+      <WelcomeDialog/>
+      {/* <Reducer/> */}
+      {/* <State/> */}
+      {/* <UncontrolledComponent/>
+      <ControlledComponent/> */}
       {/* <List/> */}
       {/* <Condition/> */}
       {/* <Event/> */}
