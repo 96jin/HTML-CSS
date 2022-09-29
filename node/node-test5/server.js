@@ -71,12 +71,13 @@ app.get('/car/update/:name&:price', (req,res)=>{
 app.get('/car/delete/:name', (req,res)=>{
   const name = req.params.name
 
-  for(let i=0; i<carList.length; i++){
-    if(name === carList[i].name){
+  // for(let i=0; i<carList.length; i++){
+  //   if(name === carList[i].name){
       // carList.splice(i,1)
       carList = carList.filter(data => data.name!=name)
-    }
-  }
+      // filter를 쓰면 for문으로 돌면서 비교할 필요가 없다.
+  //   }
+  // }
   console.log('삭제 완료')
   for(let i=0; i<carList.length; i++){
     console.log(carList[i].name)
