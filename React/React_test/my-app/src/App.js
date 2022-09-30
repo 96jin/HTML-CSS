@@ -1,6 +1,10 @@
 
 import './App.css';
-import WelcomeDialog from './components/3-5.Composition/WelcomeDialog';
+import Input from './components/3-7.HOC/Input';
+import Button from './components/3-7.HOC/Button';
+// import ThankyouDialog from './components/3-6.Composition2/ThankyouDialog';
+// import Dialog from './components/3-6.Composition2/Dialog';
+// import WelcomeDialog from './components/3-5.Composition/WelcomeDialog';
 // import Reducer from './components/3-3.Hooks/Reducer'
 // import State from './components/3-3.Hooks/State';
 // import ControlledComponent from './components/2-10.Form/ControlledComponent';
@@ -17,7 +21,13 @@ import WelcomeDialog from './components/3-5.Composition/WelcomeDialog';
 function App() {
   return (
     <div className="App">
-      <WelcomeDialog/>
+      <Input/>
+      <br/>
+      <br/>
+      <Button/>
+      {/* <ThankyouDialog/> */}
+      {/* <Dialog/> */}
+      {/* <WelcomeDialog/> */}
       {/* <Reducer/> */}
       {/* <State/> */}
       {/* <UncontrolledComponent/>
