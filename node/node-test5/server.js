@@ -8,7 +8,6 @@ let carList = [
   {name : '소나타', price : '3000만', eff : '12.8km'},
   {name : '아반떼', price : '3500만', eff : '13.2km'},
   {name : '투싼', price : '3800만', eff : '13.6km'},
-
 ]
 
 app.get('/',(req,res)=>{
