@@ -264,10 +264,10 @@ insert into emp values
 (7900,'james','clerk',null)
 ;
 
-select *
+select empno,ename,job,dname,loc
 from dept as d
 join emp as e on e.deptno = d.deptno
-order by d.deptno;
+order by e.empno;
 
 
 
