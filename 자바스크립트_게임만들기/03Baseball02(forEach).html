@@ -70,12 +70,13 @@
       let strike = 0
       let ball = 0
       
-      /*
+      // -----------forEach 문-----------
+      /* 
       answer.forEach((element,i) => {    
       // forEach 문 적용.배열에 있는 요소들을 순회하면서 element(요소), i (인덱스) 가 들어간다
         const index = value.indexOf(element)
         if(index > -1){
-          if (index === 1 ){
+          if (index === i ){
             strike += 1
           }
           else{
@@ -83,6 +84,14 @@
           }
         }
       })  
+      */
+
+      // -----------map 함수-----------
+      /*
+      어떤 배열에 있는 모든 요소들의 값을 변경해서 만든 새로운 배열을 써야할 때가 있을 떄 사용.
+      이때 루프를 사용하여 배열에 대해 수동으로 반복 처리하는 대신, Array.map()메서드를 사용하면 된다.
+      arr.map( (element, index, array) => {} )
+      - 1개의 인자만 적히면 element, 2개의 인자가 적히면 element, index, 3개의 인자가 쓰이면 element, index, array로 인식
       */
     
       for(let i = 0; i < answer.length; i++){
