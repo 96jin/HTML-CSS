@@ -9,7 +9,7 @@
 <body>
   <script>
     /*
-    npm install react-create-app (폴더이름) 으로 폴더이름의 리액트 app 생성
+    npx react-create-app (폴더이름) 으로 폴더이름의 리액트 app 생성
 
     ---Moment---
     Moment Library : Date / Time 라이브러리
@@ -23,6 +23,7 @@
       : 섬머타임의 경우 / 윤년의 경우
 
     - Time zone / Format / Strict mode forgiving mode
+
 
     ---dayjs---
     npm install dayjs 로 라이브러리 설치해준다.
@@ -40,8 +41,18 @@
 
     커버리지가 가장 높은 라이브러리
     Object Oriented (객체지향) 이 아니라 함수형이다.
+    함수형이므로 new Date() 로 먼저 생성해주고나서 format(new Date()) 형식으로 묶어야한다.
+
+    타임존 : date-fns-tz 설치
+    Format / 비교 : 원하는 스타일로 표기 가능
+    포괄적이다 : immutable / Tree shaking 까지 가능
+    필요한 함수별로 import 하면 돼서 용량 조절 가능
 
 
+    ------ 라이브러리 고르는 기준 ------
+    기능 / 성능 / 번들 사이즈 / tree shaking(안쓰는 기능은 빌드하지 않기)
+
+    문서 가독성 / 인기 / 관리 상태(최근 관리) / 관리 주체
 
     */
   </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    리액트를 쓰면서 css를 사용하면서의 문제점
+    - Global Namespace : 글로벌 변수를 지양해야하는 JS와 대치
+    - Dependancies : css간의 의존 관리
+    - Dead Code Elimination : 안쓰는 css를 인지하기 어렵다
+    - Minification : 클래스 이름 최소화
+    - Sharing Constants : JS의 코드와 값을 공유하고 싶음
+    - Non-deterministic Resolution : css 파일 로드 타이밍 이슈
+    - Isolation (격리) 시키기 힘들다
+
+    이러한 문제점들 때문에 css in Js 가 나옴 -> 대표적으로 styled-components가 있다.
+    
+    스타일드 컴포넌트 (styled-components)
+    - Automatic critical CSS : 자동 style injects & 코드 스플릿 -> 사용자한테 작은 사이즈의 꼭 필요한 스타일들만 제공
+    - No class name bugs : unique / overlap x / misspellings
+    - Easier deletion of CSS : tied to a specific component -> 쓰지 않는 컴포넌트들을 표시해줘서 지우기 쉽다.
+    - Simple dynamic styling : props / global theme
+    - Painless maintenance : styling affection your component -> 스타일링을 한곳에서 볼 수 있어서 관리 용이
+    - Automatic vendor prefixing : curren standard only -> 벤더도 제공되기때문에 standard만 주면 된다
+
+    스타일들을 style 태그로 분리
+    사용법 : styled.{element}``
+    styled(스타일드 컴포넌트) : 상속 (extends)
+
+
+    */
+  </script>
+</body>
+</html>

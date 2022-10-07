@@ -14,6 +14,10 @@ import timezone from 'dayjs/plugin/timezone'
 import {add , addWeeks, differenceInHours, format, sub} from 'date-fns'
 import {ko} from 'date-fns/locale'
 // 한국어도 import 해줘야한다.
+import {format as timeZoneFormat, toDate} from 'date-fns-tz'
+// timezone import 하기 전에 date-fns-tz를 설치해줘야한다.
+// timezone import 하는데, 위에서 이미 format을 import 했으니 timeZoneFormat 로 다르게 이름지어준다.
+// toDate 함수를 import 해서 timezone을 설정할 수도 있다.
 
 // 다시 dayjs
 dayjs.locale('ko')
@@ -55,9 +59,14 @@ const cloneNewDateFnsDate = addWeeks(newDateFnsDate, 1)
       <div>Summer Time (New-york)</div>
       <div>{dayjs.tz.guess({})}</div>
       <div>2018년 3월 10일 13시에 하루 더하기 : 
-        {dayjs.tz('2018-03-10 13:00:00', 'America/New_York').add(1,'day').format()}</div>
+        {timeZoneFormat(add(new Date('2018-03-10 13:00:00'),{days : 1}) , 'yyyy-MM-dd HH:mm:ssXXX',{timeZone:'America/New_York',})}</div>
+      
+      <br />
+      <div>{format(toDate(new Date('2018-03-10 13:00:00'),{timeZone : 'Ameriaca/New_York'}),'yyyy-MM-dd HH:mm:ssXXX')}</div>
+      <br />
+      
       <div>2018년 3월 10일 13시에 24시간 더하기 : 
-        {dayjs.tz('2018-03-10 13:00:00', 'America/New_York').add(24,'hour').format()}</div>
+        {timeZoneFormat(add(new Date('2018-03-10 13:00:00'),{hours : 24}), 'yyyy-MM-dd HH:mm:ssXXX',{timeZone:'America/New_York',})}</div>
         
         <br />
 
