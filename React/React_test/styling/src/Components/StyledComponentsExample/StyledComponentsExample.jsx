@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { createGlobalStyle, keyframes, ThemeProvider } from 'styled-components'
 
 // styled-components는 style 이 들어가는 react 컴포넌트를 만들어준다. 
 // 스타일드 컴포넌트를 만들어 줄 때에는 render method 바깥에다가 만들어주는것이 좋다.
@@ -61,25 +61,95 @@ const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
   }
 `
 
-
 // props.children.split('').reverse() -> 반대로 뒤집는다.
 const ReversedButton = props => <Button {...props} children={props.children.split('').reverse()} />
 
+const Input = styled.input.attrs(props => ({
+  type: "text",
+  size: props.size || "1em",
+}))`
+  border: 2px solid palevioletred;
+  margin: ${props => props.size};
+  padding: ${props => props.size};
+`;
+
+// Input's attrs will be applied first, and then this attrs obj
+const PasswordInput = styled(Input).attrs({
+  type: "password",
+})`
+  // similarly, border will override Input's border
+  border: 2px solid aqua;
+`;
+
+// Create the keyframes
+// keyframes도 import 해주어야한다.
+// keyframes는 animation을 위한 도구이다.
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+`;
+
+// Define our button, but with the use of props.theme this time
+const Button2 = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+
+  /* Color the border and text with theme.main */
+  color: ${props => props.theme.color};
+  border: 2px solid ${props => props.theme.borderColor};
+`;
+
+// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
+const defaultTheme = {
+  color : 'green',
+  borderColor : 'green',
+}
+
+// Define what props.theme will look like
+const redTheme = {
+  color: "red",
+  borderColor : 'red',
+};
+
+// 모든 버튼에 적용
+const GlobalStyle = createGlobalStyle`
+  button {
+    background-color: pink;
+  }
+`
+
 export default function StyledComponentsExample() {
+  const [theme, setTheme] = React.useState(defaultTheme)
   
   // Use Title and Wrapper like any other React component – except they're styled!
     return (
       <>
-        <>
-          <Thing>Hello world!</Thing>
-          <Thing>How ya doing?</Thing>
-          <Thing className="something">The sun is shining...</Thing>
-          <div>Pretty nice day today.</div>
-          <Thing>Don't you think?</Thing>
-          <div className="something-else">
-            <Thing>Splendid.</Thing>
-          </div>
-        </>
+        <div>
+          <GlobalStyle/>
+          <button onClick={()=>{setTheme(redTheme)}}>red</button>
+          <button onClick={()=>{setTheme(defaultTheme)}}>green</button>
+
+          {/* ThemeProvider로 감싸면 아래 컴포넌트의 props를 모두 theme로 준다.  */}
+          <ThemeProvider theme={theme}>
+            <Button2>Normal</Button2>
+            <Button2>Themed</Button2>
+          </ThemeProvider>
+        </div>
       {/* <Wrapper>
       <Title>
         Hello World!

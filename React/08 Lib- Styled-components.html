@@ -9,6 +9,7 @@
 <body>
   <script>
     /*
+    ---------styled-components---------
     리액트를 쓰면서 css를 사용하면서의 문제점
     - Global Namespace : 글로벌 변수를 지양해야하는 JS와 대치
     - Dependancies : css간의 의존 관리
@@ -19,6 +20,8 @@
     - Isolation (격리) 시키기 힘들다
 
     이러한 문제점들 때문에 css in Js 가 나옴 -> 대표적으로 styled-components가 있다.
+
+    npm install --save styled-components 로 설치한다.
     
     스타일드 컴포넌트 (styled-components)
     - Automatic critical CSS : 자동 style injects & 코드 스플릿 -> 사용자한테 작은 사이즈의 꼭 필요한 스타일들만 제공
@@ -32,8 +35,47 @@
     사용법 : styled.{element}``
     styled(스타일드 컴포넌트) : 상속 (extends)
 
+    & : 가상 엘리먼트 / 가상 선택자 , 자기 자신(컴포넌트)을 뜻함
+    Global style : 전역 스타일
+    attrs : props addition (props를 준다.)
+    keyframes / ThemeProvider : Animation / Theme 를 set하는데에 쓴다.
 
     */
+
+// ---------리액트용 @emotion/react---------
+
+  /**  @jsxImportSource @emotion/react */
+//  - cra(Create React App) 으로 만든 프로젝트 안에서는 위의 import를 써라
+
+    /*
+    css props : like style props
+    - 마치 style props 와 비슷하다.
+    ex) Object Styles : css = {{fontSize : 12}}
+        String Styles : css = {css`font-size: 12px`}
+        로 쓸 수 있다.
+    
+    auto vendor-prefix / nested selectors / media queries
+
+    SSR with zero configuration
+
+    Styled Components 와 유사한 기능 +@ 제공
+
+    Composing dynamic styles
+
+    as prop
+
+    Nesting Components
+
+    emotion 요약
+    - react에 특화 : @emotion / react
+    - css props : jsx를 대체함
+    - styled components : styled-component + @
+    - composition : css안에서 css 사용
+
+    */
+    
+
+    
   </script>
 </body>
 </html>
