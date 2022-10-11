@@ -4,7 +4,7 @@ import React from 'react'
 // 이 문장을 사용해야 import된다.
 // emotion/react 패키지안에서 jsx를 쓰겠다.
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { ClassNames, css, keyframes } from '@emotion/react'
 
 // emotion에서 styled component import 가능
 import styled from '@emotion/styled'
@@ -67,6 +67,31 @@ const ArticleText = props => (
   />
 )
 
+const bounce = keyframes`
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+`
+
+let SomeComponent2 = props => (
+  <div className={props.wrapperClassName}>
+    in the wrapper!
+    <div className={props.className}>{props.children}</div>
+  </div>
+)
+
 export default function EmotionExample() {
   return (
     <>
@@ -93,6 +118,27 @@ export default function EmotionExample() {
 
       <P>PPPP</P>
       <ArticleText>ArticleText</ArticleText>
+      <div
+        css={css`
+        animation: ${bounce} 2s ease infinite;
+        `}
+      >
+        some bouncing text!
+      </div>
+
+      <ClassNames>
+        {({ css, cx }) => (
+          <SomeComponent2
+            wrapperClassName={css({ color: 'green' })}
+            className={css`
+              color: hotpink;
+            `}
+          >
+            from children!!
+          </SomeComponent2>
+        )}
+      </ClassNames>
+
     </>
   )
 }
