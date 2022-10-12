@@ -23,6 +23,9 @@ export default function Example() {
       <p className='warning'>warning</p>
       <div className='square-av'></div>
       <div className='circle-av'></div>
+      <div className='sidebar'></div>
+      <div className='gray'>gray</div>
+      <div className='button'>button</div>
     </div>
   )
 }
