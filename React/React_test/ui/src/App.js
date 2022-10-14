@@ -10,11 +10,15 @@ import OnsenUiExample from './Components/OnsenUi/OnsenUiExample';
 import SemanticUiExample from './Components/SemanticUi/SemanticUiExample';
 import 'semantic-ui-css/semantic.min.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ReactBoostrap from './Components/ReactBootstrap/ReactBoostrap';
+
 function App() {
   return (
     // <OnsenUiExample/>
     <div className="App">
-      <SemanticUiExample/>
+      <ReactBoostrap/>
+      {/* <SemanticUiExample/> */}
       {/* <AntDesignExample/> */}
     </div>
   );
