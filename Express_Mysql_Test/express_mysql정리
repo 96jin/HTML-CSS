@@ -1,0 +1,12 @@
+프로젝트 폴더 생성
+
+npm install express
+npm install mysql
+
+express 기본 틀 만들기
+
+프로젝트 폴더에 server 폴더 생성하고
+server 폴더에 server.js 생성
+server 폴더 하위에 config 폴더 생성하고 db.js 생성
+
+db 기본 틀 만들어서 node 와 연결

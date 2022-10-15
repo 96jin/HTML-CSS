@@ -269,6 +269,36 @@ from dept as d
 join emp as e on e.deptno = d.deptno
 order by e.empno;
 
+create database node_db;
+
+use node_db;
+
+create table movie(
+	id int,
+    title varchar(30),
+    director varchar(30),
+    running_time int
+);
+
+
+insert into movie values(1,'반지의 제왕','김철수',120);
+insert into movie values(2,'인생은 아름다워','이민호',115);
+insert into movie values(3,'오펀 천사의 탄생','신동엽',125);
+
+select *
+from movie;
+
+-- ER_NOT_SUPPORTED_AUTH_MODE 에러 해결
+ALTER USER root@localhost
+  IDENTIFIED WITH mysql_native_password
+  BY '00000000';
+
+delete from movie where id=4;
+
+alter table movie add constraint primary key (id);
+
+
+
 
 
 
