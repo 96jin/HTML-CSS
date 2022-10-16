@@ -1,4 +1,6 @@
 import './App.css';
+import Contents from './components/Contents';
+import Footer from './components/Footer';
 import Header from './components/Header';
 // from 의 경로에서 Header 컴포넌트를 가져온다.
 import Slide from './components/Slide';
@@ -13,6 +15,8 @@ function App() {
     <div className="App">
       <Header style={{backgroundColor:'green', color:'white'}}/>
       <Slide/>
+      <Contents/>
+      <Footer/>
     </div>
   );
 }
