@@ -1,0 +1,21 @@
+import './App.css';
+import Header from './components/Header';
+// from 의 경로에서 Header 컴포넌트를 가져온다.
+import Slide from './components/Slide';
+
+function App() {
+  // 함수형 컴포넌트
+  // 원래는 APP.jsx 형식인데  APP.js 라고 해도 된다.
+  // jsx : JavaScript Extension
+  // App가 사실상 메인 컴포넌트이고 하위컴포넌트들을 App의 return안에 넣어준다.
+
+  return (
+    <div className="App">
+      <Header style={{backgroundColor:'green', color:'white'}}/>
+      <Slide/>
+    </div>
+  );
+}
+
+// App 컴포넌트를 외부로 보낸다. 그리고 index.js에서 import해서 사용
+export default App;
