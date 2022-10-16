@@ -1,6 +1,6 @@
-import { createPool } from 'mysql'
+let mysql = require('mysql')
 
-const db = createPool({
+const db = mysql.createPool({
   host:'localhost',
   user:'root',
   password:'00000000',
@@ -8,4 +8,4 @@ const db = createPool({
   port:4000
 })
 
-export defaultdb
+module.exports=db
