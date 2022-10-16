@@ -1,0 +1,47 @@
+#footer{
+  width:1200px;
+  height: 100px;
+}
+
+#footer>#logo{
+  width: 200px;
+  height: 100px;
+  float:left;
+}
+
+#footer>#copy{
+  width: 800px;
+  height: 100px;
+  float:left;
+}
+
+#footer>#sns{
+  width: 200px;
+  height: 100px;
+  float:left;
+}
+
+#footer>#logo>img{
+  position: relative;
+  top:25px;
+}
+
+#footer>#copy>address{
+  position: relative;
+  top:25px;
+  left:50px;
+}
+
+#footer>#sns{
+
+}
+
+#footer>#sns>ul{
+  position: relative;
+  left:10px;
+  top:20px;
+}
+#footer>#sns>ul>li{
+  float:left;
+  margin-right:10px;
+}

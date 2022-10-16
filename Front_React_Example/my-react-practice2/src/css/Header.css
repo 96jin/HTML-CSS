@@ -1,0 +1,70 @@
+#header{
+  width:1200px;
+  height: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+#header>#logo{
+  width:200px;
+  height: 100px;  
+  float:left; /*왼쪽부터 가로배치*/
+}
+
+#header>#logo>img{
+  position : relative;
+  top:25px;
+}
+
+#header>#nav{
+  width:1000px;
+  height: 100px;
+  float:left;
+}
+
+#nav{
+  padding-top:30px;
+  padding-right: 60px;
+  box-sizing: border-box;
+}
+
+#nav>#gnb{
+  float : right;
+}
+
+#gnb>li{
+  float:left;
+}
+
+#gnb>li>a{
+  display: block;
+  width: 100px;
+  height:40px;
+  text-align: center;
+  padding-top:10px;
+  box-sizing: border-box;
+  color:#222328;
+  font-weight: bold;
+}
+
+.lnb>li>a{
+  display: block;
+  width: 100px;
+  height:40px;
+  text-align: center;
+  padding-top:10px;
+  box-sizing: border-box;
+  color:#222328;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+#gnb li a:hover{
+  background-color: #222328;
+  color:#ffffff;
+}
+
+.lnb{
+  display:none;
+/* visilibity : hidden; 로도 쓰일 수 있다. */
+}
