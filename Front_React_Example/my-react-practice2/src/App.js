@@ -11,6 +11,7 @@ function App() {
   // jsx : JavaScript Extension
   // App가 사실상 메인 컴포넌트이고 하위컴포넌트들을 App의 return안에 넣어준다.
 
+  // 리액트에서 img src 사용할때에는 public 내부가 기본경로로 설정되어있다.
   return (
     <div className="App">
       <Header style={{backgroundColor:'green', color:'white'}}/>

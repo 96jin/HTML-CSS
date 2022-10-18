@@ -1,0 +1,62 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  width:100%;
+  height:2400px;
+  background-color: rgb(193, 187, 187);
+}
+
+div{
+  height:800px;
+}
+
+section{
+  height:800px;
+  background:url(https://www.starbucks.co.kr/common/img/main/mob_fav_prod_bg_new.jpg) center fixed no-repeat;
+  background-size: 100% auto;
+  background-position: 0% 25%;
+  position:relative;
+}
+section > img{
+  position:absolute;
+  left:55%;
+  top:30%;
+  width:42%;
+  height: auto;
+}
+
+h1{
+  font-family: sans-serif;
+  font-size:5em;
+  width:257px;
+  color:white;
+  position:absolute;
+  top:250px;
+  left:300px;
+  animation:slide 2s ease-out;
+}
+
+@keyframes slide{
+  from{
+    left:-100px;
+    opacity:0;
+  }
+  to{
+    left:300px;
+    opacity:1;
+  }
+}
+
+@keyframes backSlide{
+  from{
+    left:300px;
+    opacity:1;
+  }
+  to{
+    left:-100px;
+    opacity:0;
+  }
+}

@@ -6,6 +6,7 @@ export default function Header(props) {
   const lnbRef2 = React.useRef();
   const lnbRef3 = React.useRef();
   const lnbRef4 = React.useRef();
+  const lnbRef = React.useRef([])
 
   return (
     <header id="header">
@@ -16,14 +17,14 @@ export default function Header(props) {
         <ul id="gnb">
           <li
             onMouseOver={() => {
-              lnbRef1.current.style.display = "block";
+              lnbRef.current[0].style.display = "block";
             }}
             onMouseOut={() => {
-              lnbRef1.current.style.display = "none";
+              lnbRef.current[0].style.display = "none";
             }}
           >
             <a href="#">탑</a>
-            <ul className="lnb" ref={lnbRef1}>
+            <ul className="lnb" ref={el => lnbRef.current[0] =el}>
               <li>
                 <a href="#">블라우스</a>
               </li>

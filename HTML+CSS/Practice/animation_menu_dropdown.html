@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    div{
+      height: 30px;
+      width: 100px;
+      background-color: aquamarine;
+      position:relative;
+      z-index:2;
+    }
+    ul{
+      list-style: none;
+      padding:0;
+      background-color: bisque;
+      width:100px;
+      height:100px;
+      margin-top: 5px;
+      position: relative;
+      animation : dropMenu 1s ease-out forwards;
+      z-index:1;
+    }
+    li{
+      list-style: none;
+      margin: 0;
+      height: 25px;
+    }
+
+    @keyframes dropMenu{
+      from{
+        top: -100px;
+        opacity:1;
+      }
+      to{
+        top: 0px;
+        opacity:1;
+      }
+    }
+
+    @keyframes backDropMenu{
+      from{
+        top: 0px;
+        opacity:1;
+      }
+      to{
+        top: -100px;
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    menu
+  </div>
+    <ul>
+      <li>subMenu1</li>
+      <li>subMenu2</li>
+      <li>subMenu3</li>
+      <li>subMenu4</li>
+    </ul>
+
+    <script>
+      let $menu = document.querySelector('div')
+      let $subMenu = document.querySelector('ul')
+
+      $menu.addEventListener('mouseover', function(){
+        console.log($subMenu)
+        $subMenu.style.animation = animation = 'dropMenu 1s ease-out forwards'
+      })
+      $menu.addEventListener('mouseout', function(){
+        $subMenu.style.animation = 'backDropMenu 1s ease-out forwards'
+      })
+    </script>
+</body>
+</html>

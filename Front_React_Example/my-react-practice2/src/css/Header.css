@@ -62,9 +62,22 @@
 #gnb li a:hover{
   background-color: #222328;
   color:#ffffff;
+  transition:0.3s;
+}
+
+@keyframes slide-fade-in-dropdown-animation{
+  0%{
+    transform: translateY('-100%');
+  }
+  100%{
+    transform:translateY(0);
+  }
 }
 
 .lnb{
   display:none;
 /* visilibity : hidden; 로도 쓰일 수 있다. */
+}
+.lnb>li{
+  animation : slide-fade-in-dropdown-animation .4s ease;
 }
