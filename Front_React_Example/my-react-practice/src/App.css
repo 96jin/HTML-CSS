@@ -62,3 +62,16 @@ a{
   text-decoration: none;
   color:black;
 }
+
+.art{
+  width:150px;
+  height:50px;
+  border-bottom: 1px solid darkgray;
+  padding-top: 5px;
+  background-color: wheat;
+}
+
+.art:first-child{
+  border-top: 1px solid darkgray;
+  margin-top: 15px;
+}

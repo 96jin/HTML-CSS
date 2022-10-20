@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #circle1{
+      background-color: rgb(88, 126, 214);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      margin-left: 150px;
+      position:relative;
+    }
+
+
+    #circle{
+      width:300px;
+      height:300px;
+      border-radius: 42%;
+      background-color: rgb(36, 39, 212);
+      animation:move 8s infinite linear;
+      position:absolute;
+      top:-230px;
+      left:-98%;
+    }
+
+    #circle2{
+      width:200px;
+      height:200px;
+      border-radius: 45%;
+      background-color: rgb(3, 3, 84);
+      position:absolute;
+      top:-135px;
+      left:-52%;
+      animation:move 8s infinite linear;
+      /* opacity: 0; */
+    }
+    @keyframes move{
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    #box{
+      width: 100px;
+      height: 100px;
+      animation:move 3s infinite linear;
+      background-color: burlywood;
+      text-align: center;
+      padding-top:40px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+  <div id="circle1">
+    <div id="circle"></div>
+    <div id="circle2"></div>
+  </div>
+  <div id="box">8</div>
+<body>
+
+</body>
+
+</html>

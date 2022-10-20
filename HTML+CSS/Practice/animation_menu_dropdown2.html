@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div{
+        width:100px;
+        height:100px;
+        background-color: aquamarine;
+        transition:1s;
+      }
+      div:hover{
+        width :200px;
+        background-color: blue;
+      }
+      div:hover~ul{
+        opacity: 1;
+        
+      }
+      ul,li{
+        list-style:none;
+        padding:0;
+      }
+      a{
+        display:block;
+        text-decoration: none;
+      }
+      ul{
+        background-color: blueviolet;
+        width:100px;
+        opacity:0;
+        display:block;
+        margin:0;
+        transition:1s;
+      }
+      ul:hover{
+        opacity: 1;
+      }
+      li{
+        background-color: yellow;
+        width:100px;
+        }
+    </style>
+</head>
+<body>
+  <div>
+    menu1
+  </div>
+  <ul>
+    <li><a href="#"></a>ex1</li>
+    <li><a href="#"></a>ex2</li>
+    <li><a href="#"></a>ex3</li>
+    <li><a href="#"></a>ex4</li>
+  </ul>
+</body>
+</html>

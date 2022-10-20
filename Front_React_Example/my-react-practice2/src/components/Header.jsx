@@ -8,6 +8,10 @@ export default function Header(props) {
   const lnbRef4 = React.useRef();
   const lnbRef = React.useRef([])
 
+  const onMouseOver = (n) => () => {
+    lnbRef.current[n].style.display='block';
+  }
+
   return (
     <header id="header">
       <div id="logo">
@@ -40,15 +44,13 @@ export default function Header(props) {
             </ul>
           </li>
           <li
-            onMouseOver={() => {
-              lnbRef2.current.style.display = "block";
-            }}
+            onMouseOver={onMouseOver(1)}
             onMouseOut={() => {
-              lnbRef2.current.style.display = "none";
+              lnbRef.current[1].style.display = "none";
             }}
           >
             <a href="#">아우터</a>
-            <ul className="lnb" ref={lnbRef2}>
+            <ul className="lnb" ref={el => lnbRef.current[1] =el}>
               <li>
                 <a href="#">자켓</a>
               </li>
