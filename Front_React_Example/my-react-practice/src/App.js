@@ -13,40 +13,42 @@ function App() {
   // jsx : JavaScript Extension
   // App가 사실상 메인 컴포넌트이고 하위컴포넌트들을 App의 return안에 넣어준다.
   let inputRef = useRef()
-  let opRef = useRef()
+  let optionRef = useRef()
+  let divRef = useRef()
   
-  const [articleTitles, setArticleTitles] = useState(['서울역 3번출구','용산역 4번출구','강남역 2번출구'])
+  const [articleTitles, setArticleTitles] = useState(['리액트 공부하기','점심먹기','JS 작동원리 파악'])
   const [input, setInput] = useState(articleTitles)
   
   const handleOnInput = () => {
     console.log('input : '+input)
     
   }
-  const handleClickButton = () => {
+
+  function keyEffect(){
+    let changeIdx = optionRef.current.value
+    divRef.current.children[changeIdx].style.animation = ''
     const copyArticleTitles = [...articleTitles]
-    let changeIdx = opRef.current.value
     copyArticleTitles[changeIdx] = inputRef.current.value
     setInput(copyArticleTitles)
     setArticleTitles(copyArticleTitles)
     inputRef.current.value = ''
     inputRef.current.focus()
+    setTimeout(()=>{divRef.current.children[changeIdx].style.animation = 'color 2s'},0)
+  }
+
+  const handleClickButton = () => {
+    keyEffect()
   }
   const handleKeyDownEnter=(e)=>{
     if(e.keyCode === 13){
-      const copyArticleTitles = [...articleTitles]
-      let changeIdx = opRef.current.value
-      copyArticleTitles[changeIdx] = inputRef.current.value
-      setInput(copyArticleTitles)
-      setArticleTitles(copyArticleTitles)
-      inputRef.current.value = ''
-      inputRef.current.focus()
+      keyEffect()
     }
   }
   const handleClickSort = () => {
     const copyArticleTitles = [...articleTitles]
     copyArticleTitles.sort()
     setInput(copyArticleTitles)
-    console.log(opRef.current.value)
+    setArticleTitles(copyArticleTitles)
   }
 
   return (
@@ -55,24 +57,26 @@ function App() {
       <Slide/>
       <Contents/>
       <Footer/> */}
-      <button onClick={handleClickSort}>글자순정렬</button><br/>
-      <input onChange={handleOnInput} onKeyDown={handleKeyDownEnter} ref={inputRef}></input>
-      <br/>
-      <select ref={opRef}>
-        <option value='0'>1번</option>
-        <option value='1'>2번</option>
-        <option value='2'>3번</option>
-      </select>
-      <button onClick={handleClickButton}>게시판 이름 변경</button>
-      <div className='article'> 
-        <div className='art'>
-          {input[0]}
-        </div>
-        <div className='art'>
-          {input[1]}
-        </div>
-        <div className='art'>
-          {input[2]}
+      <div className='wrap'>
+        <input className='inputBox' onChange={handleOnInput} onKeyDown={handleKeyDownEnter} ref={inputRef}></input>
+        <select className='sel' ref={optionRef}>
+          <option value='0'>1번</option>
+          <option value='1'>2번</option>
+          <option value='2'>3번</option>
+        </select>
+        <button className='change' onClick={handleClickButton}>목록 변경</button>
+        <br/>
+        <button className='sort' onClick={handleClickSort}>정렬</button><br/>
+        <div className='article' ref={divRef}> 
+          <div className='art'>
+            {input[0]}
+          </div>
+          <div className='art'>
+            {input[1]}
+          </div>
+          <div className='art'>
+            {input[2]}
+          </div>
         </div>
       </div>
     </div>
