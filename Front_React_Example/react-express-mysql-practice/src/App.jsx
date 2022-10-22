@@ -42,7 +42,7 @@ function App() {
 
   const updateData = async() => {
     alert('updateData')
-    const updateObj = {id:3,director:'김하나', running_time:130}
+    const updateObj = {id:3,director:'성시경', running_time:130}
     const result = await axios.put('/movies',updateObj)
   }
 
