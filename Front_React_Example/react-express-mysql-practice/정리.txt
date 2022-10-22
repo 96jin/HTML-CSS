@@ -1,0 +1,29 @@
+npm install express
+npm install mysql
+npm install axios
+설치하면 package.json 의 dependencies 안에 생성된다.
+
+그리고 package.json에 프록시 설정 (react가 express를 찾아갈 수 있게)
+'proxy' : 'localhost:(express Port)
+
+cmd 창 두개 만들어서 서버와 클라이언트를 각각 실행시켜준다.
+
+node server.js / npm start
+
+
+
+
+React port : 3000
+
+Express port : 3500
+
+Mysql port : 4000 으로 설정해놓고 
+
+React와 Express 를 구동시켜준다.
+
+React 안에 Express가 등록되어있기 때문에 axios로 해당 경로를 찾아갈 수 있다.
+- package.json 안에 proxy를 db port말고 express port 로 설정해줘야 찾아갈 수 있다.
+
+XMLHttpRequest - 순수 자바스트립트 객체
+$.ajax - 제이쿼리에서 사용 (재료가 XMLHttpRequest)
+axios - 리액트에서 사용
