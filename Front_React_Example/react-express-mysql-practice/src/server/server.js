@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3500
 
 app.get('/',(req,res)=>{
     console.log('root')
-  })
+    })
 
 app.get('/movies',(req,res)=>{
     console.log('/movies')
