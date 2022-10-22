@@ -9,7 +9,7 @@ function App() {
     alert('selectAll')
     axios.get('/movies')
 
-    // 서버에 전송해서 응답
+    // 서버에 전송해서 응답d
     // package.json 에 proxy 설정해주면 앞의 경로를 생략가능
     // axios.get('/movies/')
   }
