@@ -60,21 +60,6 @@ insert into car(model,price,eff,unit,production_date) values
 ;
 
 
-select *
-from car;
-
-select *
-from car
-where price>2500;
-
-alter table car add column production_date date;
-
-update car set production_date = '2022-05-22' where model='k5';
-update car set production_date = '2022-04-13' where model='소나타';
-update car set model = '아반떼' where model='아반뗴';
-update car set production_date = '2022-08-04' where model='아반떼';
-update car set production_date = '2022-01-17' where model='그랜져';
-
 /*
 날짜, LIKE
 날짜 : DATE , TIME , DATETIME
@@ -297,8 +282,19 @@ delete from movie where id=4;
 
 alter table movie add constraint primary key (id);
 
+use node_db;
 
+create table cars(
+    model varchar(30),
+    provider varchar(30),
+    price int
+);
 
+insert into cars values 
+('소나타','현대',2500),
+('아반떼','현대',2300),
+('투싼','현대',2800);
 
+select * from cars;
 
 
