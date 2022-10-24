@@ -297,4 +297,4 @@ insert into cars values
 
 select * from cars;
 
-
+use practice;
