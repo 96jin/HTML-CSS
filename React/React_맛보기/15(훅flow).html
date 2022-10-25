@@ -46,19 +46,20 @@
           // useState로 만들어진 함수는 애초부터 인자로 이전값이 들어온다.
           // 따라서 이전에 들어온 값을 반대로 만들어주면 된다.
         }
+        console.log("App render end")
+      
         return (
           <>
             <button onClick={handleClick}>search</button>
             {show ? <>
               <input/>
               <p>ㅇㄹㅇㄹ</p>
-            </> : null}
-          </>
-        )
-      }
-      ReactDOM.render(<App />, rootElement)
-      console.log("App render end")
-      
+              </> : null}
+              </>
+              )
+            }
+            ReactDOM.render(<App />, rootElement)
+            
     </script>
   </body>
 </html>

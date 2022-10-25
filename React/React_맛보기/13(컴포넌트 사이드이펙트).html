@@ -32,6 +32,9 @@
         // 처음 값을 읽어오는데 시간이 좀 걸리더라도 arrow 함수를 이용해준다.
         // 이렇게 하면 조금 느리게 읽더라도 함수가 실행되면 값을 안정적으로 받아올 수 있다.
         // 새로고침 될 떄에만 이 함수가 실행되어 값을 받아온다.
+
+        // * 데이터를 먼저 받아오기때문에 제일 처음에 값을 못받아와서 오류가 생길 수 있다.
+        // * 그러므로 이렇게 해줌으로써 더 안정적이게 해준다. -> 렌더링 후에 실행된다.
         const[keyword, setKeyword] = React.useState(
           () => { return window.localStorage.getItem("keyword") }
           )
@@ -43,6 +46,8 @@
         React.useEffect(()=>{
           console.log("effect")
           window.localStorage.setItem("keyword", keyword)
+          // ↑ 이 함수는 그냥 있으면 렌더링 될 때 마다 실행된다.
+          // -> 불필요할때도 실행되므로 useEffect를 사용해서 내가 원하는 상태값이 변할떄에만 실행되게 할 수 있다.
         },[keyword,typing]) 
         // 배열에 주어진 인자가 변할때에만 useEffect가 동작, 빈배열을 넣으면 제일처음(새로고침)에만 동작
         // 그냥 공백으로 있으면 항상 동작

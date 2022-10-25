@@ -31,7 +31,7 @@
       function useLocalStorage(itemName, value = ""){ // value인자를 안넣어주면 default로 "" 를 넣어준다.
         const[state, setState] = React.useState(
           () => { return window.localStorage.getItem(itemName) || value}  // state의 값을 setState로 갱신
-        )
+        ) // 브라우저의 로컬 스토리지에 저장해 둘 수 있다. 마치 쿠키와 세션처럼
         React.useEffect(()=>{
           window.localStorage.setItem(itemName, state) // itemName에 저장된 값을 state로 설정해준다.
         },[state])
