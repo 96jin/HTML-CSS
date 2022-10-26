@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    .wrap{
+      width:100vw;
+      height: 100vh;
+      display:grid;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 100px auto 50px;
+      grid-template-areas: 
+      'header header'
+      'main side'
+      'footer footer'
+      ;
+    }
+    .common{
+      font-size: 1.2rem;
+      font-weight: bold;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .header{
+      background-color: black;
+      grid-area: header;
+      color:white;
+      /* grid-column:1 / span 4; */
+    }
+    .main{
+      background-color: rgb(228, 203, 203);
+      grid-area: main;
+      /* grid-column: 1/ 4; */
+    }
+    .side{
+      background-color: orange;
+      grid-area: side;
+      /* grid-column: 4/ span 1; */
+    }
+    .footer{
+      background-color: black;
+      grid-area: footer;
+      color:white;
+      /* grid-column : 1 / span 4; */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="common header">header</div>
+    <div class="common main">main</div>
+    <div class="common side">side</div>
+    <div class="common footer">footer</div>
+  </div>
+</body>
+</html>

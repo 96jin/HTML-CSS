@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{box-sizing: border-box;}
+    body{width:100vw; height:100vh; margin:0;}
+
+    .item{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      border:1px solid #181818;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .container{
+      display: grid;
+      /* grid-template-columns: 100px 100px 100px; */
+      grid-template-columns: repeat(5,1fr);
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      /* 비율로 나누는것 : fr */
+      
+      /* grid-template-rows: 100px 200px repeat(2,100px); */
+      grid-auto-rows: minmax(150px,auto);
+      /* 최소 150px, 내용물 많으면 자동으로 커짐 */
+
+      padding:10px;
+      grid-gap: 10px;
+    }
+
+    .item2{
+      /* grid-column-start: 2;
+      grid-column-end: 5; */
+      grid-column : 2/ span 3;
+      /* 축약해서 사용 가능 */
+      /* grid-row-start: 1;
+      grid-row-end: 3; */
+      grid-row:1/3;
+    }
+
+
+
+
+
+
+    .color1{
+      background-color: rgb(174, 154, 192); 
+        }
+    .color2{
+      background-color: rgb(179, 252, 230); 
+        }
+    .color3{
+      background-color: rgb(5, 83, 83);
+    }
+    .color4{
+      background-color: rgb(22, 119, 16);
+    }
+    .color5{
+      background-color: rgb(135, 108, 21);
+    }
+    .color6{
+      background-color: rgba(160, 203, 149, 0.678);
+    }
+    .color7{
+      background-color: rgb(184, 202, 96);
+    }
+    .color8{
+      background-color: rgb(226, 122, 43);
+    }
+    .color9{
+      background-color: rgb(190, 36, 31);
+    }
+    .color10{
+      background-color: rgb(54, 141, 157);
+    }
+  </style>
+</head>
+
+<body>
+<!-- 
+  grid도 flex와 마찬가지로 컨테이너에 display:grid 설정해야한다.
+  컨테이너에는 grid-template-columns : 열이 몇개있는지 (가로), 와
+  grid-template-rows : 행이 몇개있는지 (세로)
+  grid-template-areas 
+  grid-gap : 각각의 그리드의 갭을 설정할 수 있다.
+  grid-column-gap 와 grid-row-gap로 따로 설정할 수도 있다.
+
+  각각의 grid cell , 즉 자식 요소들은 얼마만큼의 크기를 , 몇개를 차지할건지 설정 가능
+  grid-column-start, grid-column-end 로 열 어디서부터 어디까지
+  grid-row-start, grid-row-end 로 행 어디서부터 어디까지 지정 가능
+  grid line은 제일 왼쪽, 제일 위쪽 기준 1부터 시작한다. 제일 끝 기준은 -1부터 시작
+  grid-template-areas 와 함께 쓰는 grid-area로 어느 영역에 표시할 지 지정 가능
+-->
+
+<div class="container">
+  <div class="item color1">Item1</div>
+  <div class="item item2 color2">Item2</div>
+  <div class="item color3">Item3</div>
+  <div class="item color4">Item4</div>
+  <div class="item color5">Item5</div>
+  <div class="item color6">Item6</div>
+  <div class="item color7">Item7</div>
+  <div class="item color8">Item8</div>
+  <div class="item color9">Item9</div>
+  <div class="item color10">Item10</div>
+</div>
+</body>
+
+</html>

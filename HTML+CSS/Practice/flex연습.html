@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      background-color: beige;
+      height:100vh;
+      /* 100%는 부모가 갖는 높이의 100%을 채우겠다는 뜻
+      container의 부모는 body이고 body의 부모는 html이다
+      */
+      display:flex;
+      flex-direction:row;
+      flex-wrap: wrap;
+      /* flex-flow: column nowrap; */
+      justify-content: space-evenly;
+      /* 중심축에서 아이템을 어떻게 배치할 지 결정
+      space-around : 양끝은 조금, 가운데 일정
+      space-evenly : 양끝이랑 가운데 똑같은 간격으로
+      space-between : 제일 왼,오른쪽은 딱 붙이고 사이간격 일정
+      */
+
+      /* align-items:flex-start; */
+      /* 한줄에 있는 아이템들의 기준점을 잡아준다. */
+
+      align-content:flex-start;
+      /* 아이템들을 전체적으로 어떻게 배치할지 결정 */
+    }
+    .item{
+      width:40px;
+      height:40px;
+    }
+
+    .item1{
+      background-color: blueviolet;
+      flex-grow:2;
+      /* item에 적용, 화면이 넓어지면 같이 넓어진다. */
+
+      flex-shrink: 1;
+      /* 화면이 점점 작아지면 같이 작아진다. */
+      
+      flex-basis:40%;
+      /* 각 아이템들의 크기를 상세하게 나눌 수 있다. */
+
+      align-self:center;
+      /* align-contents가 없을때, 아이템 하나의 위치를 배치할 수 있다. */
+    }
+    .item2{
+      background-color: rgb(174, 154, 192); 
+      flex-grow:1;
+    }
+    .item3{
+      background-color: rgb(5, 83, 83);
+      flex-grow:2;
+    }
+    .item4{
+      background-color: rgb(22, 119, 16);
+    }
+    .item5{
+      background-color: rgb(135, 108, 21);
+    }
+    .item6{
+      background-color: rgba(160, 203, 149, 0.678);
+    }
+    .item7{
+      background-color: rgb(184, 202, 96);
+    }
+    .item8{
+      background-color: rgb(226, 122, 43);
+    }
+    .item9{
+      background-color: rgb(190, 36, 31);
+    }
+    .item10{
+      background-color: rgb(54, 141, 157);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <!-- <div class="item item4">4</div>
+    <div class="item item5">5</div>
+    <div class="item item6">6</div>
+    <div class="item item7">7</div>
+    <div class="item item8">8</div>
+    <div class="item item9">9</div>
+    <div class="item item10">10</div> -->
+  </div>
+</body>
+
+</html>
