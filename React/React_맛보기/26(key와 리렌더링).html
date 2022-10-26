@@ -33,10 +33,10 @@
     const App = () =>{
       const [items, setItems] = React.useState(todos)
       const handleDoneClick = (todo) => {
-        setItems(item => items.filter((item) => item !== todo)) // 클릭된 /todo랑 다른값들을 다시 items에 넣어준다.
+        setItems(items => items.filter((item) => item !== todo)) // 클릭된 /todo랑 다른값들을 다시 items에 넣어준다.
       }
       const handleRestoreClick = (todo) => {
-        setItems(item => [...items, 
+        setItems(items => [...items, 
         todos.find(item => !items.includes(item))])  
         // 어떤 항목을 삭제했으면 todos는 4개 목록이 다 있지만 items에는 삭제된 목록이 없다.
         // 없는 항목을 todos에서 찾아준다. (item => items에 포함되지 않는것을 전해준다.)
