@@ -17,9 +17,18 @@
     재사용성 : Context를 사용하면 재사용하기 어려움 (Context로 감싸야만 재사용할 수 있기때문.)
     API : createContext / Provider / Consumer
     useContext : Consumer 대체
+    - createContext : 상태 저장 공간을 생성
+    - Provider : 그 공간에 있는 값의 변경을 자식들에게 알려줄 수 있는 컴포넌트
+    - ContextType : 어떤 값을 꺼낼건지 알려주는것
+    - Consumer : 컴포넌트를 리턴할 수 있는 함수를 칠드런으로 두면서 그 컨텍스트의 값을 그대로 사용할 수 있게 렌더링
+
+    ex) const MyContext = React.createContext(defaultValue)
 
 
-    Portal : 뒤에나온 태그에 대해 z-index를 주고싶을때 (덮어쓰고 싶을때)
+
+    Portal : DOM계층 구조 바깥에 있는 DOM 구조에다가 자식을 렌더링하는 방법
+    
+    뒤에나온 태그에 대해 z-index를 주고싶을때 (덮어쓰고 싶을때)
     - public 폴더 안의 index.html에 id가 portal 인 div를 준다.
 
     createPortal : 부모 컴포넌트 DOM 트리로부터 벗어난, 부모랑 동급인 새로운 레이어를 두고 내 children을 그리도록 한다.

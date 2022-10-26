@@ -2,9 +2,11 @@ import React from 'react'
 import {createPortal} from 'react-dom'
 import ThankyouDialog from './ThankyouDialog'
 
+// createPortal을 리턴해주는 Portal 컴포넌트를 먼저 만들어준다.
 const Portal = (props) => {
   return createPortal(props.children, document.getElementById('portal'))
-  //  props의 children을 portal아이디인 태그에 넣는다.
+  // props를 받고, props의 children을 아이디가 portal인 태그에 넣는다.
+  // #portal은 public폴더안에 index.html에 만들어놨다.
 }
 
 export default function Example() {

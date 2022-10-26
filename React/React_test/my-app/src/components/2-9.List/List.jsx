@@ -6,6 +6,7 @@ export default function List() {
   //   <ul>
   //     {numbers.map(item => 
   //     <li key={item.toString()}>{item}</li>
+  //          ↑ key는 문자열로 해주는게 좋다더라~ 그래서 toStrin() 해준다.
   //     )}
   //   </ul>
   // ) 
