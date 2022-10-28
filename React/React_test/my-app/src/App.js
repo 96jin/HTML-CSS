@@ -6,6 +6,7 @@ import Component from './components/3-14.PropComponent/Component';
 // import Input from './components/3-7.HOC/Input';
 // import Button from './components/3-7.HOC/Button';
 import ThankyouDialog from './components/3-6.Composition2/ThankyouDialog';
+import Prac from './components/Prac';
 // import Dialog from './components/3-6.Composition2/Dialog';
 // import WelcomeDialog from './components/3-5.Composition/WelcomeDialog';
 // import Reducer from './components/3-3.Hooks/Reducer'
@@ -24,14 +25,14 @@ import ThankyouDialog from './components/3-6.Composition2/ThankyouDialog';
 function App() {
   return (
     <div className="App">
-      <Component/>
+      {/* <Component/> */}
       {/* <Example/> */}
       {/* <Memo/> */}
       {/* <Input/>
       <br/>
       <br/>
       <Button/> */}
-      <ThankyouDialog/>
+      {/* <ThankyouDialog/> */}
       {/* <Dialog/> */}
       {/* <WelcomeDialog/> */}
       {/* <Reducer/> */}
@@ -46,6 +47,7 @@ function App() {
       <ClassComponent />
       <Extraction/>
       <Composition/> */}
+      <Prac/>
     </div>
   );
 }

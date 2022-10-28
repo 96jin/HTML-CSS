@@ -24,6 +24,17 @@
     Custom Hook : 컴포넌트들에 반복되는 hooks 묶기
     다양한 Hooks : 필요한 타이밍에 참고해서 사용
 
+    useRef 사용시 
+    ex) const inputRef = React.useRef('value') -> ref 오브젝트를 반환한다.
+    'value'는 inputRef.current 의 초기값으로 들어가있다.
+
+    inputRef.current= value
+    ref={inputRef}  -> inputRef.current = 현재 element 요소.
+
+    const inputRef = React.useRef([])
+    inputRef.current[0], inputRef.current[1], inputRef.current[2] ... = ''
+    ref={inputRef.current[0]}
+
 
     */
   </script>
