@@ -27,28 +27,30 @@ function App() {
   }
   const {posts, loading, currentPageNum,postsPerPage} = postList
   const [pageNum, setPageNum] = useState(currentPageNum)
+  const [perPage, setPerPage] = useState(postsPerPage)
 
-  const pageFirstIdx = (pageNum - 1)*postsPerPage
-  const pageLastIdx = pageNum * postsPerPage
+  const pageFirstIdx = (pageNum - 1)*perPage
+  const pageLastIdx = pageNum * perPage
   const firstPosts = posts.slice(pageFirstIdx, pageLastIdx)  
   
   const [post, setPost] = useState(firstPosts)
-  console.log(post)
+  
 
   useEffect(()=>{
     setPost(firstPosts)
-  },[pageNum])
+  },[pageNum],[perPage])
 
 
 
   return (
     <div className="App">
-      <div style={{minHeight:200}}>
+      <div style={{minHeight:300, marginTop:20}}>
         {post.map((post)=><Posts key={post.id} post={post.title} id={post.id}/>)}
       </div>
       <div>
-        <PageNum totalLen={Math.ceil(posts.length/postsPerPage)} 
-        pageNum={pageNum} setPageNum={setPageNum}/>
+        <PageNum totalLen={Math.ceil(posts.length/perPage)} 
+        pageNum={pageNum} setPageNum={setPageNum}
+        setPerPage={setPerPage} firstPosts={firstPosts} setPost={setPost} perPage={perPage}/>
       </div>
 
     </div>
