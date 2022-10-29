@@ -1,0 +1,3 @@
+npm install json-server 로 json server을 설치해준다.
+json-server --watch ./src/db/data.json --port 3001 로 json server와 db 파일을 연결해주고 port설정해준다
+-> 사용 준비 끝
