@@ -1,0 +1,15 @@
+*{
+  margin : 0 auto;
+  text-align: center;
+}
+
+.App{
+  margin : 0 auto;
+  text-align: center;
+}
+
+button{
+  margin-left: 5px;
+  width:25px;
+  height:25px;
+}
