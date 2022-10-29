@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    padding:0;
+}
+.Posts{
+    width:200px;
+    text-align: center;
+    margin:0 auto;
+    background-color: antiquewhite;
+}
+
+
+.listBox{
+    text-align: center;
+}
+
+.page{
+    cursor:pointer;
+    border: 1px solid black;
+    margin: 10px;
+    display:inline-block;
+    text-align: center;
+    width:20px;
+    height:20px;
+}
