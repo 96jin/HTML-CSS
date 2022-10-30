@@ -23,9 +23,10 @@ function App() {
     ],
     loading : false,
     currentPageNum : 1,
-    postsPerPage : 3,
+    postsPerPage : 4,
   }
   const {posts, loading, currentPageNum,postsPerPage} = postList
+  const [post, setPost] = useState([])
   const [pageNum, setPageNum] = useState(currentPageNum)
   const [perPage, setPerPage] = useState(postsPerPage)
 
@@ -33,20 +34,19 @@ function App() {
   const pageLastIdx = pageNum * perPage
   const firstPosts = posts.slice(pageFirstIdx, pageLastIdx)  
   
-  const [post, setPost] = useState(firstPosts)
   
 
   useEffect(()=>{
     setPost(firstPosts)
-  },[pageNum],[perPage])
+  },[pageNum])
 
 
 
   return (
     <div className="App">
-      <div style={{minHeight:300, marginTop:20}}>
+      <main>
         {post.map((post)=><Posts key={post.id} post={post.title} id={post.id}/>)}
-      </div>
+      </main>
       <div>
         <PageNum totalLen={Math.ceil(posts.length/perPage)} 
         pageNum={pageNum} setPageNum={setPageNum}

@@ -8,8 +8,44 @@
   text-align: center;
 }
 
+main{
+  width:100vw;
+  height:50vh;
+  min-height:300px; 
+  margin-top:20px;
+  /* background-color:aqua; */
+  /* display:flex; */
+  flex-wrap:wrap;
+  justify-items: flex-start;
+  align-content: flex-start;
+}
+
 button{
   margin-left: 5px;
+  margin-bottom: 2px;
   width:25px;
   height:25px;
+}
+
+.numListBox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  /* background-color: aquamarine; */
+  width:300px;
+}
+
+.numList{
+  display:flex;
+  justify-content: space-between;
+}
+
+.numBtnBox{
+  display:flex;
+  transform:translate(-0px)
+}
+
+.prevBtn,.nextBtn{
+  font-weight: 600;
+  font-size: 16px;
 }

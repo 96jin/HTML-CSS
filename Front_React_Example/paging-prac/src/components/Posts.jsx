@@ -5,10 +5,11 @@ export default function Posts({post}) {
     <div style={{
       backgroundColor:'beige',
       marginBottom:10,
-      width: 200,
+      width: '40%',
       height: 50,
       borderBottom:'1px solid gray'
-    
-  }}>{post}</div>
+      }}>
+        {post}
+    </div>
   )
 }
