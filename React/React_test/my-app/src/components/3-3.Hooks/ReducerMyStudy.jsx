@@ -35,6 +35,7 @@ export default function ReducerMyStudy() {
   // dispatch를 호출하면 우리가 만든 reducer가 호출되는데, 인자로 action을 받는다.
   // 인자로 받는 action은 객체 형태로 전달해준다.
   // 객체 안에 type 이랑 payload(현재 input에 들어있는 값)를 전달해준다.
+  // reducer 은 state에 직접 접근하면 안되므로 payload에 담아서 준다.
 
   return (
     <div>
