@@ -64,12 +64,16 @@ export default function PageNum({totalLen, pageNum, setPageNum, setPerPage, firs
       <br />
       <div className='numListBox'>
         <div style={{width:50, }}>
-          <button className='prevBtn' onClick={handlePrev} disabled={disabledPrev} style={{backgroundColor:'transparent', border:'none', cursor: !disabledPrev && 'pointer'}}>
+          <button className='prevBtn' onClick={handlePrev} disabled={disabledPrev} style={{
+            backgroundColor:'transparent', border:'none', cursor: !disabledPrev && 'pointer',
+            }}>
             {'<'}
           </button>
         </div>
         <div className='numList' style={{width:'150px',height:'27px',overflow:'hidden'}}>
-          <div className='numBtnBox' style={{height:'27px', transform: (totalLen>5 && pageNum>3 ) && `translate(-${30*(pageNum-3)}px)`}}>
+          <div className='numBtnBox' style={{
+            height:'27px', transform: (totalLen>5 && pageNum>3 ) && `translate(-${30*(pageNum-3)}px)`,
+            }}>
             {pageNumList.map((num)=>(
               <button key={num} className='numBtn' onClick={()=>setPageNum(num)}
               style={(pageNum === num ) ? {backgroundColor:'blue', color:'white'}:{}}
@@ -80,7 +84,9 @@ export default function PageNum({totalLen, pageNum, setPageNum, setPerPage, firs
           </div>
         </div>
         <div style={{width:50,}}>
-          <button className='nextBtn' onClick={handleNext} disabled={disabledNext} style={{backgroundColor:'transparent', border:'none', cursor: !disabledNext && 'pointer'}}>
+          <button className='nextBtn' onClick={handleNext} disabled={disabledNext} style={{
+            backgroundColor:'transparent', border:'none', cursor: !disabledNext && 'pointer',
+            }}>
             {'>'}
           </button>
         </div>
