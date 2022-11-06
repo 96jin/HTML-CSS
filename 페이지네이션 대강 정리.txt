@@ -28,7 +28,8 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 const multer = require('multer')
-const storage = multer.diskStorage({
+-----------------------------------------------------------------------------------------------
+const storage = multer.diskStorage({	-- storage 선언하고 upload에 넣어줌 // 3가지 방법이 있다.
   destination: function(req,file,cb){
     cb(null,'upload/')
   },
@@ -36,8 +37,11 @@ const storage = multer.diskStorage({
     cb(null,Date.now()+file.originalname)
   }
 })
-// const upload = multer({dest:'upload/'})
-const upload = multer({
+const upload = multer({storage:storage})
+-----------------------------------------------------------------------------------------------
+// const upload = multer({dest:'upload/'})	-- 경로만 설정
+-----------------------------------------------------------------------------------------------
+const upload = multer({	-- 한번에 설정
   storage:multer.diskStorage({
     destination(req,file,cb){
       cb(null,'upload/')
@@ -47,7 +51,7 @@ const upload = multer({
     }
   })
 })
-
+-----------------------------------------------------------------------------------------------
 app.get('/',(res,req)=>{
   console.log('root')
 })
@@ -60,3 +64,5 @@ app.post('/upload', upload.single('file'),(req,res) => {
 app.listen(PORT,()=>{
   console.log(`Connecting succeeded : localhost:${PORT}`)
 })
+
+-----------------------------------------------------------------------------------------------
