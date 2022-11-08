@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      background-color: black;
+    }
+    .make-select{
+      background-color: aquamarine;
+      width: 80px;
+      /* height:200px; */
+      overflow: hidden;
+      height: 30px;
+      text-align: center;
+    }
+    .default-select{
+      /* margin-bottom: 5px; */
+      background-color: antiquewhite;
+      height:30px;
+    }
+    .option{
+      background-color: blueviolet;
+      height:30px;
+    }
+    .option:hover{
+      background-color: brown;
+    }
+    .option:not(:last-child){
+      /* margin-bottom: 5px; */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="make-select">
+    <div class="default-select">
+      최소
+    </div>
+    <div class="option" id="1">최소</div>
+    <div class="option" id="1">1</div>
+    <div class="option" id="2">2</div>
+    <div class="option" id="3">3</div>
+    <div class="option" id="4">4</div>
+    <div class="option" id="5">5</div>
+    <div class="option" id="6">6</div>
+    <div class="option" id="7">7</div>
+    <div class="option" id="8">8</div>
+    <div class="option" id="9">9</div>
+    <div class="option" id="10">10</div>
+  </div>
+
+  <script>
+    document.querySelector('.make-select').addEventListener('mouseover',()=>{
+      document.querySelector('.make-select').style.height=5*30 + 'px'
+      document.querySelector('.make-select').style.overflow = 'scroll'
+    })
+    document.querySelector('.make-select').addEventListener('mouseout', ()=>{
+      document.querySelector('.make-select').style.height = 30+'px'
+      document.querySelector('.make-select').style.overflow = 'hidden'
+    })
+    document.querySelectorAll('.option').forEach((op)=>(op.addEventListener('click',(e) => {
+      let a = e.target.id
+      document.querySelector('.default-select').textContent = a
+      console.log(e.target.innerText)
+      document.querySelector('.make-select').style.height = 30+'px'
+      document.querySelector('.make-select').style.overflow = 'hidden'
+    })))
+  </script>
+</body>
+</html>

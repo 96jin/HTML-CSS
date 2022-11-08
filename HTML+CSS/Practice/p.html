@@ -9,25 +9,36 @@
     *{
       margin: 0 auto;
     }
-    div{
-      height: 100vh;
-      display: flex;
-      flex-wrap:nowrap;
-      justify-content: center;
-      align-items:center;
+
+    #wrap{
       background-color: antiquewhite;
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      grid-gap: 10px;
     }
-    button:not(:nth-child(2)){
-      display: inline-block;
-      height:60px;
+
+    #wrap div{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width:90%;
+      min-width:250px;
+      height:200px;
+      background-color: aquamarine;
     }
   </style>
 </head>
 <body>
-  <div>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
+  <div id="wrap">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
   </div>
 </body>
 </html>

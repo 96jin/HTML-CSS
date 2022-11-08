@@ -35,7 +35,7 @@
       "day": 2,
       "eng": "car",
       "kor": "자동차",
-      "isDone": true
+      "isDone": false
     },
     {
       "id": 5,
@@ -76,7 +76,7 @@
       "day": "1",
       "eng": "computer",
       "kor": "컴퓨터",
-      "isDone": true,
+      "isDone": false,
       "id": 13
     },
     {
