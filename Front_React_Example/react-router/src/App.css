@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.home{
+  background-color: aquamarine;
+  width:100vw;
+  height:20vh;
+}
+.home-btn{
+  cursor:pointer;
+}
+.article{
+  background-color: yellowgreen;
+  width:100vw;
+  height:80vh;
+}
+
+.board{
+  background-color: blueviolet;
+  width:100vw;
+  height:80vh;
+}
+.search-result{
+  height:80vh;
+  background-color: cadetblue;
+}
