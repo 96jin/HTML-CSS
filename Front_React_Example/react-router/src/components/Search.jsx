@@ -21,34 +21,38 @@ export default class Search extends Component {
     this.getData(searchText)
   }
   getData = async(searchText) => {
+    //  이렇게도 할 수 있다.
+    // const result = await axios({
+    //   method: 'get',
+    //   url:`http://openapi.naver.com/v1/search/book.json?query=${searchText}`,
+    //   dataType:'json',
+    //   headers:{
+    //     "X-Naver-Client-Id":'PWtO57KgpkYanO0MUPeL',
+    //     "X-Naver-Client-Secret":'wecG6Lu9xy'
+    //   }
+    // })
     const result = await axios.get(`/search/${searchText}`)
     // axios 해서 서버에서 데이터를 받아온다.
-    console.log(result.data)
+    // console.log([...result.data])
     this.setState({
-      searchResult : result.data
+      searchResult : [...result.data]
     })
-    console.log(this.state.searchResult)
-    /* 이렇게도 할 수 있다.
-    const result = await axios({
-      method: 'get',
-      url:'http://openapi.naver.com/v1/search/book.json?query=${searchText}',
-      dataType:'json',
-      headers:{
-        "X-Naver-Client-Id":'',
-        "X-Naver-Client-Secret":''
-      }
-    })
-    */
+    // console.log(this.state.searchResult)
   }
   render() {
-    if(this.state.searchResult===undefined){
-      return <div>로딩중</div>
-    }else{
-      return (
-        <div className="search-result">
-          {this.searchResult && this.searchResult[0].title}
-        </div>
-      )
-    }
+    const {searchResult} =  this.state
+    console.log(searchResult)
+    return (
+      <div className="search-result">
+        {searchResult.length !== 0 && searchResult.map((data,i)=>(
+          <div key={i}>
+            <div>{data.title}</div>
+            <div>{data.link}</div>
+            <div>{data.bloggername}</div>
+            <div>{data.description}</div>
+          </div>
+        ))}
+      </div>
+    )
   }
 }

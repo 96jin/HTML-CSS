@@ -1,15 +1,29 @@
 .App {
   text-align: center;
 }
-
 .home{
   background-color: aquamarine;
   width:100vw;
-  height:20vh;
 }
 .home-btn{
   cursor:pointer;
 }
+.slide-wrap{
+  width:800px;
+  height:500px;
+  margin:0 auto;
+}
+.slide{
+  width:500px;
+  height:400px;
+  /* background-color: aliceblue; */
+}
+.slide img{
+  height:100%;
+  width:100%;
+  margin:0 auto;
+}
+
 .article{
   background-color: yellowgreen;
   width:100vw;
@@ -22,6 +36,6 @@
   height:80vh;
 }
 .search-result{
-  height:80vh;
+  min-height:80vh;
   background-color: cadetblue;
 }
