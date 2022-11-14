@@ -20,6 +20,7 @@ export default class SearchTab extends Component {
     this.setState({
       query:e.target.value.trim()
     })
+    console.log(this.state.query)
   }
   render() {
     return (
