@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'development') {
   worker.start()
 }
 
+// provider에서는 우리가 만든 store를 제공한다.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
