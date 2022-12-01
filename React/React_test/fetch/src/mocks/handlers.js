@@ -1,6 +1,50 @@
 import {rest} from 'msw'
 
 export const handlers = [
+  rest.get('http://localhost:3000/api/users',async(req,res,ctx)=>{
+    const pageIndex = req.url.searchParams.get('page')
+    return res(
+      ctx.json([
+        {
+          id: `1 ${pageIndex}`,
+          name: `Jimmy 1-${pageIndex}`
+        },
+        {
+          id: `2 ${pageIndex}`,
+          name: `Jimmy 2-${pageIndex}`
+        },
+        {
+          id: `3 ${pageIndex}`,
+          name: `Jimmy 3-${pageIndex}`
+        },
+        {
+          id: `4 ${pageIndex}`,
+          name: `Jimmy 4-${pageIndex}`
+        },
+        {
+          id: `5 ${pageIndex}`,
+          name: `Jimmy 5-${pageIndex}`
+        },
+        {
+          id: `6 ${pageIndex}`,
+          name: `Jimmy 6-${pageIndex}`
+        },
+        {
+          id: `7 ${pageIndex}`,
+          name: `Jimmy 7-${pageIndex}`
+        },
+        {
+          id: `8 ${pageIndex}`,
+          name: `Jimmy 8-${pageIndex}`
+        },
+        {
+          id: `9 ${pageIndex}`,
+          name: `Jimmy 9-${pageIndex}`
+        },]
+      )
+    )
+    // return res(ctx.status(400))
+  }),
   rest.get('http://localhost:3000/api/user/:id',async(req,res,ctx)=>{
     const {id} = req.params
     return res(
@@ -8,6 +52,7 @@ export const handlers = [
         name: `Jimmy ${id}`
       })
     )
+    // return res(ctx.status(400))
   }),
   rest.get('http://localhost:3000/api/user-name',async(req,res,ctx)=>{
     const id= req.url.searchParams.get("id")

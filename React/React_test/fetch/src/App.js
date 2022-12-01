@@ -13,6 +13,9 @@ import TodoList from './components/RecoilExample/Todo/TodoList';
 import CurrentUserInfo from './components/RecoilExample/CurrentUser/CurrentUserInfo';
 import Profile from './components/SWRExample/Profile';
 import Cache from './components/SWRExample/Cache';
+import Fetcher from './components/SWRExample/Fetcher';
+import Mutate from './components/SWRExample/Mutate';
+import Pagination from './components/SWRExample/Pagination';
 
 function App() {
   return (
@@ -33,8 +36,11 @@ function App() {
         <Text/>
         <CharactorCount/> */}
       {/* </RecoilRoot> */}
-      <Profile/>
-      <Cache/>
+      {/* <Profile/> */}
+      {/* <Cache/> */}
+      {/* <Fetcher/> */}
+      <Mutate/>
+      <Pagination/>
     </div>
   );
 }
