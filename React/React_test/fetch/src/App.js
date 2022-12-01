@@ -11,6 +11,8 @@ import { RecoilRoot } from 'recoil';
 // import CharactorCount from './components/RecoilExample/CharactorCount';
 import TodoList from './components/RecoilExample/Todo/TodoList';
 import CurrentUserInfo from './components/RecoilExample/CurrentUser/CurrentUserInfo';
+import Profile from './components/SWRExample/Profile';
+import Cache from './components/SWRExample/Cache';
 
 function App() {
   return (
@@ -24,13 +26,15 @@ function App() {
       {/* 컴포넌트가 분리되어있음에도 상태가 공유된다. why? Provider덕분에 */}
       {/* <MobXExample/> */}
       {/* <TodoList store={observableTodoStore}/> */}
-      <RecoilRoot>
-        <TodoList/>
-        <CurrentUserInfo/>
+      {/* <RecoilRoot> */}
+        {/* <TodoList/> */}
+        {/* <CurrentUserInfo/> */}
         {/* <FontButton/>
         <Text/>
         <CharactorCount/> */}
-      </RecoilRoot>
+      {/* </RecoilRoot> */}
+      <Profile/>
+      <Cache/>
     </div>
   );
 }
