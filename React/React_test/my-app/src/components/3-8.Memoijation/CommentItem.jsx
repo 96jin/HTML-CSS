@@ -23,25 +23,26 @@ function CommentItem({title, content, likes, onClick}) {
     alert(`${title} 눌림`)
   }
 
-  // useMemo로 할떄에는 {}안에 ()뺴고 넣어줘야한다.
+  // 클릭할 때 마다 rate 함수가 실행되었다 -> 최적화 필요
+  // useMemo로 할때에는 {}안에 함수 실행하는 ()를 뺴고 넣어줘야한다.
   const rate = useMemo(() => {
     console.log("rate check")
     return likes>10 ? 'Good' : 'Bad'
-  },[])
+  },[likes])
 
   return (
     <Profiler id="CommentItem" onRender={onRenderCallback}>
-    <div className="CommentItem" onClick={handleClick}>
-      <span>{title}</span>
-      <br/>
-      <span>{content}</span>
-      <br/>
-      <span>{likes}</span>
-      <br />
-      <span>{rate}</span>
-      <br />
-      <span>{clickCount}</span>
-    </div>
+      <div className="CommentItem" onClick={handleClick}>
+        <span>{title}</span>
+        <br/>
+        <span>{content}</span>
+        <br/>
+        <span>{likes}</span>
+        <br />
+        <span>{rate}</span>
+        <br />
+        <span>{clickCount}</span>
+      </div>
     </Profiler>
   )
 }

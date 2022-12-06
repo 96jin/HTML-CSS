@@ -1,0 +1,41 @@
+Next.js 란?
+- Vercel이 만든 React Framework (리액트에 다양한 도구들을 추가해서 나온 기능)
+-- Create React App 으로 만들면 CSR ( Client Side Rendering )
+-SSR ( Server Side Rendering )
+-- 클라이언트로 전달될 HTML 파일 내용 (일부를) 미리 그려서 내려주는것.
+-- 클라이언트 렌더링의 속도를 빠르게 하여, 사용자 체감 속도 증진.
+-- 검색엔진이 JavaScript를 실행하지않고 크롤링 가능 -> SEO
+
+create-next-app@latest 으로 설치
+Next.js 에서는 CSR 과 SSR 둘 다 가능하다. (Next.js 에서 제공하는 SSR 기능을 안쓰면 CSR)
+CSR 로 데이터 fetch => useEffect()~~ 
+
+SSR 로 데이터 fetch =>
+getServerSideProps() -- return {props: {}} 을 반환한다. (Server-side Rendering)
+- 리턴된 props 안의 객체가 해당 컴포넌트의 props로 들어간다.
+
+getStaticProps() -- return {props: {}} (Static Generation)
+
+Next.js 는 기본적으로 pre-rendering이 가능하다. (일반 React 는 다 다운받을때 까지 빈화면이 나오지만, Nextjs는 다운로드된 화면을 미리 보여주고, 나머지 로드)
+-- SSG : Static Generation : HTML 이 build time때 만들어지고, 각각 요청할때마다 재사용된다. ex) 블로그나 소개페이지에서 유용함.
+    getStaticProps()로 사용 가능하다.
+
+-- SSR : Server-side Rendering : 각각의 요청마다 HTML이 만들어진다.
+    getServerSideProps() 로 사용 가능하다.
+
+pre-fetching : 불러오는 화면에 Link 태그가 있다면, 그 태그에 있는 HTML을 미리 받아놓는것.
+
+css.modules , sass , styled-jsx 를 제공 , tailwindcss 도 적용 가능하다.
+- css.modules 를 사용하려면 import할때 파일이름.modules.css를 해야한다.
+
+글로벌 style 을 주려면 pages 폴더 안에 _app.js 를 만든다, 그리고 styles 폴더 안에 globals.css 를 만들어서 import
+- 모든 페이지에 공통적인 설정이나 동작을 줄 수 있다.
+
+hydration : 페이지가 브라우저에 로드되고 자바스크립트 코드가 실행되면서 페이지가 인터랙티브하게 동작할 상태가 되는 과정
+
+fallback은 getStaticPaths 에서 return. fallback : false 를 주면 해당 경로 외의 요청에는 404 를 리턴한다.
+
+getStaticPaths 는 [{params: {id: string}}] 목록을  리턴한다. params 안에 dynamic routes key 가 들어있어야 함.
+- 동적 라우팅을 위해 사용 . [id].jsx 안에서 paths를 받아와서 getStaticProps 의 인자로 전달
+
+Next.js 에서는 req,res,redirect,query 등을 사용할 수 있다.

@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-    /*
-    메모이제이션이란?
-    -메모이제이션은 컴퓨터 프로램이 동일한 계산을 반복해야할 때, 이전에 계산한 값을 메모리에 저장함으로써
-    동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다.
 
-    React.memo
-    리액트에서의 메모는 동일한 props로 렌더링을 한다면, React.memo를 사용하여 성능향상을 누릴 수 있다.
-    memo를 사용한다면 React는 컴포넌트를 렌더링하지 않고 마지막으로 렌더링 된 결과를 재사용한다.
+메모이제이션이란?
+-메모이제이션은 컴퓨터 프로램이 동일한 계산을 반복해야할 때, 이전에 계산한 값을 메모리에 저장함으로써
+동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다.
 
-    Profiler API
-    - React가 렌더링하는 빈도와 렌더링 비용을 측정해준다.
-    --> 최적화 확인할 수 있다.
+React.memo
+- HOC 형태이다. props를 비교해서, props가 바뀌지 않았다면 메모된 컴포넌트를 다시 사용한다.
+- commentList 가 계속 추가되어서 중간에 있는 comments 가 바뀌면서 자식들이 다 리렌더링 되는 상황인데, 자식 하나하나의 props는 바뀌지 않았기에 메모된 값을 쓴다.
+- --> commentItem의 props는 동일하기 때문에 여기서 memo를 사용해서 최적화한다.
+- ---> 1차 메모이제이션
+- 리액트에서의 메모는 동일한 props로 렌더링을 한다면, React.memo를 사용하여 성능향상을 누릴 수 있다.
+- memo를 사용한다면 React는 컴포넌트를 렌더링하지 않고 마지막으로 렌더링 된 결과를 재사용한다.
+- 간단하게 말해서, 기록해두는거라고 생각하자.
+- 리턴할 때, memo() 로 감싸서 사용한다.
 
-    React.memo : HOC / Props 비교하여 메모
-    Profiler : 리액트 성능 분석 도구
-    callback : useCallback 전달되는 props , 함수를 메모이제이션 해준다.
-    value : useMemo
+useCallback
+- 함수를 props로 주면 아이템을 메모를 해놨음에도 계속 리렌더링이 발생한다. why> 함수를 전달하면 함수가 바뀌지않았음에도 바꼈다고 인식해서.
+- 그래서 함수를 useCallback으로 메모이제이션해준다.
+- const newFn = useCallback(()=>{fn},[]) 으로 사용한다. -> 해당 deps가 바뀔때만 함수가 바꼈다고 인식해서 리렌더링.
 
-    useCallback(fn, deps) 는 useMemo( () => fn , deps) 와 같다.
-    */
-  </script>
-</body>
-</html>
+useMemo
+- 최적화를 해놨음에도 해당 아이템을 클릭해서 값을 변경하는 동작을 하면 , 해당 아이템이 리렌더링 되면서 관련된 함수가 실행되는것을 방지하기 위해 useMemo를 사용
+- const newFn = useMemo(()=>{fn},[]) 으로 사용한다. -> 해당 deps가 바뀔때만 해당 부분 리렌더링.
+
+Profiler API
+- React 에서 기본으로 제공하는 API, <Profiler></Profiler> 로 감싸서 사용가능
+- id와 onRender 로 해당 id에 관한 성능을 측정
+- React가 렌더링하는 빈도와 렌더링 비용을 측정해준다.
+--> 최적화 확인할 수 있다.
+
+React.memo : HOC / Props 비교하여 메모
+Profiler : 리액트 성능 분석 도구
+callback : useCallback 전달되는 props , 함수를 메모이제이션 해준다.
+value : useMemo
+
+useCallback(fn, deps) 는 useMemo( () => fn , deps) 와 같다.
+
+특정한 값을 메모이제이션 할 때는 useMemo() 를 쓰고, 특정한 함수를 메모이제이션 할 때는 useCallback()을 쓴다.
+

@@ -8,7 +8,10 @@ export const fetchIncrement = createAsyncThunk(
     return response.data;
   }
 );
-
+// createSlice : reducer 만드는것을 도와줌, 객체를 매개변수로 받는다.
+// name , initialState, reducers 를 넣어준다.
+// reducers에 함수를 만든다. 원래는 action.type 으로 정했지만 createSlice가 자동으로 이름을 생성해준다. name은 prefix 값.
+//
 export const counterSlice = createSlice({
   name: "counter",
   initialState: {
