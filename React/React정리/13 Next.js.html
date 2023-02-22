@@ -39,3 +39,24 @@ getStaticPaths 는 [{params: {id: string}}] 목록을  리턴한다. params 안�
 - 동적 라우팅을 위해 사용 . [id].jsx 안에서 paths를 받아와서 getStaticProps 의 인자로 전달
 
 Next.js 에서는 req,res,redirect,query 등을 사용할 수 있다.
+
+Routing
+- pages file system 을 사용한다.
+- [slug] 로 다이나믹한 url 생성 가능
+- router.query 로 key 와 value 를 꺼낼 수 있다.
+- router.query 에는 처음에 무조건 빈 객체가 들어온다. 따라서 빈 객체일때 처리하는 동작을 만드는것이 좋다.
+- [...slug] 하면 query의 key slug 에 배열로 값들이 존재
+- [[...slug]] 하면 slug가 없는 경우도 대응 가능
+-- slug 단어는 바뀔 수 있다.
+
+Shallow Routing : 데이터 페칭 없이 url만 변경
+- router.push('/?counter=10',undefined, {shallow: true}) 로 사용 가능
+
+API Routes
+- pages/api/ 에 생성하면 페이지가 아닌 api 처럼 동작한다.
+- client side 코드에는 추가되지 않는다. (api 는 서버에서만 동작하기 때문에)
+
+Vercel 을 통한 배포
+- 프로젝트를 github 에 올려서 Vercel에 가입후 프로젝트 를 import 하고 deploy한다.
+- pr 을 만들면 (branch 에 변경사항을 올리면) vercel 에서 자동으로 미리보기 페이지를 제공해주고, 
+- 변경사항을 커밋하면 자동으로 배포한다.

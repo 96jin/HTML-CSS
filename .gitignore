@@ -1,3 +1,4 @@
-이성호.txt
 /node_modules
 /Front_React_Example/node_modules
+/Typescript/node_modules
+/Typescript/*/node_modules

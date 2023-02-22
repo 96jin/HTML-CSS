@@ -1,0 +1,98 @@
+타입스크립트는 Programming Language 이다.
+타입스크립트는 Compiled Langauge 이다.
+- 전통적인 Compiled Language 와는 다른점이 많다.
+- 그래서 Transpile 이라는 용어를 사용하기도 한다.
+자바스크립트는 Interpreted Language 이다.
+
+    tsc
+타입스크립트(에디터) => 타입스크립트 컴파일러 => 자바스크립트(브라우저, Node.js)
+
+npm i typescript -g 라고 하면 글로벌 전역에 설치
+npm install typescript -D 는 package.json에 devDependencies 에 설치
+
+타입스크립트는 Static Types 이고, 자바스크립트는 Dynamic Types이다.
+-> Static Types 는 개발 중간에 타입을 체크한다, 
+-> Dynamic Types는 개발중에는 알 수 없고, 런타임에 돌입해야 잘못된걸 알 수 있다.
+
+타입스크립트에서 제공하는 데이터 타입은 Js 기본 자료형을 포함한다.
+-> Boolean , Number, String , Symbol , Null , Undefined , Array : Object형
+프로그래밍을 도울 몇가지 타입이 더 제공된다.
+-> Any , Void , Never , Unknown
+-> Enum
+-> Tuple : Object형
+
+Primitive Type : 오브젝트와 레퍼런스 형태가 아닌 실제 값을 저장하는 자료형
+-> boolean, number, symbol, string, null, undefined
+-> literal 값으로 Primitive 타입의 서브타입을 나타낼 수 있다.
+ex) true , 'hello' , 3.14 , null , undefined
+
+자바스크립트에서는 Primitive 타입을 래퍼 객체형태(첫 자 대문자)로도 만들 수 있다.
+new Boolean(false) , new String('world'), new Number(42)  -> object 타입이다.
+
+하지만 타입스크립트에서는 이러한 생성을 권장하지 않는다.
+그래서 타입스크립트의 핵심 Primitive type은 모두 소문자이다.
+ex) function reverse(s: String) String{return ~} => function reverse(s: string): string{return ~}
+이렇게 바꿔야한다.
+
+폴더 내에서 npx tsc 하면 해당 폴더 내의 모든 ts 파일이 컴파일 된다. -> js 파일 생성
+
+------------------------------------------------------------------------------
+
+타입스크립트의 타입 시스템
+- 명시적으로 타입을 지정 or 명시적으로 지정하지 않으면, 타입스크립트 컴파일러가 자동으로 타입을 추론
+타입이란 해당 변수가 할 수 있는 일을 결정한다.
+
+나만의 타입 만드는 방법
+    interface PersonInterface{
+        name: string;
+        age : number;
+    }
+    type PersonTypeAlias = {
+        name : string;
+        age : number;
+    }
+으로 타입을 만들 수 있다.
+nominal type system : 구조가 같아도 이름이 다르면, 다른 타입이다. -> C언어, 자바 등등,,
+파이썬은 duck typing이다.
+
+타입스크립트에서는 구조가 같으면 같은 타입이라고 본다. (Structural type System)
+    PersonInterface = PersonTypeAlias 해도 무방하다.
+
+함수의 매개변수 타입만 같거나 슈퍼타입인 경우, 할당이 가능하다. => 반병
+class Person{}
+class Developer extends Person{ coding(){} }
+class StartupDeveloper extends Developer{ burning(){} }
+
+function tellme(f: (d: Developer) => Developer){}
+- 함수 f를 인자로 받고 함수 f는 Developer타입을 인자로 받고, Developer타입을 리턴하는 함수이다.
+
+tellme(function dToD(d: Developer): Developer){ return new Developer() }    -- 가능
+
+tellme(function pToD(d: Person): Developer){ return new Developer() }       -- 가능 
+
+tellme(function sToD(d: StartupDeveloper): Developer){ return new Developer() } 
+-- 가능은 하지만 strictFunctionType 옵션을 키면 에러를 통해 경고한다
+
+------------------------------------------------------------------------------
+
+Type Alias ( 타입 별칭 )
+- 인터페이스랑 비슷해보인다. 인터페이스는 타입으로써의 존재가치가 명확하다.
+- 타입 별칭은 그냥 가리킬뿐이다.
+- Primitive, Union Type, Tuple, Function을 대신 쓰는 형식이다.
+- 만들어진 타입의 별명(refer)로 사용하는것이지, 타입을 만드는것이 아니다.
+
+let person : string | number = 0;
+type StringOrNumber = string | number;
+let another: StringOrNumber = 2; -- 이렇게 대신 선언해 준다.
+-> 반복을 줄여주고 타이핑을 줄여줌
+
+type EatType = (food:string) => void;
+-> EatType의 형태는 string 타입의 food 변수를 받고 void를 리턴하는 형태이다.
+
+------------------------------------------------------------------------------
+tsconfig.json 에서
+compileOnSave : true / false (default false) -- 저장하면 컴파일 하겠다.
+extends : ./경로 입력   -- 해당 경로의 파일에 있는 옵션들을 상속 받는다.(Ts 2.1 이상에서 가능)
+npm i -d @tsconfig/deno 하면 설정들이 설치된다.
+
+------------------------------------------------------------------------------
